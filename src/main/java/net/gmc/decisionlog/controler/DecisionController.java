@@ -24,4 +24,11 @@ public class DecisionController {
         model.addAttribute("decisions", decisions);
         return "index";
     }
+
+    @RequestMapping(value="/add-decision", method= RequestMethod.GET, produces = "text/html; charset=UTF-8")
+    public String getAddDecisionPage(Model model) {
+        return "add";
+    }
+
+
 }
