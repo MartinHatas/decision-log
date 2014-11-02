@@ -1,5 +1,4 @@
 syntax: glob
 .idea/*
-data/*
 *.iml
 target/*
