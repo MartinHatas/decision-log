@@ -4,47 +4,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<link rel="stylesheet" type="text/css" href="css/mogwai.css" media="screen"/>
-<link rel="stylesheet" type="text/css" href="css/decisionlog.css" media="screen"/>
-<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="js/mogwai.js"></script>
-<html>
 
-<head>
-
-
-</head>
-
-<body>
-<div class="html l-app">
-    <div class="body l-app-page">
-        <div class="l-app-page">
-            <div class="app-header">
-                <div class="app-header-left">
-                    <img src="gfx/page-header-logo.png" class="app-header-logo"/>
-
-                    <div class="app-header-btn app-header-btn--pasive-icon-by-overlay is-active">
-                        <div class="app-header-btn-icon-active">
-                            <div class="icon icon--small icon--dashboard-invert"></div>
-                        </div>
-                        <div class="app-header-btn-label">DASHBOARD</div>
-                    </div>
-                    <div class="app-header-btn app-header-btn--pasive-icon-by-overlay">
-                        <div class="app-header-btn-icon-active">
-                            <div class="icon icon--small icon--dashboard-invert"></div>
-                        </div>
-                        <div class="app-header-btn-label">CREATE NEW DECISION</div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="textbox textbox--search">
-                <input type="text" placeholder="FullText Search "/>
-            </div>
-
-            <%-- === DECISIONS . DECISIONS . DECISIONS . DECISIONS . DECISIONS . DECISIONS . DECISIONS  === --%>
-
+<jsp:include page="header.jsp"></jsp:include>
 
             <table class="table table--collapsible-rows">
                 <thead>
@@ -89,19 +50,19 @@
                             <div class="content">
                                 <div class="detail">
                                     <div class="heading">
-
+                                        Reason:
                                     </div>
                                     <div class="content">
-                                        <c:out value="${decision.reason}"/>
+                                        <c:out value="${decision.reason}" escapeXml='false'/>
 
                                     </div>
                                 </div>
                                 <div class="detail">
                                     <div class="heading">
-
+                                        Conclusion:
                                     </div>
                                     <div class="content">
-                                        <c:out value="${decision.conclusions}"/>
+                                        <c:out value="${decision.conclusions}" escapeXml='false'/>
 
                                     </div>
                                 </div>
@@ -111,12 +72,4 @@
                 </c:forEach>
                 </tbody>
             </table>
-
-
-        </div>
-    </div>
-</div>
-</body>
-
-
-</html>
+<jsp:include page="footer.jsp"></jsp:include>
