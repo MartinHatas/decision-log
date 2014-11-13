@@ -1,0 +1,58 @@
+.l-app {
+    min-width: inherit;
+}
+
+.date {
+    width: 1%;
+}
+
+.subject {
+    width: 1%;
+}
+
+.summary {
+    & > .wrapper {
+        position: relative;
+        padding-right: 20px;
+        height: 21px;
+        overflow: hidden;
+        &:after {
+            position: absolute;
+            right: 0;
+            top: 0;
+            content: "...";
+
+        }
+    }
+}
+
+.relevancy {
+    width: 1%;
+
+    .relevancy .wrapper {
+        position: absolute;
+        width: 61px;
+        clip: rect(0, 30px, 21px, 0);
+    }
+}
+
+
+//.relevancy {
+//    width: 1%;
+//    .wrapper {
+//        clip: rect(0, 50%, 100%, 0);
+//        //position: relative;
+//        //width: 100%;
+//        //        & > .hider {
+//        //            position: absolute;
+//        //            top: 0;
+//        //            right: 0;
+//        //            bottom: 0;
+//        //            width: 0;
+//        //            // todo v sablone
+//        //            width: 50%;
+//        //            background-color: #fff;
+//        //        }
+//    }
+//}
+//
