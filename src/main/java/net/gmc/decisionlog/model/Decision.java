@@ -12,17 +12,19 @@ public class Decision {
     private Date date;
     private String[] attendees;
     private String[] tags;
+    private Double relevance;
 
     public Decision() {
     }
 
-    public Decision(String subject, String reason, String conclusions, Date date, String[] attendees, String[] tags) {
+    public Decision(String subject, String reason, String conclusions, Date date, String[] attendees, String[] tags, Double relevance) {
         this.subject = subject;
         this.reason = reason;
         this.conclusions = conclusions;
         this.date = date;
         this.attendees = attendees;
         this.tags = tags;
+        this.relevance = relevance;
     }
 
     public String getSubject() {
@@ -71,6 +73,14 @@ public class Decision {
 
     public void setTags(String[] tags) {
         this.tags = tags;
+    }
+
+    public Double getRelevance() {
+        return relevance;
+    }
+
+    public void setRelevance(Double relevance) {
+        this.relevance = relevance;
     }
 
     @Override
