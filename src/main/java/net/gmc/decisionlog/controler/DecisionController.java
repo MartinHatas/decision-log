@@ -22,7 +22,7 @@ public class DecisionController {
 
     @RequestMapping(value="/", method= RequestMethod.GET)
     public String getListDecisionsView(Model model) {
-        model.addAttribute("decision", elasticSearchStore.listAllDecision());
+        model.addAttribute("decisions", elasticSearchStore.listAllDecision());
         return "index";
     }
 
