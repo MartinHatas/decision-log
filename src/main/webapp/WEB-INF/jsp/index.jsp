@@ -45,13 +45,6 @@
 
             <%-- === DECISIONS . DECISIONS . DECISIONS . DECISIONS . DECISIONS . DECISIONS . DECISIONS  === --%>
 
-            <%--this.subject = subject;--%>
-            <%--this.reason = reason;--%>
-            <%--this.conclusions = conclusions;--%>
-            <%--this.date = date;--%>
-            <%--this.attendees = attendees;--%>
-            <%--this.tags = tags;--%>
-            <%--relevance--%>
 
             <table class="table table--collapsible-rows">
                 <thead>
@@ -63,56 +56,62 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr class="table-collapsible-row-header "><%--is-open--%>
-                    <td class="date">
-                        <div class="table-collapsible-row-toggle"></div>
-                        file.pdf
-                    </td>
-                    <td class="subject">Decision Log</td>
-                    <td class="summary">
-                        <div class="wrapper">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto, delectus
-                            distinctio doloribus excepturi facere, fugiat ipsam laudantium, magni odit omnis
-                            perspiciatis quisquam saepe. Accusantium dicta ducimus, eligendi ex excepturi totam veniam?
-                            Accusamus asperiores aut doloribus exercitationem illo non officia! Amet deserunt doloribus
-                            nam obcaecati omnis sed tenetur! Dicta, iusto.
-                        </div>
-                    </td>
-                    <td class="relevancy">
-                        <div class="wrapper">
-                            &#9733;&#9733;&#9733;&#9733;&#9733;
-                            <div class="hider"></div>
-                        </div>
-                    </td>
-                </tr>
-                `
-                <tr class="table-collapsible-row-body">
-                    <td colspan="3">
-                        <div class="content">Lorem ipsum Consectetur sint in in minim magna magna elit nulla elit magna
-                            labore laborum fugiat in magna proident labore cupidatat voluptate veniam eiusmod anim
-                            cupidatat
-                            sint voluptate ullamco dolore labore dolore pariatur anim ad cupidatat
-                            ut culpa. Lorem ipsum Ut ut exercitation quis dolor aliqua commodo laboris deserunt
-                            exercitation
-                            in ex cupidatat ut Duis ad.
-                        </div>
-                    </td>
-                </tr>
+                <%--this.subject = subject;--%>
+                <%--this.reason = reason;--%>
+                <%--this.conclusions = conclusions;--%>
+                <%--this.date = date;--%>
+                <%--this.attendees = attendees;--%>
+                <%--this.tags = tags;--%>
+                <%--relevance--%>
+                <c:forEach var="decision" items="${decisions}">
+                    <tr class="table-collapsible-row-header is-open"><%--is-open--%>
+                        <td class="date">
+                            <div class="table-collapsible-row-toggle"></div>
+                            <c:out value="${decision.date}"/>
+                        </td>
+                        <td class="subject"><c:out value="${decision.subject}"/></td>
+                        <td class="summary">
+                            <div class="wrapper">
+                                <c:out value="${decision.reason}"/>
+                            </div>
+                        </td>
+                        <td class="relevancy">
+                            <div class="wrapper">
+                                <c:out value="${decision.relevance}"/>
+                                    <%--&#9733;&#9733;&#9733;&#9733;&#9733;--%>
+                                <div class="hider"></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="table-collapsible-row-body">
+                        <td colspan="4">
+                            <div class="content">
+                                <div class="detail">
+                                    <div class="heading">
+
+                                    </div>
+                                    <div class="content">
+                                        <c:out value="${decision.reason}"/>
+
+                                    </div>
+                                </div>
+                                <div class="detail">
+                                    <div class="heading">
+
+                                    </div>
+                                    <div class="content">
+                                        <c:out value="${decision.conclusions}"/>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
-            <%--<table>--%>
-            <%--<c:forEach var="decision" items="${decisions}" >--%>
-            <%--<tr>--%>
-            <%--<td><c:out value="${decision.name}"/></td>--%>
-            <%--</tr>--%>
-            <%--</c:forEach>--%>
-            <%--</table>--%>
 
-
-            <%--<div class="l-view-content-with-footer">--%>
-            <%--<div class="l-view-content-with-footer-body">Content</div>--%>
-            <%--<div class="l-view-content-with-footer-footer">Footer</div>--%>
-            <%--</div>--%>
 
         </div>
     </div>
