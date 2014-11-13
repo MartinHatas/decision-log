@@ -1,6 +1,5 @@
 package net.gmc.decisionlog.controler;
 
-import net.gmc.decisionlog.controler.dto.DecisionSearchResponse;
 import net.gmc.decisionlog.data.ElasticSearchStore;
 import net.gmc.decisionlog.model.Decision;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +27,8 @@ public class DecisionController {
 
     @RequestMapping(value="/search/{keyWord}", method= RequestMethod.GET)
     public String search(@PathVariable String keyWord, Model model) {
-        DecisionSearchResponse searchResponse = elasticSearchStore.searchDecisions(keyWord);
-        model.addAttribute("decision", searchResponse.decisions);
-        model.addAttribute("nextScrollId", searchResponse.nextScrollId);
+        List<Decision> decisions = elasticSearchStore.searchDecisions(keyWord);
+        model.addAttribute("decision", decisions);
         return "index";
     }
 
@@ -56,6 +54,12 @@ public class DecisionController {
     public List<Decision> getDecision() {
         List<Decision> decisions = elasticSearchStore.listAllDecision();
         return decisions;
+    }
+
+    @ResponseBody
+    @RequestMapping(value="/search1/{keyWord}", method= RequestMethod.GET, produces = "application/json")
+    public List<Decision> search1(@PathVariable String keyWord, Model model) {
+        return elasticSearchStore.searchDecisions(keyWord);
     }
 
 

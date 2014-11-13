@@ -1,9 +1,9 @@
 package net.gmc.decisionlog.data;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import net.gmc.decisionlog.controler.dto.DecisionSearchResponse;
 import net.gmc.decisionlog.model.Decision;
 import net.gmc.decisionlog.notification.publishing.DecisionEventPublisher;
 import org.apache.log4j.Logger;
@@ -11,6 +11,7 @@ import org.elasticsearch.action.admin.cluster.state.ClusterStateResponse;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.node.Node;
 import org.elasticsearch.search.SearchHit;
@@ -31,6 +32,7 @@ import java.util.concurrent.ExecutionException;
 import static org.elasticsearch.node.NodeBuilder.nodeBuilder;
 
 @Component
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ElasticSearchStore {
 
     private static final Logger logger = Logger.getLogger(ElasticSearchStore.class);
@@ -51,6 +53,8 @@ public class ElasticSearchStore {
     @PostConstruct
     private void init() throws InterruptedException {
         logger.info("Constructing and running ElasticSearch storage.");
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
         buildNode();
         createIndex();
         waitUntilElasticSearchIsStarted();
@@ -102,15 +106,19 @@ public class ElasticSearchStore {
     private List<Decision> deserializeDecisionsResponse(SearchResponse searchResponse) {
         List<Decision> decisions = new ArrayList<Decision>();
         for(SearchHit hit : searchResponse.getHits()){
-            String sourceAsString = hit.getSourceAsString();
-            Decision decision = deserialize(sourceAsString);
-            if (decision != null) {
-                decision.setRelevance(hit.getScore());
-                decision.setId(hit.getId());
-                decisions.add(decision);
-            }
+            getDecisionsFromHit(decisions, hit);
         }
         return decisions;
+    }
+
+    private void getDecisionsFromHit(List<Decision> decisions, SearchHit hit) {
+        String sourceAsString = hit.getSourceAsString();
+        Decision decision = deserialize(sourceAsString);
+        if (decision != null) {
+            decision.setRelevance(hit.getScore());
+            decision.setId(hit.getId());
+            decisions.add(decision);
+        }
     }
 
     private Decision deserialize(String sourceAsString) {
@@ -180,17 +188,42 @@ public class ElasticSearchStore {
                                 "2)\tPetr mrkne na kaskády v databázi, které využijeme při mazání.\n" +
                                 "3)\tMartin H. se podívá na optimalizaci operací s DB, při vytváření snapshotů, taky aby se bloby kopírovaly přímo v DB a ne v Javě.\n" +
                                 "4)\tOndra koukne na optimalizaci při mazání draftů – budou pouze označeny jako deleted a z DB se smažou později.\n");
-                sampleDecision1.setAttendees(new String[]{"m.hatas", "m.jankovsky", "v.stolin", "h.steinmetz", "m.kosar"});
+                sampleDecision1.setAttendees(new String[]{"Martin Hátaš", "Michal Jankovský", "Václav Stolín", "Hynek Steinmetz", "Martin Kosař"});
                 sampleDecision1.setTags(new String[]{"#performance", "#transactions", "#database", "#deadlock", "#peak"});
 
+                Decision sampleDecision2 = new Decision();
+                sampleDecision2.setSubject("User activity tracking");
+                sampleDecision2.setDate(new Date());
+                sampleDecision2.setReason("We want lo log some user actions at frontend to the license library so we can achieve better UX.");
+                sampleDecision2.setConclusions(
+                        "1)\tMartin Viktorin a Tomáš Sychra vyvíjejí JavaScriptový logger, který si includneme do klienta a budem přes něj logovat uživatelské akce, které upřesní UX. (pure javascript, singleton, odesílá jednou za čas/po naplnění zásobníku/po ukončení framu, obecné schéma logované zprávy)\n" +
+                                "2)\tMartin Viktorin a Tomáš Sychra vyvíjejí maven modul, který obsahuje servlet, který umí příjmat a deserializovat zprávy z JS loggeru a volá metodu interface, který si v I+ na serveru naimplementujeme tak, aby zprávu poslal do licencační knihovny.\n" +
+                                "3)\tKonzultanti za I+ byli demokraticky zvoleni Lukáš a Standa.\n");
+                sampleDecision2.setAttendees(new String[]{"Stanislav Hacker", "Lukáš Fíla", "Lenka Kreibichová", "Radek Špelda", "Martin Kosař"});
+                sampleDecision2.setTags(new String[]{"#UX", "#frontend", "#javascript", "#logging", "#license"});
+
                 saveDecision(sampleDecision1);
+                saveDecision(sampleDecision2);
             }
         }
 
     }
 
-    public DecisionSearchResponse searchDecisions(String keyWord) {
-        return new DecisionSearchResponse();
+    public List<Decision> searchDecisions(String keyWord) {
+
+        SearchResponse response = node.client().prepareSearch(DECISIONS_INDEX_NAME)
+                .setTypes(DECISION_TYPE_NAME)
+                .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
+                .setQuery(QueryBuilders.simpleQueryString(keyWord).field("subject").field("reason").field("conclusions").field("attendees").field("tags"))
+                .execute()
+                .actionGet();
+
+        List<Decision> decisionList = new ArrayList<Decision>();
+        for (SearchHit hit : response.getHits()) {
+            getDecisionsFromHit(decisionList, hit);
+        }
+
+        return decisionList;
     }
 
     public Decision getDecision(String decisionId) {
