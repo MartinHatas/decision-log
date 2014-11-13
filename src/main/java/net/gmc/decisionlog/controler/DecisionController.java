@@ -40,6 +40,7 @@ public class DecisionController {
 
     @RequestMapping(value="/add-decision", method= RequestMethod.GET)
     public String getAddDecisionView(Model model) {
+        model.addAttribute("decision", new Decision());
         return "add";
     }
 

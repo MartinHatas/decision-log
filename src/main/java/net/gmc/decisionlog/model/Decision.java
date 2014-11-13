@@ -65,7 +65,11 @@ public class Decision {
     }
 
     public String getDate() {
-        return DATE_FORMAT.format(date);
+        if (date != null) {
+            return DATE_FORMAT.format(date);
+        }else {
+            return DATE_FORMAT.format(new Date());
+        }
     }
 
     public void setDate(Date date) {
