@@ -7,50 +7,49 @@
 <jsp:include page="header.jsp"></jsp:include>
 <div class="detail-box">
     <c:forEach var="decision" items="${decisions}">
-        <tr class="table-collapsible-row-header is-open"><%--is-open--%>
-            <td class="date">
-                <div class="table-collapsible-row-toggle"></div>
-                <c:out value="${decision.date}"/>
-            </td>
-            <td class="subject"><c:out value="${decision.subject}"/></td>
-            <td class="summary">
-                <div class="wrapper">
-                    <c:out value="${decision.reason}"/>
-                </div>
-            </td>
-                <%--<td class="relevancy">--%>
-                <%--<div class="wrapper">--%>
-                <%--<c:out value="${decision.relevance}"/>--%>
-                <%--&lt;%&ndash;&#9733;&#9733;&#9733;&#9733;&#9733;&ndash;%&gt;--%>
-                <%--<div class="hider"></div>--%>
-                <%--</div>--%>
-                <%--</td>--%>
-        </tr>
 
-        <tr class="table-collapsible-row-body">
-            <td colspan="4">
+        <div class="content">
+            <div class="detail">
+                <div class="heading">
+                    Date:
+                </div>
                 <div class="content">
-                    <div class="detail">
-                        <div class="heading">
-                            Reason:
-                        </div>
-                        <div class="content">
-                            <c:out value="${decision.reason}" escapeXml='false'/>
-
-                        </div>
-                    </div>
-                    <div class="detail">
-                        <div class="heading">
-                            Conclusion:
-                        </div>
-                        <div class="content">
-                            <c:out value="${decision.conclusions}" escapeXml='false'/>
-
-                        </div>
+                    <div class="date">
+                        <%--<c:out value="${decision.date}"/>--%>
                     </div>
                 </div>
-            </td>
-        </tr>
+            </div>
+
+            <div class="detail">
+                <div class="heading">
+                    Subject:
+                </div>
+                <div class="content">
+                    <div class="subject">
+                        <c:out value="${decision.subject}"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail">
+                <div class="heading">
+                    Reason:
+                </div>
+                <div class="content">
+                    <c:out value="${decision.reason}" escapeXml='false'/>
+                </div>
+            </div>
+
+            <div class="detail">
+                <div class="heading">
+                    Conclusion:
+                </div>
+                <div class="content">
+                    <c:out value="${decision.conclusions}" escapeXml='false'/>
+
+                </div>
+            </div>
+        </div>
     </c:forEach>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>
