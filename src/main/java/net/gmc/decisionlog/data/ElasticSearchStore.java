@@ -54,6 +54,7 @@ public class ElasticSearchStore {
         buildNode();
         createIndex();
         waitUntilElasticSearchIsStarted();
+//        listAllDecision();
         createSampleData();
     }
 
