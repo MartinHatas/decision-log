@@ -57,7 +57,11 @@ public class Decision {
     }
 
     public String getConclusions() {
-        return conclusions.replaceAll("\\n", "<br/>");
+        if (conclusions != null) {
+            return conclusions.replaceAll("\\n", "<br/>");
+        }else {
+            return conclusions;
+        }
     }
 
     public void setConclusions(String conclusions) {
