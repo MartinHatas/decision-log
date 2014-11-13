@@ -6,18 +6,20 @@ import java.util.Date;
 
 public class Decision {
 
+    private String id;
     private String subject;
     private String reason;
     private String conclusions;
     private Date date;
     private String[] attendees;
     private String[] tags;
-    private Double relevance;
+    private Float relevance;
 
     public Decision() {
     }
 
-    public Decision(String subject, String reason, String conclusions, Date date, String[] attendees, String[] tags, Double relevance) {
+    public Decision(String id, String subject, String reason, String conclusions, Date date, String[] attendees, String[] tags, Float relevance) {
+        this.id = id;
         this.subject = subject;
         this.reason = reason;
         this.conclusions = conclusions;
@@ -25,6 +27,14 @@ public class Decision {
         this.attendees = attendees;
         this.tags = tags;
         this.relevance = relevance;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getSubject() {
@@ -75,11 +85,11 @@ public class Decision {
         this.tags = tags;
     }
 
-    public Double getRelevance() {
+    public Float getRelevance() {
         return relevance;
     }
 
-    public void setRelevance(Double relevance) {
+    public void setRelevance(Float relevance) {
         this.relevance = relevance;
     }
 

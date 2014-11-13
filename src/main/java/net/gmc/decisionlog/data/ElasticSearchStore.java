@@ -3,13 +3,14 @@ package net.gmc.decisionlog.data;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import net.gmc.decisionlog.controler.dto.DecisionSearchResponse;
 import net.gmc.decisionlog.model.Decision;
 import net.gmc.decisionlog.notification.publishing.DecisionEventPublisher;
 import org.apache.log4j.Logger;
 import org.elasticsearch.action.admin.cluster.state.ClusterStateResponse;
+import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.cluster.ClusterState;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.node.Node;
 import org.elasticsearch.search.SearchHit;
@@ -101,19 +102,24 @@ public class ElasticSearchStore {
         List<Decision> decisions = new ArrayList<Decision>();
         for(SearchHit hit : searchResponse.getHits()){
             String sourceAsString = hit.getSourceAsString();
-            deserialize(decisions, sourceAsString);
-
+            Decision decision = deserialize(sourceAsString);
+            if (decision != null) {
+                decision.setRelevance(hit.getScore());
+                decision.setId(hit.getId());
+                decisions.add(decision);
+            }
         }
         return decisions;
     }
 
-    private void deserialize(List<Decision> decisions, String sourceAsString) {
+    private Decision deserialize(String sourceAsString) {
         try {
             Decision decision = objectMapper.readValue(sourceAsString, Decision.class);
-            decisions.add(decision);
+            return decision;
         } catch (IOException e) {
             logger.error(String.format("Failed to deserialize desicion '%s'", sourceAsString), e);
         }
+        return null;
     }
 
 
@@ -177,4 +183,23 @@ public class ElasticSearchStore {
 
     }
 
+    public DecisionSearchResponse searchDecisions(String keyWord) {
+        return new DecisionSearchResponse();
+    }
+
+    public Decision getDecision(String decisionId) {
+        Decision decision = null;
+        try {
+            GetResponse response = node.client().prepareGet(DECISIONS_INDEX_NAME, DECISION_TYPE_NAME, decisionId).execute().get();
+            String sourceAsString = response.getSourceAsString();
+            decision = deserialize(sourceAsString);
+            if (decision != null) {
+                //decision.setRelevance(response.getScore());
+                decision.setId(response.getId());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return decision;
+    }
 }
