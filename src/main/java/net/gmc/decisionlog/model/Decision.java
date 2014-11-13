@@ -6,39 +6,47 @@ import java.util.Date;
 
 public class Decision {
 
-    private String name;
-    private String meeting;
+    private String subject;
+    private String reason;
+    private String conclusions;
     private Date date;
     private String[] attendees;
     private String[] tags;
-    private String conclusions;
 
     public Decision() {
     }
 
-    public Decision(String name, String meeting, Date date, String[] attendees, String[] tags, String conclusions) {
-        this.name = name;
-        this.meeting = meeting;
+    public Decision(String subject, String reason, String conclusions, Date date, String[] attendees, String[] tags) {
+        this.subject = subject;
+        this.reason = reason;
+        this.conclusions = conclusions;
         this.date = date;
         this.attendees = attendees;
         this.tags = tags;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public String getConclusions() {
+        return conclusions;
+    }
+
+    public void setConclusions(String conclusions) {
         this.conclusions = conclusions;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getMeeting() {
-        return meeting;
-    }
-
-    public void setMeeting(String meeting) {
-        this.meeting = meeting;
     }
 
     public Date getDate() {
@@ -65,23 +73,15 @@ public class Decision {
         this.tags = tags;
     }
 
-    public String getConclusions() {
-        return conclusions;
-    }
-
-    public void setConclusions(String conclusions) {
-        this.conclusions = conclusions;
-    }
-
     @Override
     public String toString() {
         return "Decision{" +
-                "name='" + name + '\'' +
-                ", meeting='" + meeting + '\'' +
+                "subject='" + subject + '\'' +
+                ", reason='" + reason + '\'' +
+                ", conclusions='" + conclusions + '\'' +
                 ", date=" + date +
                 ", attendees=" + Arrays.toString(attendees) +
                 ", tags=" + Arrays.toString(tags) +
-                ", conclusions='" + conclusions + '\'' +
                 '}';
     }
 }

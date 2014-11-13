@@ -3,8 +3,11 @@ package net.gmc.decisionlog.controler;
 import net.gmc.decisionlog.data.ElasticSearchStore;
 import net.gmc.decisionlog.model.Decision;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,15 +23,20 @@ public class DecisionController {
     private ElasticSearchStore elasticSearchStore;
 
     @RequestMapping(value="/", method= RequestMethod.GET)
-    public String getListDecisionsPage(Model model) {
-        List<Decision> decisions = elasticSearchStore.listAllDecision();
-        model.addAttribute("decisions", decisions);
+    public String getListDecisionsView(Model model) {
+        model.addAttribute("decision", elasticSearchStore.listAllDecision());
         return "index";
     }
 
     @RequestMapping(value="/add-decision", method= RequestMethod.GET)
-    public String getAddDecisionPage(Model model) {
+    public String getAddDecisionView(Model model) {
         return "add";
+    }
+
+    @RequestMapping(value="/add-decision", method= RequestMethod.POST)
+    public ResponseEntity<String> addDecision(@RequestBody Decision decision) {
+        elasticSearchStore.saveDecision(decision);
+        return new ResponseEntity<String>(HttpStatus.OK);
     }
 
     @ResponseBody
