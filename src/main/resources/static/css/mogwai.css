@@ -1,0 +1,4008 @@
+/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block
+}
+
+audio, canvas, video {
+    display: inline-block
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+[hidden] {
+    display: none
+}
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+a:focus {
+    outline: thin dotted
+}
+
+a:active, a:hover {
+    outline: 0
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+
+abbr[title] {
+    border-bottom: 1px dotted
+}
+
+b, strong {
+    font-weight: bold
+}
+
+dfn {
+    font-style: italic
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+
+mark {
+    background: #ff0;
+    color: #000
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, serif;
+    font-size: 1em
+}
+
+pre {
+    white-space: pre-wrap
+}
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019"
+}
+
+small {
+    font-size: 80%
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -0.5em
+}
+
+sub {
+    bottom: -0.25em
+}
+
+img {
+    border: 0
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+figure {
+    margin: 0
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em
+}
+
+legend {
+    border: 0;
+    padding: 0
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0
+}
+
+button, input {
+    line-height: normal
+}
+
+button, select {
+    text-transform: none
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+button[disabled], html input[disabled] {
+    cursor: default
+}
+
+input[type="checkbox"], input[type="radio"] {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+ul {
+    margin: 0;
+    padding: 0
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url('../../../../../../../dokuments/decision%20log/mogwai/webuiFonts-Mogwai/open_sans_light.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url('../../../../../../../dokuments/decision%20log/mogwai/webuiFonts-Mogwai/open_sans_normal.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url('../../../../../../../dokuments/decision%20log/mogwai/webuiFonts-Mogwai/open_sans_semibold.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url('../../../../../../../dokuments/decision%20log/mogwai/webuiFonts-Mogwai/open_sans_bold.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 300;
+    src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url('../../../../../../../dokuments/decision%20log/mogwai/webuiFonts-Mogwai/open_sans_light_italic.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Open Sans Italic'), local('OpenSans-Italic'), url('../../../../../../../dokuments/decision%20log/mogwai/webuiFonts-Mogwai/open_sans_normal_italic.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 600;
+    src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url('../../../../../../../dokuments/decision%20log/mogwai/webuiFonts-Mogwai/open_sans_semibold_italic.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: bold;
+    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('../../../../../../../dokuments/decision%20log/mogwai/webuiFonts-Mogwai/open_sans_bold_italic.woff') format('woff')
+}
+
+body, button, input, select, textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px
+}
+
+body {
+    color: #515151
+}
+
+.action-button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0 !important;
+    width: 30px;
+    height: 30px
+}
+
+.action-button.action-button--small {
+    width: 20px;
+    height: 20px
+}
+
+.action-button.action-button--medium {
+    width: 30px;
+    height: 30px
+}
+
+.action-button.action-button--large {
+    width: 40px;
+    height: 40px
+}
+
+.action-button > .icon {
+    display: block !important;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.action-button-round {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0 !important;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #dddde4;
+    border-radius: 100%
+}
+
+.action-button-round:hover {
+    width: 36px;
+    height: 36px;
+    border: 2px solid #00b7c1
+}
+
+.action-button-round > .icon {
+    display: block !important;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.app-header {
+    background-color: #2d333f;
+    height: 50px
+}
+
+.app-header .app-header-left {
+    float: left
+}
+
+.app-header .app-header-right {
+    float: right
+}
+
+.app-header .app-header-center {
+    overflow: hidden
+}
+
+.app-header-btn {
+    float: left;
+    line-height: 50px;
+    padding: 0 30px;
+    font-size: 14px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0 !important
+}
+
+.app-header-btn .app-header-btn-icon-active {
+    display: inline-block
+}
+
+.app-header-btn .app-header-btn-label {
+    color: #fff;
+    font-weight: 400;
+    display: inline-block
+}
+
+.app-header-btn.app-header-btn--only-icon {
+    padding: 0 20px
+}
+
+.app-header-btn.app-header-btn--pasive-icon-by-overlay {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    -moz-opacity: .5;
+    -khtml-opacity: .5;
+    opacity: .5
+}
+
+.app-header-btn.app-header-btn--pasive-icon-by-overlay:hover, .app-header-btn.app-header-btn--pasive-icon-by-overlay.is-active {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+    cursor: pointer
+}
+
+.app-header-dropdown {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0 !important;
+    font-size: 13px;
+    position: relative;
+    display: inline-block;
+    transform: translateZ(0)
+}
+
+.app-header-dropdown.app-header-dropdown-ellipsis .app-header-dropdown-trigger-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 150px
+}
+
+.app-header-dropdown > .app-header-dropdown-trigger {
+    background: #2d333f;
+    color: #fff;
+    font-weight: 600;
+    line-height: 50px
+}
+
+.app-header-dropdown > .app-header-dropdown-trigger .app-header-dropdown-trigger-icon {
+    margin-right: 13px;
+    float: left
+}
+
+.app-header-dropdown > .app-header-dropdown-trigger .app-header-dropdown-trigger-text {
+    float: left
+}
+
+.app-header-dropdown > .app-header-dropdown-trigger .app-header-dropdown-trigger-expander-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -390px -540px no-repeat;
+    margin-top: -4px;
+    margin-bottom: -3px;
+    vertical-align: middle
+}
+
+.app-header-dropdown > .app-header-dropdown-list {
+    border: 1px solid #aeaeae;
+    box-shadow: 0 1px 3px #aeaeae;
+    border-collapse: separate;
+    z-index: 4000;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    display: none;
+    border-top: 1px solid #dddde4
+}
+
+.app-header-dropdown > .app-header-dropdown-list .app-header-dropdown-list-item {
+    white-space: nowrap;
+    background-color: #fff;
+    padding: 0 40px 0 13px;
+    border-bottom: 1px solid #dddde4;
+    font-weight: 600;
+    line-height: 60px;
+    color: #40484b
+}
+
+.app-header-dropdown > .app-header-dropdown-list .app-header-dropdown-list-item:hover {
+    background-color: #f0f0f0
+}
+
+.app-header-dropdown > .app-header-dropdown-list .app-header-dropdown-list-item .app-header-dropdown-list-item-icon {
+    width: 20px;
+    margin-right: 13px;
+    display: inline-block
+}
+
+.app-header-dropdown > .app-header-dropdown-list .app-header-dropdown-list-item .app-header-dropdown-list-item-text {
+    display: inline-block
+}
+
+.app-header-dropdown.is-open .app-header-dropdown-trigger {
+    background: #2d333f;
+    color: #fff
+}
+
+.app-header-dropdown.is-open .app-header-dropdown-trigger > .app-header-dropdown-trigger-expander-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -410px -540px no-repeat
+}
+
+.app-header-dropdown.is-open .app-header-dropdown-list {
+    display: block
+}
+
+.app-header-label {
+    line-height: 50px;
+    float: left;
+    color: #fff
+}
+
+.app-header-logo {
+    float: left
+}
+
+.app-header-separator {
+    float: left;
+    margin: 0 1px;
+    background-color: #32425e;
+    line-height: 50px;
+    height: 50px;
+    width: 1px
+}
+
+.app-header-separator.app-header-separator--group {
+    margin: 12px 1px;
+    background-color: #000;
+    height: 26px
+}
+
+.btn {
+    background: #515151;
+    border-radius: 2px;
+    border: 0;
+    font-weight: 600;
+    font-size: 13px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0 !important;
+    padding: 0 20px;
+    min-width: 62px;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    color: #fff;
+    line-height: 35px;
+    vertical-align: middle;
+    display: inline-block;
+    height: 35px;
+    text-align: center
+}
+
+.btn:hover {
+    background: #414141
+}
+
+.btn:active {
+    background: #313131
+}
+
+.btn.is-disabled {
+    background: #efefef !important;
+    color: #ababab;
+    cursor: default
+}
+
+.btn.btn-light {
+    background: #818181
+}
+
+.btn.btn-light:hover {
+    background: #686868
+}
+
+.btn.btn-light:active {
+    background: #4e4e4e
+}
+
+.btn.btn-error {
+    background: #e34243
+}
+
+.btn.btn-error:hover {
+    background: #d31f20
+}
+
+.btn.btn-error:active {
+    background: #a6191a
+}
+
+.btn.btn-warning {
+    background: #f28918
+}
+
+.btn.btn-warning:hover {
+    background: #cc6f0b
+}
+
+.btn.btn-warning:active {
+    background: #9b5509
+}
+
+.btn.btn-info {
+    background: #3598db
+}
+
+.btn.btn-info:hover {
+    background: #217dbc
+}
+
+.btn.btn-info:active {
+    background: #1a6090
+}
+
+.btn.btn-success {
+    background: #69b027
+}
+
+.btn.btn-success:hover {
+    background: #50861e
+}
+
+.btn.btn-success:active {
+    background: #375d14
+}
+
+.error-page {
+    margin-top: 300px;
+    width: 668px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 128px
+}
+
+.error-page > .error-img {
+    background: url("../../sample-images/img-error.png") 0 0 no-repeat;
+    width: 128px;
+    height: 128px;
+    display: inline-block;
+    float: left
+}
+
+.error-page > .error-text {
+    width: 480px;
+    color: #000;
+    margin-left: 60px;
+    display: inline-block;
+    font-size: 18px
+}
+
+.error-page > .error-text > .error-title {
+    font-size: 26px
+}
+
+.field-label {
+    height: 35px
+}
+
+.field-label .field-label-text {
+    font-weight: 400;
+    font-size: 13px;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.icon {
+    vertical-align: middle;
+    display: inline-block;
+    width: 30px;
+    height: 30px
+}
+
+.icon.icon--small {
+    width: 20px;
+    height: 20px
+}
+
+.icon.icon--large {
+    width: 40px;
+    height: 40px
+}
+
+.icon.icon--accept {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px -320px no-repeat
+}
+
+.icon.icon--accept.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -450px -540px no-repeat
+}
+
+.icon.icon--accept.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 0 no-repeat
+}
+
+.icon.icon--accept-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -910px -320px no-repeat
+}
+
+.icon.icon--accept-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -430px -540px no-repeat
+}
+
+.icon.icon--accept-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px 0 no-repeat
+}
+
+.icon.icon--add {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -90px -360px no-repeat
+}
+
+.icon.icon--add.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -570px -540px no-repeat
+}
+
+.icon.icon--add.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px 0 no-repeat
+}
+
+.icon.icon--add-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -360px no-repeat
+}
+
+.icon.icon--add-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -550px -540px no-repeat
+}
+
+.icon.icon--add-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px 0 no-repeat
+}
+
+.icon.icon--add-contact {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -940px -320px no-repeat
+}
+
+.icon.icon--add-contact.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -490px -540px no-repeat
+}
+
+.icon.icon--add-contact.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px 0 no-repeat
+}
+
+.icon.icon--add-contact-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -360px no-repeat
+}
+
+.icon.icon--add-contact-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -470px -540px no-repeat
+}
+
+.icon.icon--add-contact-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px 0 no-repeat
+}
+
+.icon.icon--add-department {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -30px -360px no-repeat
+}
+
+.icon.icon--add-department.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -530px -540px no-repeat
+}
+
+.icon.icon--add-department.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px 0 no-repeat
+}
+
+.icon.icon--add-department-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -60px -360px no-repeat
+}
+
+.icon.icon--add-department-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -510px -540px no-repeat
+}
+
+.icon.icon--add-department-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px 0 no-repeat
+}
+
+.icon.icon--additional-sheets {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -150px -360px no-repeat
+}
+
+.icon.icon--additional-sheets.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -590px -540px no-repeat
+}
+
+.icon.icon--additional-sheets.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px 0 no-repeat
+}
+
+.icon.icon--archive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -180px -360px no-repeat
+}
+
+.icon.icon--archive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -610px -540px no-repeat
+}
+
+.icon.icon--archive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px 0 no-repeat
+}
+
+.icon.icon--arrow-circle-left {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -210px -360px no-repeat
+}
+
+.icon.icon--arrow-circle-left.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -630px -540px no-repeat
+}
+
+.icon.icon--arrow-circle-left.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px 0 no-repeat
+}
+
+.icon.icon--arrow-circle-right {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -360px no-repeat
+}
+
+.icon.icon--arrow-circle-right.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -650px -540px no-repeat
+}
+
+.icon.icon--arrow-circle-right.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px 0 no-repeat
+}
+
+.icon.icon--arrow-down {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -300px -360px no-repeat
+}
+
+.icon.icon--arrow-down.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -690px -540px no-repeat
+}
+
+.icon.icon--arrow-down.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px 0 no-repeat
+}
+
+.icon.icon--arrow-down-144 {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -270px -360px no-repeat
+}
+
+.icon.icon--arrow-down-144.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -670px -540px no-repeat
+}
+
+.icon.icon--arrow-down-144.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px 0 no-repeat
+}
+
+.icon.icon--arrow-left {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -330px -360px no-repeat
+}
+
+.icon.icon--arrow-left.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -710px -540px no-repeat
+}
+
+.icon.icon--arrow-left.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px 0 no-repeat
+}
+
+.icon.icon--arrow-right {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -360px no-repeat
+}
+
+.icon.icon--arrow-right.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -730px -540px no-repeat
+}
+
+.icon.icon--arrow-right.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px 0 no-repeat
+}
+
+.icon.icon--arrow-up {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -390px -360px no-repeat
+}
+
+.icon.icon--arrow-up.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -750px -540px no-repeat
+}
+
+.icon.icon--arrow-up.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px 0 no-repeat
+}
+
+.icon.icon--assign-to-template-designer {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -420px -360px no-repeat
+}
+
+.icon.icon--assign-to-template-designer.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -770px -540px no-repeat
+}
+
+.icon.icon--assign-to-template-designer.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px 0 no-repeat
+}
+
+.icon.icon--attachments {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -450px -360px no-repeat
+}
+
+.icon.icon--attachments.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -790px -540px no-repeat
+}
+
+.icon.icon--attachments.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px 0 no-repeat
+}
+
+.icon.icon--basic-info {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -360px no-repeat
+}
+
+.icon.icon--basic-info.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -810px -540px no-repeat
+}
+
+.icon.icon--basic-info.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px 0 no-repeat
+}
+
+.icon.icon--batch {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -510px -360px no-repeat
+}
+
+.icon.icon--batch.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -830px -540px no-repeat
+}
+
+.icon.icon--batch.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px 0 no-repeat
+}
+
+.icon.icon--block {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -540px -360px no-repeat
+}
+
+.icon.icon--block.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -850px -540px no-repeat
+}
+
+.icon.icon--block.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px 0 no-repeat
+}
+
+.icon.icon--block-with-draft {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -570px -360px no-repeat
+}
+
+.icon.icon--block-with-draft.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -870px -540px no-repeat
+}
+
+.icon.icon--block-with-draft.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px 0 no-repeat
+}
+
+.icon.icon--bold {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -360px no-repeat
+}
+
+.icon.icon--bold.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -890px -540px no-repeat
+}
+
+.icon.icon--bold.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px 0 no-repeat
+}
+
+.icon.icon--business-process {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -630px -360px no-repeat
+}
+
+.icon.icon--business-process.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -910px -540px no-repeat
+}
+
+.icon.icon--business-process.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -40px no-repeat
+}
+
+.icon.icon--business-process-with-draft {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -660px -360px no-repeat
+}
+
+.icon.icon--business-process-with-draft.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -930px -540px no-repeat
+}
+
+.icon.icon--business-process-with-draft.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px -40px no-repeat
+}
+
+.icon.icon--calendar {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -690px -360px no-repeat
+}
+
+.icon.icon--calendar.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -950px -540px no-repeat
+}
+
+.icon.icon--calendar.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px -40px no-repeat
+}
+
+.icon.icon--car {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -360px no-repeat
+}
+
+.icon.icon--car.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -970px -540px no-repeat
+}
+
+.icon.icon--car.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -40px no-repeat
+}
+
+.icon.icon--channels {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -750px -360px no-repeat
+}
+
+.icon.icon--channels.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -570px no-repeat
+}
+
+.icon.icon--channels.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -40px no-repeat
+}
+
+.icon.icon--check {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -360px no-repeat
+}
+
+.icon.icon--check.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px -570px no-repeat
+}
+
+.icon.icon--check.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -40px no-repeat
+}
+
+.icon.icon--check-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -870px -360px no-repeat
+}
+
+.icon.icon--check-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -60px -570px no-repeat
+}
+
+.icon.icon--check-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -40px no-repeat
+}
+
+.icon.icon--check-in-circle {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -780px -360px no-repeat
+}
+
+.icon.icon--check-in-circle.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px -570px no-repeat
+}
+
+.icon.icon--check-in-circle.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -40px no-repeat
+}
+
+.icon.icon--check-in-circle-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -810px -360px no-repeat
+}
+
+.icon.icon--check-in-circle-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -20px -570px no-repeat
+}
+
+.icon.icon--check-in-circle-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -40px no-repeat
+}
+
+.icon.icon--checkbox {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -900px -360px no-repeat
+}
+
+.icon.icon--checkbox.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -100px -570px no-repeat
+}
+
+.icon.icon--checkbox.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -40px no-repeat
+}
+
+.icon.icon--clone {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -930px -360px no-repeat
+}
+
+.icon.icon--clone.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -570px no-repeat
+}
+
+.icon.icon--clone.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -40px no-repeat
+}
+
+.icon.icon--clone-template {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -960px -360px no-repeat
+}
+
+.icon.icon--clone-template.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -140px -570px no-repeat
+}
+
+.icon.icon--clone-template.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -40px no-repeat
+}
+
+.icon.icon--close {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -390px no-repeat
+}
+
+.icon.icon--close.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -180px -570px no-repeat
+}
+
+.icon.icon--close.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -40px no-repeat
+}
+
+.icon.icon--close-negative {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -30px -390px no-repeat
+}
+
+.icon.icon--close-negative.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -570px no-repeat
+}
+
+.icon.icon--close-negative.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -40px no-repeat
+}
+
+.icon.icon--combo-box {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -60px -390px no-repeat
+}
+
+.icon.icon--combo-box.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -570px no-repeat
+}
+
+.icon.icon--combo-box.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -40px no-repeat
+}
+
+.icon.icon--comment {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -90px -390px no-repeat
+}
+
+.icon.icon--comment.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -220px -570px no-repeat
+}
+
+.icon.icon--comment.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -40px no-repeat
+}
+
+.icon.icon--compose {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -390px no-repeat
+}
+
+.icon.icon--compose.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -570px no-repeat
+}
+
+.icon.icon--compose.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px -40px no-repeat
+}
+
+.icon.icon--content {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -180px -390px no-repeat
+}
+
+.icon.icon--content.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -570px no-repeat
+}
+
+.icon.icon--content.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -40px no-repeat
+}
+
+.icon.icon--content-manager {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -150px -390px no-repeat
+}
+
+.icon.icon--content-manager.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -260px -570px no-repeat
+}
+
+.icon.icon--content-manager.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -40px no-repeat
+}
+
+.icon.icon--controls {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -210px -390px no-repeat
+}
+
+.icon.icon--controls.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -300px -570px no-repeat
+}
+
+.icon.icon--controls.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -40px no-repeat
+}
+
+.icon.icon--create-business-process {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -390px no-repeat
+}
+
+.icon.icon--create-business-process.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -340px -570px no-repeat
+}
+
+.icon.icon--create-business-process.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -40px no-repeat
+}
+
+.icon.icon--create-business-process-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -270px -390px no-repeat
+}
+
+.icon.icon--create-business-process-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -570px no-repeat
+}
+
+.icon.icon--create-business-process-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -40px no-repeat
+}
+
+.icon.icon--create-display-rule {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -300px -390px no-repeat
+}
+
+.icon.icon--create-display-rule.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -380px -570px no-repeat
+}
+
+.icon.icon--create-display-rule.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px -40px no-repeat
+}
+
+.icon.icon--create-display-rule-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -330px -390px no-repeat
+}
+
+.icon.icon--create-display-rule-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -570px no-repeat
+}
+
+.icon.icon--create-display-rule-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px -40px no-repeat
+}
+
+.icon.icon--create-form {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -390px no-repeat
+}
+
+.icon.icon--create-form.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -420px -570px no-repeat
+}
+
+.icon.icon--create-form.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -80px no-repeat
+}
+
+.icon.icon--create-form-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -390px -390px no-repeat
+}
+
+.icon.icon--create-form-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -570px no-repeat
+}
+
+.icon.icon--create-form-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px -80px no-repeat
+}
+
+.icon.icon--create-new-block {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -420px -390px no-repeat
+}
+
+.icon.icon--create-new-block.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -460px -570px no-repeat
+}
+
+.icon.icon--create-new-block.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px -80px no-repeat
+}
+
+.icon.icon--create-new-block-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -450px -390px no-repeat
+}
+
+.icon.icon--create-new-block-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -570px no-repeat
+}
+
+.icon.icon--create-new-block-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -80px no-repeat
+}
+
+.icon.icon--create-new-template {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -570px -390px no-repeat
+}
+
+.icon.icon--create-new-template.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -570px no-repeat
+}
+
+.icon.icon--create-new-template.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -80px no-repeat
+}
+
+.icon.icon--create-new-template-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -540px -390px no-repeat
+}
+
+.icon.icon--create-new-template-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -570px no-repeat
+}
+
+.icon.icon--create-new-template-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -80px no-repeat
+}
+
+.icon.icon--create-new-template-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -390px no-repeat
+}
+
+.icon.icon--create-new-template-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -540px -570px no-repeat
+}
+
+.icon.icon--create-new-template-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -80px no-repeat
+}
+
+.icon.icon--create-new-template-instance {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -390px no-repeat
+}
+
+.icon.icon--create-new-template-instance.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -500px -570px no-repeat
+}
+
+.icon.icon--create-new-template-instance.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -80px no-repeat
+}
+
+.icon.icon--create-new-template-instance-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -510px -390px no-repeat
+}
+
+.icon.icon--create-new-template-instance-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -570px no-repeat
+}
+
+.icon.icon--create-new-template-instance-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -80px no-repeat
+}
+
+.icon.icon--create-text-block {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -630px -390px no-repeat
+}
+
+.icon.icon--create-text-block.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -570px no-repeat
+}
+
+.icon.icon--create-text-block.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -80px no-repeat
+}
+
+.icon.icon--create-text-block-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -660px -390px no-repeat
+}
+
+.icon.icon--create-text-block-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -580px -570px no-repeat
+}
+
+.icon.icon--create-text-block-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -80px no-repeat
+}
+
+.icon.icon--crosscheck {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -690px -390px no-repeat
+}
+
+.icon.icon--crosscheck.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -620px -570px no-repeat
+}
+
+.icon.icon--crosscheck.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -80px no-repeat
+}
+
+.icon.icon--dashboard {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -750px -390px no-repeat
+}
+
+.icon.icon--dashboard.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -660px -570px no-repeat
+}
+
+.icon.icon--dashboard.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -80px no-repeat
+}
+
+.icon.icon--dashboard-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -390px no-repeat
+}
+
+.icon.icon--dashboard-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px -570px no-repeat
+}
+
+.icon.icon--dashboard-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -80px no-repeat
+}
+
+.icon.icon--dashboard-warning {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -780px -390px no-repeat
+}
+
+.icon.icon--dashboard-warning.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -570px no-repeat
+}
+
+.icon.icon--dashboard-warning.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -80px no-repeat
+}
+
+.icon.icon--dashboard2 {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -810px -390px no-repeat
+}
+
+.icon.icon--dashboard2.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -700px -570px no-repeat
+}
+
+.icon.icon--dashboard2.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -80px no-repeat
+}
+
+.icon.icon--decline {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -390px no-repeat
+}
+
+.icon.icon--decline.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -740px -570px no-repeat
+}
+
+.icon.icon--decline.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px -80px no-repeat
+}
+
+.icon.icon--decline-negative {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -870px -390px no-repeat
+}
+
+.icon.icon--decline-negative.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -570px no-repeat
+}
+
+.icon.icon--decline-negative.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -80px no-repeat
+}
+
+.icon.icon--delete {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -900px -390px no-repeat
+}
+
+.icon.icon--delete.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -780px -570px no-repeat
+}
+
+.icon.icon--delete.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -80px no-repeat
+}
+
+.icon.icon--delete-negative {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -930px -390px no-repeat
+}
+
+.icon.icon--delete-negative.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -570px no-repeat
+}
+
+.icon.icon--delete-negative.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -80px no-repeat
+}
+
+.icon.icon--details {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -960px -390px no-repeat
+}
+
+.icon.icon--details.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -570px no-repeat
+}
+
+.icon.icon--details.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -80px no-repeat
+}
+
+.icon.icon--dialog {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -420px no-repeat
+}
+
+.icon.icon--dialog.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -820px -570px no-repeat
+}
+
+.icon.icon--dialog.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -80px no-repeat
+}
+
+.icon.icon--dispatcher {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -30px -420px no-repeat
+}
+
+.icon.icon--dispatcher.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -570px no-repeat
+}
+
+.icon.icon--dispatcher.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px -80px no-repeat
+}
+
+.icon.icon--display-rule-set {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -60px -420px no-repeat
+}
+
+.icon.icon--display-rule-set.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px -570px no-repeat
+}
+
+.icon.icon--display-rule-set.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px -80px no-repeat
+}
+
+.icon.icon--display-rule-set-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -90px -420px no-repeat
+}
+
+.icon.icon--display-rule-set-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -860px -570px no-repeat
+}
+
+.icon.icon--display-rule-set-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -120px no-repeat
+}
+
+.icon.icon--display-rule-with-draft {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -420px no-repeat
+}
+
+.icon.icon--display-rule-with-draft.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -900px -570px no-repeat
+}
+
+.icon.icon--display-rule-with-draft.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px -120px no-repeat
+}
+
+.icon.icon--document-creator {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -150px -420px no-repeat
+}
+
+.icon.icon--document-creator.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px -570px no-repeat
+}
+
+.icon.icon--document-creator.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px -120px no-repeat
+}
+
+.icon.icon--documentation {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -180px -420px no-repeat
+}
+
+.icon.icon--documentation.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -940px -570px no-repeat
+}
+
+.icon.icon--documentation.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -120px no-repeat
+}
+
+.icon.icon--download {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -420px no-repeat
+}
+
+.icon.icon--download.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -590px no-repeat
+}
+
+.icon.icon--download.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -120px no-repeat
+}
+
+.icon.icon--download-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -210px -420px no-repeat
+}
+
+.icon.icon--download-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -960px -570px no-repeat
+}
+
+.icon.icon--download-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -120px no-repeat
+}
+
+.icon.icon--draft-exist {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -270px -420px no-repeat
+}
+
+.icon.icon--draft-exist.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -20px -590px no-repeat
+}
+
+.icon.icon--draft-exist.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -120px no-repeat
+}
+
+.icon.icon--drag-drop {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -300px -420px no-repeat
+}
+
+.icon.icon--drag-drop.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px -590px no-repeat
+}
+
+.icon.icon--drag-drop.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -120px no-repeat
+}
+
+.icon.icon--edit {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -420px no-repeat
+}
+
+.icon.icon--edit.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px -590px no-repeat
+}
+
+.icon.icon--edit.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -120px no-repeat
+}
+
+.icon.icon--edit-draft {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -330px -420px no-repeat
+}
+
+.icon.icon--edit-draft.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -60px -590px no-repeat
+}
+
+.icon.icon--edit-draft.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -120px no-repeat
+}
+
+.icon.icon--editable-block {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -390px -420px no-repeat
+}
+
+.icon.icon--editable-block.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -100px -590px no-repeat
+}
+
+.icon.icon--editable-block.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -120px no-repeat
+}
+
+.icon.icon--email-output {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -420px -420px no-repeat
+}
+
+.icon.icon--email-output.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -590px no-repeat
+}
+
+.icon.icon--email-output.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -120px no-repeat
+}
+
+.icon.icon--envelope {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -450px -420px no-repeat
+}
+
+.icon.icon--envelope.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -140px -590px no-repeat
+}
+
+.icon.icon--envelope.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -120px no-repeat
+}
+
+.icon.icon--erraser {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -420px no-repeat
+}
+
+.icon.icon--erraser.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -590px no-repeat
+}
+
+.icon.icon--erraser.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -120px no-repeat
+}
+
+.icon.icon--error {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -510px -420px no-repeat
+}
+
+.icon.icon--error.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -590px no-repeat
+}
+
+.icon.icon--error.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -120px no-repeat
+}
+
+.icon.icon--error-negative {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -540px -420px no-repeat
+}
+
+.icon.icon--error-negative.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -180px -590px no-repeat
+}
+
+.icon.icon--error-negative.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -120px no-repeat
+}
+
+.icon.icon--export {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -570px -420px no-repeat
+}
+
+.icon.icon--export.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -220px -590px no-repeat
+}
+
+.icon.icon--export.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px -120px no-repeat
+}
+
+.icon.icon--external-text-block {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -420px no-repeat
+}
+
+.icon.icon--external-text-block.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -590px no-repeat
+}
+
+.icon.icon--external-text-block.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -120px no-repeat
+}
+
+.icon.icon--file {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -630px -420px no-repeat
+}
+
+.icon.icon--file.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -260px -590px no-repeat
+}
+
+.icon.icon--file.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -120px no-repeat
+}
+
+.icon.icon--filter {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -660px -420px no-repeat
+}
+
+.icon.icon--filter.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -590px no-repeat
+}
+
+.icon.icon--filter.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -120px no-repeat
+}
+
+.icon.icon--finish-crosscheck {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -690px -420px no-repeat
+}
+
+.icon.icon--finish-crosscheck.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -300px -590px no-repeat
+}
+
+.icon.icon--finish-crosscheck.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -120px no-repeat
+}
+
+.icon.icon--fit-actual-size {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -420px no-repeat
+}
+
+.icon.icon--fit-actual-size.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -590px no-repeat
+}
+
+.icon.icon--fit-actual-size.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -120px no-repeat
+}
+
+.icon.icon--fit-page {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -750px -420px no-repeat
+}
+
+.icon.icon--fit-page.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -340px -590px no-repeat
+}
+
+.icon.icon--fit-page.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px -120px no-repeat
+}
+
+.icon.icon--fit-width {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -780px -420px no-repeat
+}
+
+.icon.icon--fit-width.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -590px no-repeat
+}
+
+.icon.icon--fit-width.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px -120px no-repeat
+}
+
+.icon.icon--float {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -810px -420px no-repeat
+}
+
+.icon.icon--float.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -380px -590px no-repeat
+}
+
+.icon.icon--float.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -160px no-repeat
+}
+
+.icon.icon--folder {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -420px no-repeat
+}
+
+.icon.icon--folder.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -590px no-repeat
+}
+
+.icon.icon--folder.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px -160px no-repeat
+}
+
+.icon.icon--form {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -900px -420px no-repeat
+}
+
+.icon.icon--form.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -590px no-repeat
+}
+
+.icon.icon--form.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -160px no-repeat
+}
+
+.icon.icon--form-control-properties {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -870px -420px no-repeat
+}
+
+.icon.icon--form-control-properties.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -420px -590px no-repeat
+}
+
+.icon.icon--form-control-properties.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px -160px no-repeat
+}
+
+.icon.icon--form-with-draft {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -930px -420px no-repeat
+}
+
+.icon.icon--form-with-draft.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -460px -590px no-repeat
+}
+
+.icon.icon--form-with-draft.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -160px no-repeat
+}
+
+.icon.icon--globe {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -960px -420px no-repeat
+}
+
+.icon.icon--globe.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -590px no-repeat
+}
+
+.icon.icon--globe.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -160px no-repeat
+}
+
+.icon.icon--graph {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -450px no-repeat
+}
+
+.icon.icon--graph.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -500px -590px no-repeat
+}
+
+.icon.icon--graph.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -160px no-repeat
+}
+
+.icon.icon--group {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -30px -450px no-repeat
+}
+
+.icon.icon--group.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -590px no-repeat
+}
+
+.icon.icon--group.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -160px no-repeat
+}
+
+.icon.icon--health {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -60px -450px no-repeat
+}
+
+.icon.icon--health.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -540px -590px no-repeat
+}
+
+.icon.icon--health.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -160px no-repeat
+}
+
+.icon.icon--heart {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -90px -450px no-repeat
+}
+
+.icon.icon--heart.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -590px no-repeat
+}
+
+.icon.icon--heart.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -160px no-repeat
+}
+
+.icon.icon--help {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -150px -450px no-repeat
+}
+
+.icon.icon--help.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -590px no-repeat
+}
+
+.icon.icon--help.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -160px no-repeat
+}
+
+.icon.icon--help-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -450px no-repeat
+}
+
+.icon.icon--help-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -580px -590px no-repeat
+}
+
+.icon.icon--help-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -160px no-repeat
+}
+
+.icon.icon--history {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -180px -450px no-repeat
+}
+
+.icon.icon--history.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -620px -590px no-repeat
+}
+
+.icon.icon--history.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -160px no-repeat
+}
+
+.icon.icon--home {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -210px -450px no-repeat
+}
+
+.icon.icon--home.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px -590px no-repeat
+}
+
+.icon.icon--home.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -160px no-repeat
+}
+
+.icon.icon--house-in-fire {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -450px no-repeat
+}
+
+.icon.icon--house-in-fire.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -660px -590px no-repeat
+}
+
+.icon.icon--house-in-fire.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -160px no-repeat
+}
+
+.icon.icon--http-input {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -270px -450px no-repeat
+}
+
+.icon.icon--http-input.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -590px no-repeat
+}
+
+.icon.icon--http-input.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -160px no-repeat
+}
+
+.icon.icon--http-output {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -300px -450px no-repeat
+}
+
+.icon.icon--http-output.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -700px -590px no-repeat
+}
+
+.icon.icon--http-output.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px -160px no-repeat
+}
+
+.icon.icon--image {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -330px -450px no-repeat
+}
+
+.icon.icon--image.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -590px no-repeat
+}
+
+.icon.icon--image.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -160px no-repeat
+}
+
+.icon.icon--import {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -450px no-repeat
+}
+
+.icon.icon--import.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -740px -590px no-repeat
+}
+
+.icon.icon--import.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -160px no-repeat
+}
+
+.icon.icon--import-template {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -390px -450px no-repeat
+}
+
+.icon.icon--import-template.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -590px no-repeat
+}
+
+.icon.icon--import-template.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -160px no-repeat
+}
+
+.icon.icon--info {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -420px -450px no-repeat
+}
+
+.icon.icon--info.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -780px -590px no-repeat
+}
+
+.icon.icon--info.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -160px no-repeat
+}
+
+.icon.icon--insertable {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -450px -450px no-repeat
+}
+
+.icon.icon--insertable.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -590px no-repeat
+}
+
+.icon.icon--insertable.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -160px no-repeat
+}
+
+.icon.icon--insertion-point {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -450px no-repeat
+}
+
+.icon.icon--insertion-point.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -820px -590px no-repeat
+}
+
+.icon.icon--insertion-point.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px -160px no-repeat
+}
+
+.icon.icon--integer {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -510px -450px no-repeat
+}
+
+.icon.icon--integer.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -590px no-repeat
+}
+
+.icon.icon--integer.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px -160px no-repeat
+}
+
+.icon.icon--integrity {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -540px -450px no-repeat
+}
+
+.icon.icon--integrity.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -860px -590px no-repeat
+}
+
+.icon.icon--integrity.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -200px no-repeat
+}
+
+.icon.icon--italic {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -570px -450px no-repeat
+}
+
+.icon.icon--italic.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px -590px no-repeat
+}
+
+.icon.icon--italic.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px -200px no-repeat
+}
+
+.icon.icon--job-monitoring {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -630px -450px no-repeat
+}
+
+.icon.icon--job-monitoring.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px -590px no-repeat
+}
+
+.icon.icon--job-monitoring.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -200px no-repeat
+}
+
+.icon.icon--job-monitoring-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -450px no-repeat
+}
+
+.icon.icon--job-monitoring-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -900px -590px no-repeat
+}
+
+.icon.icon--job-monitoring-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px -200px no-repeat
+}
+
+.icon.icon--label {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -660px -450px no-repeat
+}
+
+.icon.icon--label.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -940px -590px no-repeat
+}
+
+.icon.icon--label.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -200px no-repeat
+}
+
+.icon.icon--library {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -690px -450px no-repeat
+}
+
+.icon.icon--library.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -960px -590px no-repeat
+}
+
+.icon.icon--library.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -200px no-repeat
+}
+
+.icon.icon--license {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -450px no-repeat
+}
+
+.icon.icon--license.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -610px no-repeat
+}
+
+.icon.icon--license.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -200px no-repeat
+}
+
+.icon.icon--link {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -750px -450px no-repeat
+}
+
+.icon.icon--link.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -20px -610px no-repeat
+}
+
+.icon.icon--link.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -200px no-repeat
+}
+
+.icon.icon--lock {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -780px -450px no-repeat
+}
+
+.icon.icon--lock.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -60px -610px no-repeat
+}
+
+.icon.icon--lock.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -200px no-repeat
+}
+
+.icon.icon--lock-negative {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -810px -450px no-repeat
+}
+
+.icon.icon--lock-negative.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px -610px no-repeat
+}
+
+.icon.icon--lock-negative.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -200px no-repeat
+}
+
+.icon.icon--log-out {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -870px -450px no-repeat
+}
+
+.icon.icon--log-out.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -100px -610px no-repeat
+}
+
+.icon.icon--log-out.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -200px no-repeat
+}
+
+.icon.icon--log-out-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -450px no-repeat
+}
+
+.icon.icon--log-out-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px -610px no-repeat
+}
+
+.icon.icon--log-out-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -200px no-repeat
+}
+
+.icon.icon--master-template {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -900px -450px no-repeat
+}
+
+.icon.icon--master-template.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -610px no-repeat
+}
+
+.icon.icon--master-template.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -200px no-repeat
+}
+
+.icon.icon--multidocument {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -960px -450px no-repeat
+}
+
+.icon.icon--multidocument.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -610px no-repeat
+}
+
+.icon.icon--multidocument.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -200px no-repeat
+}
+
+.icon.icon--move-ticket {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -930px -450px no-repeat
+}
+
+.icon.icon--move-ticket.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -140px -610px no-repeat
+}
+
+.icon.icon--move-ticket.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -200px no-repeat
+}
+
+.icon.icon--new-communication {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -480px no-repeat
+}
+
+.icon.icon--new-communication.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -610px no-repeat
+}
+
+.icon.icon--new-communication.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -200px no-repeat
+}
+
+.icon.icon--non-insertable {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -60px -480px no-repeat
+}
+
+.icon.icon--non-insertable.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -610px no-repeat
+}
+
+.icon.icon--non-insertable.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -200px no-repeat
+}
+
+.icon.icon--non-insertable-negative {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -90px -480px no-repeat
+}
+
+.icon.icon--non-insertable-negative.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -220px -610px no-repeat
+}
+
+.icon.icon--non-insertable-negative.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -200px no-repeat
+}
+
+.icon.icon--open-in-new-tab {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -480px no-repeat
+}
+
+.icon.icon--open-in-new-tab.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -260px -610px no-repeat
+}
+
+.icon.icon--open-in-new-tab.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -200px no-repeat
+}
+
+.icon.icon--optical-mark {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -180px -480px no-repeat
+}
+
+.icon.icon--optical-mark.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -300px -610px no-repeat
+}
+
+.icon.icon--optical-mark.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -200px no-repeat
+}
+
+.icon.icon--optical-mark-add {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -150px -480px no-repeat
+}
+
+.icon.icon--optical-mark-add.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -610px no-repeat
+}
+
+.icon.icon--optical-mark-add.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -200px no-repeat
+}
+
+.icon.icon--outline {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -210px -480px no-repeat
+}
+
+.icon.icon--outline.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -610px no-repeat
+}
+
+.icon.icon--outline.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px -200px no-repeat
+}
+
+.icon.icon--page-break {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -480px no-repeat
+}
+
+.icon.icon--page-break.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -340px -610px no-repeat
+}
+
+.icon.icon--page-break.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px -200px no-repeat
+}
+
+.icon.icon--page-margins {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -270px -480px no-repeat
+}
+
+.icon.icon--page-margins.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -610px no-repeat
+}
+
+.icon.icon--page-margins.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -240px no-repeat
+}
+
+.icon.icon--page-settings {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -300px -480px no-repeat
+}
+
+.icon.icon--page-settings.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -380px -610px no-repeat
+}
+
+.icon.icon--page-settings.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px -240px no-repeat
+}
+
+.icon.icon--performance-warning {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -330px -480px no-repeat
+}
+
+.icon.icon--performance-warning.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -610px no-repeat
+}
+
+.icon.icon--performance-warning.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px -240px no-repeat
+}
+
+.icon.icon--preview {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -480px no-repeat
+}
+
+.icon.icon--preview.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -420px -610px no-repeat
+}
+
+.icon.icon--preview.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -240px no-repeat
+}
+
+.icon.icon--printer {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -390px -480px no-repeat
+}
+
+.icon.icon--printer.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -610px no-repeat
+}
+
+.icon.icon--printer.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -240px no-repeat
+}
+
+.icon.icon--properties {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -420px -480px no-repeat
+}
+
+.icon.icon--properties.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -460px -610px no-repeat
+}
+
+.icon.icon--properties.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -240px no-repeat
+}
+
+.icon.icon--publish {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -450px -480px no-repeat
+}
+
+.icon.icon--publish.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -610px no-repeat
+}
+
+.icon.icon--publish.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -240px no-repeat
+}
+
+.icon.icon--radio-button {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -480px no-repeat
+}
+
+.icon.icon--radio-button.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -500px -610px no-repeat
+}
+
+.icon.icon--radio-button.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -240px no-repeat
+}
+
+.icon.icon--recipient-identification {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -510px -480px no-repeat
+}
+
+.icon.icon--recipient-identification.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -540px -610px no-repeat
+}
+
+.icon.icon--recipient-identification.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -240px no-repeat
+}
+
+.icon.icon--recipient-identification-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -540px -480px no-repeat
+}
+
+.icon.icon--recipient-identification-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -610px no-repeat
+}
+
+.icon.icon--recipient-identification-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -240px no-repeat
+}
+
+.icon.icon--redo {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -570px -480px no-repeat
+}
+
+.icon.icon--redo.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -610px no-repeat
+}
+
+.icon.icon--redo.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -240px no-repeat
+}
+
+.icon.icon--refresh {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -480px no-repeat
+}
+
+.icon.icon--refresh.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -580px -610px no-repeat
+}
+
+.icon.icon--refresh.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -240px no-repeat
+}
+
+.icon.icon--report {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -630px -480px no-repeat
+}
+
+.icon.icon--report.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -610px no-repeat
+}
+
+.icon.icon--report.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -240px no-repeat
+}
+
+.icon.icon--sandclock {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -660px -480px no-repeat
+}
+
+.icon.icon--sandclock.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -620px -610px no-repeat
+}
+
+.icon.icon--sandclock.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -240px no-repeat
+}
+
+.icon.icon--save {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -690px -480px no-repeat
+}
+
+.icon.icon--save.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px -610px no-repeat
+}
+
+.icon.icon--save.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -240px no-repeat
+}
+
+.icon.icon--script {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -480px no-repeat
+}
+
+.icon.icon--script.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -660px -610px no-repeat
+}
+
+.icon.icon--script.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -240px no-repeat
+}
+
+.icon.icon--search {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -750px -480px no-repeat
+}
+
+.icon.icon--search.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -610px no-repeat
+}
+
+.icon.icon--search.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px -240px no-repeat
+}
+
+.icon.icon--section {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -780px -480px no-repeat
+}
+
+.icon.icon--section.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -700px -610px no-repeat
+}
+
+.icon.icon--section.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -240px no-repeat
+}
+
+.icon.icon--settings {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -480px no-repeat
+}
+
+.icon.icon--settings.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -740px -610px no-repeat
+}
+
+.icon.icon--settings.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -240px no-repeat
+}
+
+.icon.icon--settings-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -810px -480px no-repeat
+}
+
+.icon.icon--settings-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -610px no-repeat
+}
+
+.icon.icon--settings-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -240px no-repeat
+}
+
+.icon.icon--sort {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -510px no-repeat
+}
+
+.icon.icon--sort.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -610px no-repeat
+}
+
+.icon.icon--sort.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -280px no-repeat
+}
+
+.icon.icon--sort-asc {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -900px -480px no-repeat
+}
+
+.icon.icon--sort-asc.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -780px -610px no-repeat
+}
+
+.icon.icon--sort-asc.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -240px no-repeat
+}
+
+.icon.icon--sort-asc-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -870px -480px no-repeat
+}
+
+.icon.icon--sort-asc-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -610px no-repeat
+}
+
+.icon.icon--sort-asc-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -240px no-repeat
+}
+
+.icon.icon--sort-desc {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -960px -480px no-repeat
+}
+
+.icon.icon--sort-desc.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -820px -610px no-repeat
+}
+
+.icon.icon--sort-desc.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px -240px no-repeat
+}
+
+.icon.icon--sort-desc-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -930px -480px no-repeat
+}
+
+.icon.icon--sort-desc-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -610px no-repeat
+}
+
+.icon.icon--sort-desc-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px -240px no-repeat
+}
+
+.icon.icon--spellcheck-warning {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -90px -510px no-repeat
+}
+
+.icon.icon--spellcheck-warning.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -900px -610px no-repeat
+}
+
+.icon.icon--spellcheck-warning.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -280px no-repeat
+}
+
+.icon.icon--star {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -510px no-repeat
+}
+
+.icon.icon--star.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px -610px no-repeat
+}
+
+.icon.icon--star.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -280px no-repeat
+}
+
+.icon.icon--submit {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -150px -510px no-repeat
+}
+
+.icon.icon--submit.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -940px -610px no-repeat
+}
+
+.icon.icon--submit.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -280px no-repeat
+}
+
+.icon.icon--submit-to-group {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -180px -510px no-repeat
+}
+
+.icon.icon--submit-to-group.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -960px -610px no-repeat
+}
+
+.icon.icon--submit-to-group.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -280px no-repeat
+}
+
+.icon.icon--table {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -210px -510px no-repeat
+}
+
+.icon.icon--table.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -630px no-repeat
+}
+
+.icon.icon--table.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -280px no-repeat
+}
+
+.icon.icon--take {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -510px no-repeat
+}
+
+.icon.icon--take.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -20px -630px no-repeat
+}
+
+.icon.icon--take.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -280px no-repeat
+}
+
+.icon.icon--template {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -510px no-repeat
+}
+
+.icon.icon--template.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -100px -630px no-repeat
+}
+
+.icon.icon--template.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -280px no-repeat
+}
+
+.icon.icon--template-draft {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -270px -510px no-repeat
+}
+
+.icon.icon--template-draft.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px -630px no-repeat
+}
+
+.icon.icon--template-draft.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -280px no-repeat
+}
+
+.icon.icon--template-instance {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -300px -510px no-repeat
+}
+
+.icon.icon--template-instance.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -60px -630px no-repeat
+}
+
+.icon.icon--template-instance.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -280px no-repeat
+}
+
+.icon.icon--template-instance-with-draft {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -330px -510px no-repeat
+}
+
+.icon.icon--template-instance-with-draft.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px -630px no-repeat
+}
+
+.icon.icon--template-instance-with-draft.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -280px no-repeat
+}
+
+.icon.icon--template-warning {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -390px -510px no-repeat
+}
+
+.icon.icon--template-warning.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -630px no-repeat
+}
+
+.icon.icon--template-warning.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -280px no-repeat
+}
+
+.icon.icon--test-template {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -420px -510px no-repeat
+}
+
+.icon.icon--test-template.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -140px -630px no-repeat
+}
+
+.icon.icon--test-template.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -280px no-repeat
+}
+
+.icon.icon--text-block {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -450px -510px no-repeat
+}
+
+.icon.icon--text-block.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -630px no-repeat
+}
+
+.icon.icon--text-block.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -280px no-repeat
+}
+
+.icon.icon--text-field {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -510px no-repeat
+}
+
+.icon.icon--text-field.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -180px -630px no-repeat
+}
+
+.icon.icon--text-field.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px -280px no-repeat
+}
+
+.icon.icon--thumbnails {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -510px -510px no-repeat
+}
+
+.icon.icon--thumbnails.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -630px no-repeat
+}
+
+.icon.icon--thumbnails.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -280px no-repeat
+}
+
+.icon.icon--tip {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -540px -510px no-repeat
+}
+
+.icon.icon--tip.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -220px -630px no-repeat
+}
+
+.icon.icon--tip.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -280px no-repeat
+}
+
+.icon.icon--trim {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -570px -510px no-repeat
+}
+
+.icon.icon--trim.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -630px no-repeat
+}
+
+.icon.icon--trim.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -280px no-repeat
+}
+
+.icon.icon--underline {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -510px no-repeat
+}
+
+.icon.icon--underline.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -260px -630px no-repeat
+}
+
+.icon.icon--underline.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -280px no-repeat
+}
+
+.icon.icon--undo {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -630px -510px no-repeat
+}
+
+.icon.icon--undo.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -630px no-repeat
+}
+
+.icon.icon--undo.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -280px no-repeat
+}
+
+.icon.icon--unlock {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -660px -510px no-repeat
+}
+
+.icon.icon--unlock.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -630px no-repeat
+}
+
+.icon.icon--unlock.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px -280px no-repeat
+}
+
+.icon.icon--unlock-positive {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -690px -510px no-repeat
+}
+
+.icon.icon--unlock-positive.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -300px -630px no-repeat
+}
+
+.icon.icon--unlock-positive.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px -280px no-repeat
+}
+
+.icon.icon--upload {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -750px -510px no-repeat
+}
+
+.icon.icon--upload.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -630px no-repeat
+}
+
+.icon.icon--upload.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -40px -320px no-repeat
+}
+
+.icon.icon--upload-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -510px no-repeat
+}
+
+.icon.icon--upload-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -340px -630px no-repeat
+}
+
+.icon.icon--upload-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -320px no-repeat
+}
+
+.icon.icon--user {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -960px -510px no-repeat
+}
+
+.icon.icon--user.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -630px no-repeat
+}
+
+.icon.icon--user.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -280px -320px no-repeat
+}
+
+.icon.icon--user-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -900px -510px no-repeat
+}
+
+.icon.icon--user-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -460px -630px no-repeat
+}
+
+.icon.icon--user-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -320px no-repeat
+}
+
+.icon.icon--user-administrator {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -780px -510px no-repeat
+}
+
+.icon.icon--user-administrator.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -380px -630px no-repeat
+}
+
+.icon.icon--user-administrator.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -80px -320px no-repeat
+}
+
+.icon.icon--user-agent {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -810px -510px no-repeat
+}
+
+.icon.icon--user-agent.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -630px no-repeat
+}
+
+.icon.icon--user-agent.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -320px no-repeat
+}
+
+.icon.icon--user-block-editor {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -510px no-repeat
+}
+
+.icon.icon--user-block-editor.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -420px -630px no-repeat
+}
+
+.icon.icon--user-block-editor.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -160px -320px no-repeat
+}
+
+.icon.icon--user-communication-consultant {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -870px -510px no-repeat
+}
+
+.icon.icon--user-communication-consultant.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -630px no-repeat
+}
+
+.icon.icon--user-communication-consultant.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -200px -320px no-repeat
+}
+
+.icon.icon--user-medical-accessor {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -930px -510px no-repeat
+}
+
+.icon.icon--user-medical-accessor.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -630px no-repeat
+}
+
+.icon.icon--user-medical-accessor.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -320px -320px no-repeat
+}
+
+.icon.icon--user-senior-writer {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") 0 -540px no-repeat
+}
+
+.icon.icon--user-senior-writer.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -500px -630px no-repeat
+}
+
+.icon.icon--user-senior-writer.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -320px no-repeat
+}
+
+.icon.icon--user-supervisor {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -30px -540px no-repeat
+}
+
+.icon.icon--user-supervisor.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -540px -630px no-repeat
+}
+
+.icon.icon--user-supervisor.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -400px -320px no-repeat
+}
+
+.icon.icon--user-system-user {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -60px -540px no-repeat
+}
+
+.icon.icon--user-system-user.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -630px no-repeat
+}
+
+.icon.icon--user-system-user.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -440px -320px no-repeat
+}
+
+.icon.icon--user-template-designer {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -90px -540px no-repeat
+}
+
+.icon.icon--user-template-designer.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -580px -630px no-repeat
+}
+
+.icon.icon--user-template-designer.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -480px -320px no-repeat
+}
+
+.icon.icon--user-writer {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -120px -540px no-repeat
+}
+
+.icon.icon--user-writer.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -630px no-repeat
+}
+
+.icon.icon--user-writer.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -520px -320px no-repeat
+}
+
+.icon.icon--variable {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -150px -540px no-repeat
+}
+
+.icon.icon--variable.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -620px -630px no-repeat
+}
+
+.icon.icon--variable.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -560px -320px no-repeat
+}
+
+.icon.icon--variant-block {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -180px -540px no-repeat
+}
+
+.icon.icon--variant-block.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px -630px no-repeat
+}
+
+.icon.icon--variant-block.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -600px -320px no-repeat
+}
+
+.icon.icon--view-dependencies {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -210px -540px no-repeat
+}
+
+.icon.icon--view-dependencies.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -660px -630px no-repeat
+}
+
+.icon.icon--view-dependencies.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -640px -320px no-repeat
+}
+
+.icon.icon--warning {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -240px -540px no-repeat
+}
+
+.icon.icon--warning.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -630px no-repeat
+}
+
+.icon.icon--warning.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -680px -320px no-repeat
+}
+
+.icon.icon--workflow {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -300px -540px no-repeat
+}
+
+.icon.icon--workflow.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -630px no-repeat
+}
+
+.icon.icon--workflow.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -320px no-repeat
+}
+
+.icon.icon--workflow-invert {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -270px -540px no-repeat
+}
+
+.icon.icon--workflow-invert.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -700px -630px no-repeat
+}
+
+.icon.icon--workflow-invert.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -720px -320px no-repeat
+}
+
+.icon.icon--zoom-in {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -330px -540px no-repeat
+}
+
+.icon.icon--zoom-in.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -740px -630px no-repeat
+}
+
+.icon.icon--zoom-in.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -320px no-repeat
+}
+
+.icon.icon--zoom-out {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -360px -540px no-repeat
+}
+
+.icon.icon--zoom-out.icon--small {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -760px -630px no-repeat
+}
+
+.icon.icon--zoom-out.icon--large {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -320px no-repeat
+}
+
+.login-error-message {
+    color: #d00303
+}
+
+.login-header {
+    font-weight: 300;
+    font-size: 30px
+}
+
+.select {
+    border-radius: 2px;
+    border: 1px solid #dddde4;
+    padding-right: 24px;
+    background: #fff;
+    padding-left: 12px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 13px;
+    line-height: 31px;
+    color: #515151;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0 !important;
+    height: 34px;
+    text-align: left;
+    display: block;
+    width: 100%;
+    outline: 0;
+    outline-style: none;
+    outline-width: 0;
+    position: relative;
+    overflow: hidden;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.select > .select-toggle {
+    margin-top: 12px;
+    border: 5px solid transparent;
+    border-top-color: #515151;
+    border-bottom-style: none;
+    right: 12px;
+    display: inline-block;
+    position: absolute;
+    top: 1px
+}
+
+.select.is-invalid {
+    border-color: #e34243;
+    background: rgba(227, 66, 67, 0.05);
+    color: #e34243;
+    position: relative;
+    overflow: visible
+}
+
+.select.is-invalid > .select-toggle {
+    border-top-color: #e34243
+}
+
+.select.is-warning {
+    border-color: #f28918;
+    background: rgba(242, 137, 24, 0.05);
+    color: #f28918;
+    position: relative;
+    overflow: visible
+}
+
+.select.is-warning > .select-toggle {
+    border-top-color: #f28918
+}
+
+.select.is-disabled {
+    background-color: #efefef;
+    color: #818181;
+    cursor: default
+}
+
+.select-items {
+    border: 1px solid #dddde4;
+    z-index: 4000;
+    background: #fff;
+    font-size: 13px;
+    display: inline-block;
+    position: absolute;
+    width: calc(100% - 2px);
+    margin-top: -1px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-height: 375px;
+    overflow-y: auto;
+    overflow-x: none;
+    min-width: 100%
+}
+
+.select-items .select-item {
+    text-align: left;
+    line-height: 25px;
+    padding: 0 12px;
+    color: #515151;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0 !important;
+    white-space: nowrap;
+    width: auto;
+    overflow-x: hidden
+}
+
+.select-items .select-item:hover {
+    background: #dddde4
+}
+
+.select-items .select-item.select-item--group {
+    color: #afb2b5;
+    cursor: default
+}
+
+.select-items .select-item.select-item--group:hover {
+    background: #fff
+}
+
+.select-items .select-item.select-item--group .select-item--group-items > .select-item {
+    line-height: 25px;
+    padding: 0 12px;
+    color: #515151;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0 !important;
+    white-space: nowrap;
+    width: auto;
+    overflow-x: hidden;
+    margin-left: -12px;
+    margin-right: -12px
+}
+
+.select-items .select-item.select-item--group .select-item--group-items > .select-item:hover {
+    background: #dddde4
+}
+
+.table {
+    background: #fff;
+    width: 100%;
+    font-size: 13px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #fff
+}
+
+.table > thead {
+    background: #fff
+}
+
+.table > thead > tr > th {
+    height: 45px;
+    line-height: 45px;
+    vertical-align: middle;
+    color: #a2a2a6;
+    font-weight: normal;
+    padding: 0 12px
+}
+
+.table > thead > tr > th, .table > thead > tr > th.table-text {
+    text-align: left
+}
+
+.table > thead > tr > th.table-number {
+    text-align: right
+}
+
+.table > thead > tr > th.table-date {
+    text-align: right
+}
+
+.table > tbody > tr:hover {
+    background-color: #f8f7fa
+}
+
+.table > tbody > tr > td {
+    line-height: 21px;
+    font-size: 14px;
+    padding: 12px 12px
+}
+
+.table > tbody > tr > td, .table > tbody > tr > td.table-text {
+    text-align: left
+}
+
+.table > tbody > tr > td.table-number {
+    text-align: right
+}
+
+.table > tbody > tr > td.table-date {
+    text-align: right
+}
+
+.table > tbody > tr.table-row-link > td {
+    padding: 0
+}
+
+.table > tbody > tr.table-row-link > td > a {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0 !important;
+    padding: 12px 12px;
+    display: block;
+    text-decoration: none;
+    color: inherit
+}
+
+.table > thead > tr > th {
+    border-bottom: 1px solid #eee
+}
+
+.table > tbody > tr > td {
+    border-top: 1px solid #eee
+}
+
+.table > tbody > tr:first-child > td {
+    border-top: none
+}
+
+.table > tbody > tr:last-child > td {
+    border-bottom: 1px solid #eee
+}
+
+.table > tbody > tr.is-containing-error {
+    color: #d00303
+}
+
+.table.table--ellipsis {
+    table-layout: fixed
+}
+
+.table.table--ellipsis > thead > tr > th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.table.table--ellipsis > tbody > tr > td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.table.table--collapsible-rows > thead > tr > th:first-child, .table.table--collapsible-rows > tbody > tr > td:first-child {
+    padding-left: 54px
+}
+
+.table.table--collapsible-rows .table-collapsible-row-header.is-open {
+    background: #f6f6f6
+}
+
+.table.table--collapsible-rows .table-collapsible-row-header.is-open + .table-collapsible-row-body {
+    display: table-row
+}
+
+.table.table--collapsible-rows .table-collapsible-row-header.is-open > td:nth-child(1) {
+    padding-left: 54px;
+    margin-top: 1px;
+    position: relative
+}
+
+.table.table--collapsible-rows .table-collapsible-row-header.is-open > td:nth-child(1):before {
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    width: 5px;
+    background: #515151
+}
+
+.table.table--collapsible-rows .table-collapsible-row-header.is-open.is-containing-error.is-open > td:nth-child(1):before, .table.table--collapsible-rows .table-collapsible-row-header.is-open.is-containing-error.is-open + .table-collapsible-row-body > td:nth-child(1):before {
+    background: #d00303
+}
+
+.table.table--collapsible-rows .table-collapsible-row-header .table-collapsible-row-toggle {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0 !important;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -800px -630px no-repeat;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    float: left;
+    margin-left: -35px
+}
+
+.table.table--collapsible-rows .table-collapsible-row-header.is-open .table-collapsible-row-toggle {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -780px -630px no-repeat;
+    transform: rotate(130deg);
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg)
+}
+
+.table.table--collapsible-rows .table-collapsible-row-body {
+    display: none
+}
+
+.table.table--collapsible-rows .table-collapsible-row-body > td {
+    background: #f6f6f6;
+    border-top: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative
+}
+
+.table.table--collapsible-rows .table-collapsible-row-body > td:before {
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    width: 5px;
+    background: #515151
+}
+
+.table-selectable-row .table-selectable-row-action {
+    visibility: hidden
+}
+
+.table-selectable-row .table-selectable-row-actions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right
+}
+
+.table-selectable-row .table-selectable-row-actions > li {
+    visibility: hidden;
+    float: left;
+    margin-left: 16px
+}
+
+.table-selectable-row .table-selectable-row-actions > li.is-highlighted {
+    visibility: visible
+}
+
+.table-selectable-row.is-selected {
+    background: #f6f6f6
+}
+
+.table-selectable-row.is-selected .table-selectable-row-actions > li {
+    visibility: visible
+}
+
+.table-selectable-row.is-selected .table-selectable-row-action {
+    visibility: visible
+}
+
+.table-sorting-header {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0 !important
+}
+
+.table-sorting-header .table-sorting-header-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+    margin-left: 0px
+}
+
+.table-sorting-header > .table-sorting-header-text {
+    display: block;
+    max-width: calc(100% - 20px);
+    float: left
+}
+
+.table.table--ellipsis > thead > tr > .table-sorting-header > .table-sorting-header-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.table-sorting-header.table-number > .table-sorting-header-text, .table-sorting-header.table-date > .table-sorting-header-text {
+    padding-left: 3px;
+    float: right
+}
+
+tr:hover .table-sorting-header .table-sorting-header-icon {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -840px -630px no-repeat
+}
+
+tr:hover .table-sorting-header:hover .table-sorting-header-icon {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -820px -630px no-repeat
+}
+
+tr .table-sorting-header.is-ascending .table-sorting-header-icon {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -880px -630px no-repeat
+}
+
+tr .table-sorting-header.is-ascending:hover .table-sorting-header-icon {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -860px -630px no-repeat
+}
+
+tr .table-sorting-header.is-descending .table-sorting-header-icon {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -920px -630px no-repeat
+}
+
+tr .table-sorting-header.is-descending:hover .table-sorting-header-icon {
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -900px -630px no-repeat
+}
+
+.textbox {
+    position: relative;
+    border: 1px solid #dddde4;
+    border-radius: 2px;
+    padding-left: 12px;
+    height: 32px;
+    background: #fff;
+    padding-right: 12px
+}
+
+.textbox > input {
+    height: 32px;
+    color: #515151;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0
+}
+
+.textbox > input::-webkit-input-placeholder {
+    color: #aeaeae;
+    font-style: italic
+}
+
+.textbox > input::-moz-placeholder {
+    color: #aeaeae;
+    font-style: italic
+}
+
+.textbox > input:-ms-input-placeholder {
+    color: #aeaeae;
+    font-style: italic
+}
+
+.textbox > input::placeholder {
+    color: #aeaeae;
+    font-style: italic
+}
+
+.textbox > input::-ms-clear {
+    display: none
+}
+
+.textbox.is-invalid {
+    background: rgba(227, 66, 67, 0.05);
+    border-color: #e34243
+}
+
+.textbox.is-invalid > input {
+    color: #e34243
+}
+
+.textbox.is-invalid > input::-webkit-input-placeholder {
+    color: #e34243
+}
+
+.textbox.is-invalid > input::-moz-placeholder {
+    color: #e34243
+}
+
+.textbox.is-invalid > input:-ms-input-placeholder {
+    color: #e34243
+}
+
+.textbox.is-invalid > input::placeholder {
+    color: #e34243
+}
+
+.textbox.is-warning {
+    background: rgba(242, 137, 24, 0.05);
+    border-color: #f28918
+}
+
+.textbox.is-warning > input {
+    color: #f28918
+}
+
+.textbox.is-warning > input::-webkit-input-placeholder {
+    color: #f28918
+}
+
+.textbox.is-warning > input::-moz-placeholder {
+    color: #f28918
+}
+
+.textbox.is-warning > input:-ms-input-placeholder {
+    color: #f28918
+}
+
+.textbox.is-warning > input::placeholder {
+    color: #f28918
+}
+
+.textbox.is-disabled {
+    background-color: #efefef
+}
+
+.textbox.is-disabled > input {
+    color: #818181
+}
+
+.textbox.textbox--search {
+    padding-left: 44px
+}
+
+.textbox.textbox--search:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -960px -630px no-repeat;
+    left: 12px;
+    position: absolute;
+    margin: auto 0;
+    bottom: 0;
+    top: 0
+}
+
+.textbox.textbox--search.is-focused:before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../../../../../../../dokuments/decision%20log/mogwai/webuiSprite-Mogwai.png") -940px -630px no-repeat
+}
+
+.l-action-button-toolbar {
+    overflow: hidden
+}
+
+.l-action-button-toolbar .l-action-button-toolbar-item {
+    float: left;
+    margin-left: 10px
+}
+
+.l-action-button-toolbar .l-action-button-toolbar-item.is-hidden {
+    visibility: hidden
+}
+
+.l-app, .l-app-body, .l-app-page {
+    height: 100%;
+    margin: 0;
+    padding: 0
+}
+
+.l-app {
+    min-width: 1200px
+}
+
+.l-app-page.is-hidden {
+    display: none
+}
+
+.l-field {
+    font-size: 0
+}
+
+.l-field:before {
+    content: "";
+    display: inline-block;
+    min-height: 34px;
+    width: 0;
+    vertical-align: middle
+}
+
+.l-field > .l-field-label, .l-field > .l-field-value, .l-field > .l-field-unit {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.l-field > .l-field-label {
+    width: 120px;
+    padding-right: 12px
+}
+
+.l-field > .l-field-value {
+    position: relative;
+    width: calc(100% - 120px)
+}
+
+.l-field > .l-field-unit {
+    width: 50px;
+    padding-left: 12px
+}
+
+.l-field.l-field--with-unit > .l-field-value {
+    width: calc(100% - 170px)
+}
+
+.l-field.l-field--vertical > .l-field-row {
+    display: inline-block;
+    width: 100%;
+    font-size: 0
+}
+
+.l-field.l-field--vertical > .l-field-row:before {
+    content: "";
+    display: inline-block;
+    min-height: 34px;
+    width: 0;
+    vertical-align: middle
+}
+
+.l-field.l-field--vertical > .l-field-row > .l-field-label, .l-field.l-field--vertical > .l-field-row > .l-field-value, .l-field.l-field--vertical > .l-field-row > .l-field-unit {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.l-field.l-field--vertical > .l-field-row > .l-field-label, .l-field.l-field--vertical > .l-field-row > .l-field-value {
+    width: 100%
+}
+
+.l-field.l-field--vertical.l-field--with-unit > .l-field-row > .l-field-value {
+    width: calc(100% - 50px)
+}
+
+.l-field.l-field--vertical.l-field--with-unit > .l-field-row > .l-field-unit {
+    width: 50px;
+    padding-left: 12px
+}
+
+.l-field-group .l-field + .l-field {
+    margin-top: 7px
+}
+
+.l-table-cell-input {
+    max-width: 250px;
+    margin: -10px 0
+}
+
+.l-view-app-header {
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    min-width: 1200px;
+    z-index: 1000
+}
+
+.l-view-content-with-footer {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+    padding-bottom: 50px
+}
+
+.l-view-content-with-footer .l-view-content-with-footer-body {
+    min-height: 100%;
+    width: 100%;
+    float: left
+}
+
+.l-view-content-with-footer .l-view-content-with-footer-footer {
+    height: 50px;
+    width: 100%;
+    float: left
+}
+
+.l-view-login {
+    width: 100%;
+    height: 100%
+}
+
+.l-view-login .l-view-login-content {
+    width: 780px;
+    height: 256px;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.l-view-login .l-view-login-content .l-view-login-logo-wrapper {
+    width: 390px;
+    float: left;
+    padding-top: 35px
+}
+
+.l-view-login .l-view-login-content .l-view-login-form-wrapper {
+    width: 390px;
+    float: left
+}
+
+.l-view-login .l-view-login-content .l-view-login-form-wrapper .l-view-login-form > div {
+    width: 100%
+}
+
+.l-view-login .l-view-login-content .l-view-login-form-wrapper .l-view-login-form .l-view-login-form-header {
+    margin-bottom: 23px
+}
+
+.l-view-login .l-view-login-content .l-view-login-form-wrapper .l-view-login-form .l-view-login-form-username, .l-view-login .l-view-login-content .l-view-login-form-wrapper .l-view-login-form .l-view-login-form-password {
+    margin-top: 7px;
+    height: 35px
+}
+
+.l-view-login .l-view-login-content .l-view-login-form-wrapper .l-view-login-form .l-view-login-form-info {
+    margin-top: 20px
+}
+
+.l-view-login .l-view-login-content .l-view-login-form-wrapper .l-view-login-form .l-view-login-form-error {
+    margin: 23px 0px
+}
+
+.l-view-login .l-view-login-content .l-view-login-form-wrapper .l-view-login-form .l-view-login-form-submit {
+    margin-top: 30px
+}
+
+.l-view-main-content {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%
+}
+
+.l-view-main-content.l-view-main-content--combined-with-app-header {
+    padding-top: 50px
+}
+
+.l-view-main-content.l-view-main-content--combined-with-sidebar {
+    padding-left: 250px
+}
+
+.l-view-notification {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 2000;
+    min-width: 1200px
+}
+
+.l-view-notification.l-view-notification--combined-with-app-header {
+    top: 50px
+}
+
+.l-view-notification.l-view-notification--combined-with-sidebar {
+    left: 250px;
+    min-width: 950px
+}
+
+.l-view-sidebar {
+    position: fixed;
+    width: 250px;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow: auto;
+    border-right: 1px solid #dddde4;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.l-view-sidebar.l-view-sidebar--combined-with-app-header {
+    top: 50px
+}
+
+.l-view-task-queue {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    min-width: 1200px;
+    z-index: 2000
+}
+
+.l-view-task-queue .l-view-task-queue-body {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    width: 400px
+}
+
+@media (min-width: 1200px) {
+    .l-view-task-queue {
+        right: 0
+    }
+}
