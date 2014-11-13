@@ -3,13 +3,12 @@ package net.gmc.decisionlog.controler;
 import net.gmc.decisionlog.data.ElasticSearchStore;
 import net.gmc.decisionlog.model.Decision;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -47,6 +46,7 @@ public class DecisionController {
 
     @RequestMapping(value="/add-decision", method= RequestMethod.POST)
     public String addDecision(@ModelAttribute("decision") Decision decision, Model model) {
+        decision.setDate(new Date());
         elasticSearchStore.saveDecision(decision);
         List<Decision> decisionList = new ArrayList<Decision>();
         decisionList.add(decision);
