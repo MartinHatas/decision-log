@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -45,9 +46,12 @@ public class DecisionController {
     }
 
     @RequestMapping(value="/add-decision", method= RequestMethod.POST)
-    public ResponseEntity<String> addDecision(@RequestBody Decision decision) {
+    public String addDecision(@ModelAttribute("decision") Decision decision, Model model) {
         elasticSearchStore.saveDecision(decision);
-        return new ResponseEntity<String>(HttpStatus.OK);
+        List<Decision> decisionList = new ArrayList<Decision>();
+        decisionList.add(decision);
+        model.addAttribute("decisions", decisionList);
+        return "detail";
     }
 
     @ResponseBody
