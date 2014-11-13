@@ -1,0 +1,38 @@
+/*
+# #sprite
+Sets background image from application wide sprite image (more info on [CSS sprites](http://css-tricks.com/css-sprites/))
+
+Sprite image for whole application is generated/refreshed via `webui` tool
+(when executed from `/img` directory of any module or from css root directory).
+Tool also generates `.less` file with variables describing each image.
+These *generated variables* can be used by this mixin to reference required image.
+
+NOTE: Because this mixin cannot guarantee there is any module with image
+(and only modules are allowed to can contain sprites inside `/img` directory)
+there is no real sample code.
+
+-----------
+### .inlineBlock
+Sets background of the element to given sprite and sets it's dimension according to image.
+
+`#sprite > .inlineBlock("module-name", "image-name-png");`
+
+-----------
+### .background
+Sets only the css `background` property to position to the sprite.
+
+`#sprite > .background("module-name", "image-name-png");`
+
+-----------
+### .centerForPixelWidth
+Sets sprite's left/right margins to fill required width
+
+`#sprite > .centerForPixelWidth("module-name", "image-name-png", widthToFill);`
+
+-----------
+### .centerForPixelHeight
+Sets sprite's top/bottom margins to fill required height
+
+`#sprite > .centerForPixelHeight("module-name", "image-name-png", heightToFill);`
+
+*/

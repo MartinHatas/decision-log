@@ -1,0 +1,39 @@
+/*
+#transparent
+
+NOTE: Opacity in IE8 is only 0.5
+
+#Use:</br>
+`#opacity > .background(0.5)` </br>
+`#opacity > .background(0.0-1.0)`
+
+
+    //jade
+    div.sample
+      div.background
+    div.sample
+      div.sampleContainer
+        div.background.noTransparent
+        div.background.transparentBackground
+
+*/
+
+.sampleContainer {
+  position: relative;
+
+  .background {
+    width: 100px;
+    height: 100px;
+    &.noTransparent {
+      position: absolute;
+      background: red;
+    }
+
+    &.transparentBackground {
+      margin-left: 50px;
+      background: #87ceeb;
+      #opacity > .background(0.5);
+    }
+  }
+}
+

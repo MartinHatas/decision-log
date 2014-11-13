@@ -1,0 +1,46 @@
+/*
+# #ellipsis > .line();
+Mixin creates ellipsis (three dots ending) for long text.
+	
+	<div class="line-content">
+		Lorem ipsum Ullamco et et sit reprehenderit incididunt aliquip veniam.		
+	</div>
+	<div class="line-content">
+		Lorem ipsum Voluptate nostrud ex ad sit dolore nulla et ex in consectetur commodo cillum nostrud velit dolore in nisi dolore dolor ut nostrud aute est consequat pariatur in exercitation laborum adipisicing in officia do dolore Ut consequat ad culpa ut anim Excepteur amet commodo ex minim cillum adipisicing sed dolor eu deserunt ut aliquip anim veniam cillum consequat pariatur in.
+	</div>
+*/
+
+.line-content {
+	#ellipsis > .line();
+}
+
+/*
+# #ellipsis > .multiline(@lineCount, @lineHeight, @backgroundColor: white);
+Multiple lines ellipsis has not browser native implementation. This "implementation" uses fixed height for the text container with given number of lines.
+
+Element on which is mixin applied must not have padding defined (more safely **no styling** at all).
+Mixin expects single **inner/wrapper element** with text content.
+
+	<div class="multiline-content">
+		<div>
+		Lorem ipsum Duis qui aute Duis consequat Ut ad anim ad ut ea officia sint et laborum aute incididunt reprehenderit incididunt aliquip incididunt aliqua eu ea minim dolor ut eiusmod proident deserunt tempor pariatur ut.
+		</div>
+	</div>
+	<div class="multiline-content-colored">
+		<div>
+		Lorem ipsum Voluptate nostrud ex ad sit dolore nulla et ex in consectetur commodo cillum nostrud velit dolore in nisi dolore dolor ut nostrud aute est consequat pariatur in exercitation laborum adipisicing in officia do dolore Ut consequat ad culpa ut anim Excepteur amet commodo ex minim cillum adipisicing sed dolor eu deserunt ut aliquip anim veniam cillum ext consequat pariatur in.
+		</div>
+	</div>
+*/
+
+
+.multiline-content {
+	#ellipsis > .multiline(3, 20px);
+	margin-bottom: 10px; 
+}
+
+.multiline-content-colored {
+	background: red;
+	#ellipsis > .multiline(3, 20px, red);
+	margin-bottom: 10px; 
+}

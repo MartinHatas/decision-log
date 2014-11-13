@@ -1,0 +1,32 @@
+/*
+#.l-field-group
+Layout for grouping the fields - the main responsibility is to make spacing between fields.
+
+    //jade
+    mixin item()
+        .l-field
+            .l-field-label label
+            .l-field-value value
+
+    .l-field-group
+        +item()
+        +item()
+        +item()
+*/
+
+.l-field-group {
+    background: #eee;
+}
+.l-field-group-item {
+    background: #ccc;
+}
+.l-field {
+    background: pink;
+
+    .l-field-label {
+        background: #afa;
+    }
+    .l-field-value {
+        background: #ffa;
+    }
+}

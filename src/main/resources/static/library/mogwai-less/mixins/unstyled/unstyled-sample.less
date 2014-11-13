@@ -1,0 +1,59 @@
+/*
+# Unstyled
+Remove/overrides some default element styling to allow semantical usage
+
+# &lt;a&gt;
+
+	<div>
+		<a href="#">Normal link</a>
+	</div>
+	<div>
+		<a class="button" href="#">#unstyled > .link()</a>
+	</div>
+	<div class="buttons">
+		<div>#unstyled > .childLinks()</div>
+		<a href="#">Button1</a>
+		<a href="#">Button2</a>
+		<a href="#">Button3</a>
+	</div>
+
+*/
+
+.button {
+	#unstyled > .link();
+}
+.buttons {
+	margin-top: 10px;
+	#unstyled > .childLinks();
+}
+
+/*
+# &lt;ul&gt;, &lt;ol&gt;
+Removes decoration and zeros margin + padding
+
+	<div>Normal list</div>
+	<div class="list-sample">
+		<ul>
+			<li>Item1</li>
+			<li>Item2</li>
+		</ul>
+	</div>
+
+	<div>#unstyled > .list()</div>
+	<div class="list-sample">
+		<ul class="menu">
+			<li>Item1</li>
+			<li>Item2</li>
+		</ul>
+	</div>
+*/
+.menu {
+	#unstyled > .list();
+}
+
+.list-sample {
+	background: #9f9;
+	overflow: hidden;
+	ul { background: #ff9; }
+	li { background: #99f; }
+}

@@ -1,0 +1,111 @@
+/*{
+    "review-comment1": "upravit markup, tak aby záviselo a využívalo .l-app a .l-app-page!",
+    "review-comment2": "wrapper classy značí problém s pojmenováním",
+    "review-comment3": "pozicování form prvků bych dal do samostatného layoutu"
+}*/
+/*
+# Login page
+## Login page with info
+
+    //jade
+    .l-view-login
+        .l-view-login-content
+            .l-view-login-logo-wrapper
+                | Application logo
+            .l-view-login-form-wrapper
+                .l-view-login-form
+                    .l-view-login-form-header Login header
+                    .l-view-login-form-username  Username
+                    .l-view-login-form-password  Password
+                    .l-view-login-form-info   Login information
+                    .l-view-login-form-submit Submit button
+
+## Login page without info
+
+    //jade
+    .l-view-login
+        .l-view-login-content
+            .l-view-login-logo-wrapper
+                | Application logo
+            .l-view-login-form-wrapper
+                .l-view-login-form
+                    .l-view-login-form-header Login header
+                    .l-view-login-form-username  Username
+                    .l-view-login-form-password  Password
+                    .l-view-login-form-submit Submit button
+
+## Login page with error
+
+    //jade
+    .l-view-login
+        .l-view-login-content
+            .l-view-login-logo-wrapper
+                | Application logo
+            .l-view-login-form-wrapper
+                .l-view-login-form
+                    .l-view-login-form-header Login header
+                    .l-view-login-form-error  Error message
+                    .l-view-login-form-username  Username
+                    .l-view-login-form-password  Password
+                    .l-view-login-form-submit Submit button
+
+*/
+@l-view-login-content-height: 256px;
+@l-view-login-item-width: 390px;
+@l-view-login-content-width: @l-view-login-item-width * 2;
+
+.l-view-login {
+    width: 100%;
+    height: 100%;
+
+    .vertical-center() {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .l-view-login-content {
+        width: @l-view-login-content-width;
+        height: @l-view-login-content-height;
+        margin: auto;
+        .vertical-center();
+
+        .l-view-login-logo-wrapper {
+            width: @l-view-login-item-width;
+            float: left;
+            padding-top: 35px;
+        }
+
+        .l-view-login-form-wrapper {
+            width: @l-view-login-item-width;
+            float: left;
+            .l-view-login-form {
+                & > div {
+                    width: 100%;
+                }
+
+                .l-view-login-form-header {
+                    margin-bottom: 23px;
+                }
+
+                .l-view-login-form-username,
+                .l-view-login-form-password {
+                    margin-top: 7px;
+                    height: 35px;
+                }
+
+                .l-view-login-form-info {
+                    margin-top: 20px;
+                }
+
+                .l-view-login-form-error {
+                    margin: 23px 0px;
+                }
+
+                .l-view-login-form-submit {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}

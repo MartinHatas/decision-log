@@ -1,0 +1,19 @@
+/*{
+    "require": ["l-app"]
+}*/
+
+.l-view-main-content {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+// other views combinations
+
+.l-view-main-content {
+    &.l-view-main-content--combined-with-app-header {
+        padding-top: @l-view-app-header-height;
+    }
+    &.l-view-main-content--combined-with-sidebar {
+        padding-left: @l-view-sidebar-width;
+    }
+}

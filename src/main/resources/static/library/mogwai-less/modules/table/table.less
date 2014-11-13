@@ -1,0 +1,99 @@
+/*{
+  "stability": 2,
+  "status": "RC",
+  "review": "přejmenovat classu table-row-link na něco ve stylu table-row--as-link?"
+}*/
+
+.table {
+    background: @table-body-background;
+    width: 100%;
+    font-size: @table-header-font-size;
+
+    .tableCellAlign() {
+        &, &.table-text {
+            text-align: @table-text-align;
+        }
+        &.table-number {
+            text-align: @table-number-align;
+        }
+        &.table-date {
+            text-align: @table-date-align;
+        }
+    }
+
+    & > thead {
+        background: @table-header-background;
+
+        & > tr > th {
+            height: @table-header-row-height;
+            line-height: @table-header-row-height;
+            vertical-align: @table-header-vertical-align;
+            color: @table-header-color;
+            font-weight: normal;
+            padding: 0 @table-header-padding-left-right;
+            
+            .tableCellAlign();
+        }
+    }
+
+    & > tbody {
+        & > tr:hover {
+            background-color: @table-body-row-hover-color;
+        }
+
+        & > tr > td {
+            line-height: @table-body-row-line-height;
+            font-size: @table-body-font-size;
+            padding: 12px @table-header-padding-left-right;
+
+            .tableCellAlign();
+        }
+
+        & > tr.table-row-link > td {
+            padding: 0;
+
+            > a {
+                #clickable > .element();
+                padding: 12px @table-header-padding-left-right;
+                display: block;
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    }
+
+    //note: having other then "separate" value leads to browser differences, when dealing with borders
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid @table-border-color;
+
+    & > thead > tr > th {
+        border-bottom: 1px solid @table-row-border-color;
+    }
+    & > tbody > tr > td {
+        border-top: 1px solid @table-row-border-color;
+    }
+    & > tbody > tr:first-child > td {
+        border-top: none;
+    }
+    & > tbody > tr:last-child > td {
+        border-bottom: 1px solid @table-row-border-color;
+    }
+
+    & > tbody > tr.is-containing-error {
+        color: @table-row-containing-error-color;
+    }
+
+    //common variants
+    &.table--ellipsis {
+        table-layout: fixed;
+
+        & > thead > tr > th {
+            #ellipsis > .line();
+        }
+
+        & > tbody > tr > td {
+            #ellipsis > .line();
+        }
+    }
+}

@@ -1,0 +1,36 @@
+/*{
+    "stability": 3
+}*/
+/*
+# Application header
+## With logo
+
+    //jade
+    .app-header
+
+        .app-header-left
+            | Left Content
+        .app-header-right
+            | Right Content
+        //-note: center due floating design must be the last
+        .app-header-center
+            | Center content
+*/
+
+@app-header-height: 50px;
+@app-header-background-color: #2d333f;
+
+.app-header {
+    background-color: @app-header-background-color;
+    height: @app-header-height;
+
+    .app-header-left {
+        float: left;
+    }
+    .app-header-right {
+        float: right;
+    }
+    .app-header-center {
+        overflow: hidden;
+    }
+}

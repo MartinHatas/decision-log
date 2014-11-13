@@ -1,0 +1,51 @@
+/*{
+    "stability": 2,
+    "require": ["user-attention-colors"],
+    "review-comment": "přejmenovat variant classy na '--' oddělovač"
+}*/
+.btnBackground(@normalColor, @hoverColor, @activeColor) {
+    background: @normalColor;
+    &:hover{
+        background: @hoverColor;
+    }
+    &:active{
+         background: @activeColor;
+    }
+}
+.btn {
+    .btnBackground(@btn-default-background, @btn-default-background-hover, @btn-default-background-active);
+    #border-radius > .all(@btn-border-radius);
+    border: 0;
+    font-weight: @base-font-weight-semibold;
+    font-size:  @btn-font-size;
+    #clickable > .element();
+    padding: 0 @btn-padding;
+    min-width: @btn-min-width;
+    box-sizing: content-box;  /* reset boxing for inputs */
+    color: @btn-default-color;
+    line-height: @btn-height;
+    vertical-align: middle; 
+    display: inline-block;
+    height: @btn-height;
+    text-align: center;
+    &.is-disabled {
+        background: @btn-disabled-background !important;
+        color: @btn-disabled-color;
+        cursor: default;
+    }
+    &.btn-light {
+        .btnBackground(@btn-light-background, @btn-light-background-hover, @btn-light-background-active);
+    }
+    &.btn-error {
+        .btnBackground(@btn-error-background, @btn-error-background-hover, @btn-error-background-active);
+    }
+    &.btn-warning {
+        .btnBackground(@btn-warning-background, @btn-warning-background-hover, @btn-warning-background-active);
+    }
+    &.btn-info {
+        .btnBackground(@btn-info-background, @btn-info-background-hover, @btn-info-background-active);
+    }
+    &.btn-success {
+        .btnBackground(@btn-success-background, @btn-success-background-hover, @btn-success-background-active);
+    }
+}

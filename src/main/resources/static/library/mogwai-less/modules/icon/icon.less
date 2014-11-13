@@ -1,0 +1,257 @@
+/*{
+	"stability": 0,
+	"status": "obsolete",
+	"detail": "po převedení nuclea na přebarvovátko odstranit"
+}*/
+.icon {
+	//note: these values must correspond to real size of images, therefore not set in variables
+	@iconSmallSize: 20px;
+	@iconMediumSize: 30px;
+	@iconLargeSize: 40px;
+
+	vertical-align: middle;	
+	display: inline-block;
+	//note: medium size is default
+	width: @iconMediumSize;
+	height: @iconMediumSize;
+
+	&.icon--small {
+		width: @iconSmallSize;
+		height: @iconSmallSize;
+	}
+
+	&.icon--large {
+		width: @iconLargeSize;
+		height: @iconLargeSize;
+	}
+
+	.icon(@iconName) {
+		@imgSmall: ~"@{iconName}-small-png";
+		@imgMedium: ~"@{iconName}-medium-png";
+		@imgLarge: ~"@{iconName}-large-png";
+		&.icon--@{iconName} {
+			#sprite > .background("icon", @imgMedium);
+			&.icon--small {
+				#sprite > .background("icon", @imgSmall);
+			}
+			&.icon--large {
+				#sprite > .background("icon", @imgLarge);
+			}
+		}
+	}
+
+	//--------------------------- ICONS DEFINITION BEGIN -----------------------------
+	//NOTE: string value passed into mixin is without quotes
+	.icon(accept);
+	.icon(accept-positive);
+	.icon(add);
+	.icon(add-positive);
+	.icon(add-contact);
+	.icon(add-contact-positive);
+	.icon(add-department);
+	.icon(add-department-positive);
+	.icon(additional-sheets);
+	.icon(archive);
+	.icon(arrow-circle-left);
+	.icon(arrow-circle-right);
+	.icon(arrow-down);
+	.icon(arrow-down-144);
+	.icon(arrow-left);
+	.icon(arrow-right);
+	.icon(arrow-up);
+	.icon(assign-to-template-designer);
+	.icon(attachments);
+	.icon(basic-info);
+	.icon(batch);
+	.icon(block);
+	.icon(block-with-draft);
+	.icon(bold);
+	.icon(business-process);
+	.icon(business-process-with-draft);
+	.icon(calendar);
+	.icon(car);
+	.icon(channels);
+	.icon(check);
+	.icon(check-positive);
+	.icon(check-in-circle);
+	.icon(check-in-circle-positive);
+	.icon(checkbox);
+	.icon(clone);
+	.icon(clone-template);
+	.icon(close);
+	.icon(close-negative);
+	.icon(combo-box);
+	.icon(comment);
+	.icon(compose);
+	.icon(content);
+	.icon(content-manager);
+	.icon(controls);
+	.icon(create-business-process);
+	.icon(create-business-process-positive);
+	.icon(create-display-rule);
+	.icon(create-display-rule-positive);
+	.icon(create-form);
+	.icon(create-form-positive);
+	.icon(create-new-block);
+	.icon(create-new-block-positive);
+	.icon(create-new-template);
+	.icon(create-new-template-invert);
+	.icon(create-new-template-positive);
+	.icon(create-new-template-instance);
+	.icon(create-new-template-instance-positive);
+	.icon(create-text-block);
+	.icon(create-text-block-positive);
+	.icon(crosscheck);
+	.icon(dashboard);
+	.icon(dashboard-invert);
+	.icon(dashboard-warning);
+	.icon(dashboard2);
+	.icon(decline);
+	.icon(decline-negative);
+	.icon(delete);
+	.icon(delete-negative);
+	.icon(details);
+	.icon(dialog);
+	.icon(dispatcher);
+	.icon(display-rule-set);
+	.icon(display-rule-set-positive);
+	.icon(display-rule-with-draft);
+	.icon(document-creator);
+	.icon(documentation);
+	.icon(download);
+	.icon(download-invert);
+	.icon(draft-exist);
+	.icon(drag-drop);
+	.icon(edit);
+	.icon(edit-draft);
+	.icon(editable-block);
+	.icon(email-output);
+	.icon(envelope);
+	.icon(erraser);
+	.icon(error);
+	.icon(error-negative);
+	.icon(export);
+	.icon(external-text-block);
+	.icon(file);
+	.icon(filter);
+	.icon(finish-crosscheck);
+	.icon(fit-actual-size);
+	.icon(fit-page);
+	.icon(fit-width);
+	.icon(float);
+	.icon(folder);
+	.icon(form);
+	.icon(form-control-properties);
+	.icon(form-with-draft);
+	.icon(globe);
+	.icon(graph);
+	.icon(group);
+	.icon(health);
+	.icon(heart);
+	.icon(help);
+	.icon(help-invert);
+	.icon(history);
+	.icon(home);
+	.icon(house-in-fire);
+	.icon(http-input);
+	.icon(http-output);
+	.icon(image);
+	.icon(import);
+	.icon(import-template);
+	.icon(info);
+	.icon(insertable);
+	.icon(insertion-point);
+	.icon(integer);
+	.icon(integrity);
+	.icon(italic);
+	.icon(job-monitoring);
+	.icon(job-monitoring-invert);
+	.icon(label);
+	.icon(library);
+	.icon(license);
+	.icon(link);
+	.icon(lock);
+	.icon(lock-negative);
+	.icon(log-out);
+	.icon(log-out-invert);
+	.icon(master-template);
+	.icon(multidocument);
+	.icon(move-ticket);
+	.icon(new-communication);
+	.icon(non-insertable);
+	.icon(non-insertable-negative);
+	.icon(open-in-new-tab);
+	.icon(optical-mark);
+	.icon(optical-mark-add);
+	.icon(outline);
+	.icon(page-break);
+	.icon(page-margins);
+	.icon(page-settings);
+	.icon(performance-warning);
+	.icon(preview);
+	.icon(printer);
+	.icon(properties);
+	.icon(publish);
+	.icon(radio-button);
+	.icon(recipient-identification);
+	.icon(recipient-identification-positive);
+	.icon(redo);
+	.icon(refresh);
+	.icon(report);
+	.icon(sandclock);
+	.icon(save);
+	.icon(script);
+	.icon(search);
+	.icon(section);
+	.icon(settings);
+	.icon(settings-invert);
+	.icon(sort);
+	.icon(sort-asc);
+	.icon(sort-asc-invert);
+	.icon(sort-desc);
+	.icon(sort-desc-invert);
+	.icon(spellcheck-warning);
+	.icon(star);
+	.icon(submit);
+	.icon(submit-to-group);
+	.icon(table);
+	.icon(take);
+	.icon(template);
+	.icon(template-draft);
+	.icon(template-instance);
+	.icon(template-instance-with-draft);
+	.icon(template-warning);
+	.icon(test-template);
+	.icon(text-block);
+	.icon(text-field);
+	.icon(thumbnails);
+	.icon(tip);
+	.icon(trim);
+	.icon(underline);
+	.icon(undo);
+	.icon(unlock);
+	.icon(unlock-positive);
+	.icon(upload);
+	.icon(upload-invert);
+	.icon(user);
+	.icon(user-invert);
+	.icon(user-administrator);
+	.icon(user-agent);
+	.icon(user-block-editor);
+	.icon(user-communication-consultant);
+	.icon(user-medical-accessor);
+	.icon(user-senior-writer);
+	.icon(user-supervisor);
+	.icon(user-system-user);
+	.icon(user-template-designer);
+	.icon(user-writer);
+	.icon(variable);
+	.icon(variant-block);
+	.icon(view-dependencies);
+	.icon(warning);
+	.icon(workflow);
+	.icon(workflow-invert);
+	.icon(zoom-in);
+	.icon(zoom-out);
+	//---------------------------- ICONS DEFINITION END ------------------------------
+}

@@ -1,0 +1,86 @@
+/*
+# Table with sorting header
+	
+	//jade
+	table.table
+		thead
+			tr
+				th.table-sorting-header.is-ascending
+					.table-sorting-header-text Type
+					.table-sorting-header-icon
+				th.table-sorting-header.table-number
+					.table-sorting-header-text Number
+					.table-sorting-header-icon
+				th.table-sorting-header
+					.table-sorting-header-text Source file
+					.table-sorting-header-icon
+				th.table-sorting-header
+					.table-sorting-header-text Format
+					.table-sorting-header-icon
+				th.table-sorting-header
+					.table-sorting-header-text Upload Date
+					.table-sorting-header-icon
+		tbody
+			tr
+				td
+					span.icon.icon--small.icon--heart
+				td.table-number 1
+				td Test 1.afp
+				td AFP, 1024 pages
+				td 3/10/2012
+			tr
+				td
+					span.icon.icon--small.icon--heart
+				td.table-number 2
+				td Test 1.afp
+				td AFP, 1024 pages
+				td 3/10/2012
+
+# Table sorting with ellipsis
+
+	//jade
+	table.table.table--ellipsis.table--my-custom-size
+		thead
+			tr
+				th.table-sorting-header.is-ascending
+					.table-sorting-header-text Lorem ipsum Ad aliqua veniam Ut nisi tempor pariatur pariatur enim proident dolor enim non incididunt
+					.table-sorting-header-icon
+				th.table-sorting-header.table-number
+					.table-sorting-header-text Number aliqua veniam
+					.table-sorting-header-icon
+				th.table-sorting-header
+					.table-sorting-header-text Source file
+					.table-sorting-header-icon
+				th.table-sorting-header
+					.table-sorting-header-text Format
+					.table-sorting-header-icon
+				th.table-sorting-header
+					.table-sorting-header-text Upload Date
+					.table-sorting-header-icon
+		tbody
+			tr
+				td
+					span.icon.icon--small.icon--heart
+					span Lorem ipsum Dolor exercitation in aliqua pariatur laboris in exercitation qui fugiat in consectetur sed reprehenderit id culpa ullamco tempor.
+				td.table-number 1
+				td Test 1.afp
+				td AFP, 1024 pages
+				td 3/10/2012
+			tr
+				td
+					span.icon.icon--small.icon--heart
+				td.table-number 2
+				td Test 1.afp
+				td AFP, 1024 pages
+				td 3/10/2012
+
+## JavaScript requirements:
+
+Sorting itself is managed by application, use classes *is-descending/is-ascending*
+on appropriate column header.
+
+*/
+
+.table--my-custom-size {
+	#table > .columnsWidth(30% 15% 10% 10% auto);
+}

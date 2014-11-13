@@ -1,0 +1,16 @@
+/*
+
+#invalid-state-symbol > .exclamationMark()
+###mixin using for adding invalid symbol after some components (textbox, checkbox, select...)
+###it should be using in :after pseudo element (parent should have relative/absolute position)
+###Use #invalid-state-symbol > .exclamationMark(@font-size:15px, @line-height:15px, @right:15px)
+    //jade
+    .sample Some text or other components with relative position
+*/
+.sample{
+    position: relative;
+    display: inline-block;
+    &:after{
+        #invalid-state-symbol > .exclamationMark();
+    }
+}

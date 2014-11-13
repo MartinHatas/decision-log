@@ -1,0 +1,87 @@
+/*{
+    "stability": 1,
+    "require": ["table", "icon"],
+    "status": "draft",
+    "detail": "zjistit usage a udělat review, přepsat sample do jadu",
+    "review": "změnit markup na plně classový (row-actions je jako list)"
+}*/
+/*
+# Table selectable row
+
+    //jade
+    table.table
+        thead
+            tr
+                th Source File
+                th Format
+                th Upload Date
+                th.table-number Actions
+        tbody
+            tr.table-selectable-row.is-selected
+                td
+                    | Test 1.afp
+                    a.table-selectable-row-action(href='#z') Z
+                td AFP, 1024 pages
+                td 3/10/2012
+                td.table-number
+                    ul.table-selectable-row-actions
+                        li.is-highlighted
+                            a(href='#a1')
+                                span.icon.icon--small.icon--settings
+                        li
+                            a(href='#a2')
+                                span.icon.icon--small.icon--star
+            tr#test-second-row.table-selectable-row
+                td
+                    | Test 2.afp
+                    a.table-selectable-row-action(href='#z') Z
+                td IPDS, 521 pages
+                td 3/10/2012
+                td.table-number
+                    ul.table-selectable-row-actions
+                        li
+                            a(href='#a1')
+                                span.icon.icon--small.icon--accept
+                        li
+                            a(href='#a2')
+                                span.icon.icon--small.icon--decline
+                        li.is-highlighted
+                            a(href='#a3')
+                                span.icon.icon--small.icon--zoom-in
+                        li.is-highlighted
+                            a(href='#a4')
+                                span.icon.icon--small.icon--lock
+            tr.table-selectable-row.table-selectable-row-joined
+                td(colspan='4')
+                    | This row is has joined .is-selected behaviour with previous row.
+                    a.table-selectable-row-action(href='#') Subaction
+
+*/
+.table-selectable-row {
+    .table-selectable-row-action {
+        visibility: hidden;
+
+    }
+    .table-selectable-row-actions {
+        #unstyled > .list();
+        float: right;
+        & > li {
+            visibility: hidden;
+            float: left;
+            margin-left: 16px;
+
+            &.is-highlighted {
+                visibility: visible;
+            }
+        }
+    }
+    &.is-selected {
+        background: @table-selectable-row-selected-background;
+        .table-selectable-row-actions > li {
+            visibility: visible;
+        }
+        .table-selectable-row-action {
+            visibility: visible;
+        }
+    }
+}

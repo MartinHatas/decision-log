@@ -1,0 +1,55 @@
+/*
+# .l-view-main-content
+Main page content which is scrolled by browser window scrollbar
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-main-content
+                | Main content
+
+
+# overflow
+
+After scroll shows background of .l-app, this is necessary to be able to **use footer** at bottom technique
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-main-content
+                include ../../sample-helpers/contentLong.jade
+
+## combination (app-header)
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-main-content.l-view-main-content--combined-with-app-header
+                include ../../sample-helpers/contentLong.jade
+
+## combination (sidebar)
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-main-content.l-view-main-content--combined-with-sidebar
+                include ../../sample-helpers/contentLong.jade
+
+## combination (app-header + sidebar)
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-main-content.l-view-main-content--combined-with-app-header.l-view-main-content--combined-with-sidebar
+                include ../../sample-helpers/contentLong.jade
+
+## [debug] include
+
+    //jade
+    include ../../sample-helpers/viewsColoring.jade
+
+*/
+
+.l-app {
+    height: 250px;
+    overflow: auto;
+}

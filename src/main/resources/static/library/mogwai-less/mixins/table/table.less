@@ -1,0 +1,23 @@
+#table {    
+    /*
+        creates widths definition for columns, widths must be defined as array (separated with spaces) 
+        example: columnsWidth(10px 15% 22% auto 10px); 
+    */ 
+    .columnsWidth(@widths) {
+        /* initialize internal loop */
+        .columnsWidth-internal(@widths, 1);
+    };   
+    
+    /* internal loop */
+    .columnsWidth-internal(@widths, @index) when (@index <= length(@widths)+1) {
+        /* extract current column width */
+        @width: extract(@widths, @index);
+        @columnSelector: ~":nth-child(@{index})";
+
+        & > thead > tr > th@{columnSelector} { width: @width; }
+        & > tbody > tr > td@{columnSelector} { width: @width; }
+        
+        /* next column */
+        .columnsWidth-internal(@widths, @index+1);
+    };
+}

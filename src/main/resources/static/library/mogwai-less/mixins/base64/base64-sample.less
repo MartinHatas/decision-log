@@ -1,0 +1,36 @@
+/*
+# #base64
+Sets background image from it's base64
+
+Base64 variables file is generated/refreshed via `webui` tool
+(when executed from `/base64` directory of any module or from css root directory).
+
+NOTE: Because this mixin cannot guarantee there is any module with base64 image
+(and only modules are allowed to can contain images inside `/base64` directory)
+there is no real sample code.
+
+-----------
+### .inlineBlock
+Sets background of the element to given base64 and sets it's dimension according to image.
+
+`#base64 > .inlineBlock("module-name", "image-name-png");`
+
+-----------
+### .background
+Sets only the css `background` property to data uri of base64.
+
+`#base64 > .background("module-name", "image-name-png");`
+
+-----------
+### .centerForPixelWidth
+Sets images's left/right margins to fill required width
+
+`#base64 > .centerForPixelWidth("module-name", "image-name-png", widthToFill);`
+
+-----------
+### .centerForPixelHeight
+Sets images's top/bottom margins to fill required height
+
+`#base64 > .centerForPixelHeight("module-name", "image-name-png", heightToFill);`
+
+*/

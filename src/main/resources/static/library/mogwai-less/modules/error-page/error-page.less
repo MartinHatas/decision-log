@@ -1,0 +1,34 @@
+/*{
+  "stability": 2,
+  "status": "draft",
+  "review": "potřeba doplnit korektní prefix pro classy",
+  "usage": "použito v nucleu"
+}*/
+.error-page {
+  margin-top: 300px;
+  width: @error-page-text-width + 128 + 60;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 128px;
+
+  > .error-img {
+    background: url("../../sample-images/img-error.png") 0px 0px no-repeat;
+    width: 128px;
+    height: 128px;
+    display: inline-block;
+    float: left;
+  }
+  > .error-text {
+    width: @error-page-text-width;
+    color: @error-text-color;
+    margin-left: 60px;
+    display: inline-block;
+    font-size: @error-page-text-size;
+
+     > .error-title {
+      font-size: @error-page-header-text-size;
+     }
+
+  }
+
+}

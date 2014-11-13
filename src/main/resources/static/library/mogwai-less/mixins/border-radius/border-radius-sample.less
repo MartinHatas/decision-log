@@ -1,0 +1,59 @@
+/*
+# Border radius
+Demostrates how to use *#border-radius* mixins
+
+	<div class="sample-group">
+		<span class="all">.all()</span>
+	</div>
+	<div class="sample-group">
+		<span class="top">.top()</span>
+		<span class="bottom">.bottom()</span>
+		<span class="left">.left()</span>
+		<span class="right">.right()</span>
+	</div>
+	<div class="sample-group">
+		<span class="top-left">.topLeft()</span>
+		<span class="top-right">.topRight()</span>
+		<span class="bottom-left">.bottomLeft()</span>
+		<span class="bottom-right">.bottomRight()</span>
+	</div>
+*/
+
+.all {
+	#border-radius > .all();
+}
+.top {
+	#border-radius > .top();
+}
+.bottom {
+	#border-radius > .bottom();
+}
+.left {
+	#border-radius > .left();
+}
+.right {
+	#border-radius > .right();
+}
+
+.top-left {
+	#border-radius > .topLeft();
+}
+.top-right {
+	#border-radius > .topRight();
+}
+.bottom-left {
+	#border-radius > .bottomLeft();
+}
+.bottom-right {
+	#border-radius > .bottomRight();
+}
+
+
+.sample-group {
+	margin: 15px 0;
+}
+.sample-group span {
+	margin: 0 5px;
+	padding: 5px;
+	background: #aaa;
+}

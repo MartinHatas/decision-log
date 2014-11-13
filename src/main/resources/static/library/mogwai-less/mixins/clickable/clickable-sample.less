@@ -1,0 +1,32 @@
+/*
+# Clickable
+Use *#clickable > .element();* to define places of user interaction
+
+    //jade
+    div
+        span Normal span
+        span.action #clickable > .element()
+    div Normal div
+    .action Action div
+
+    .action.is-disabled Disabled action
+*/
+
+.action {
+    #clickable > .element();
+    background: #afa;
+
+    &.is-disabled {
+        #clickable > .isDisabled();
+        background: #aaa; 
+    }
+}
+
+.sample-group {
+    margin: 15px 0;
+}
+.sample-group span {
+    margin: 0 5px;
+    padding: 5px;
+    background: #aaa;
+}

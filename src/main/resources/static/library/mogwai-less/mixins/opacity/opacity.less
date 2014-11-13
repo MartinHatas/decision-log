@@ -1,0 +1,15 @@
+#opacity {
+  .background( @op : 0.5) {
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+    /* Netscape */
+    -moz-opacity: @op;
+
+    /* Safari 1.x */
+    -khtml-opacity: @op;
+
+    /* Good browsers */
+    opacity: @op;
+  }
+}

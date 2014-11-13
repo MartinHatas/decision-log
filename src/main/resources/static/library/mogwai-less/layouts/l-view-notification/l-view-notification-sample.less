@@ -1,0 +1,53 @@
+/*
+# .l-view-notification
+Offers fixed left side with scrollbar
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-notification
+                | Here is notification
+
+## overflow test
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-notification
+                include ../../sample-helpers/contentShort.jade
+
+## combination (app-header)
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-notification.l-view-notification--combined-with-app-header
+                include ../../sample-helpers/contentShort.jade
+
+## combination (sidebar)
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-notification.l-view-notification--combined-with-sidebar
+                include ../../sample-helpers/contentShort.jade
+
+## combination (app-header + sidebar)
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-notification.l-view-notification--combined-with-app-header.l-view-notification--combined-with-sidebar
+                include ../../sample-helpers/contentShort.jade
+
+
+## [debug] include
+
+    //jade
+    include ../../sample-helpers/fixedElementsPositioning.jade
+    include ../../sample-helpers/viewsColoring.jade
+
+*/
+
+.l-app {
+    height: 250px;
+}

@@ -1,0 +1,27 @@
+/*{
+    "require": ["l-app"]
+}*/
+@l-view-task-queue-body-right: 40px;
+@l-view-task-queue-body-bottom: 40px;
+@l-view-task-queue-body-width: 400px;
+
+.l-view-task-queue {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    min-width: @l-app-min-width;
+    z-index: @l-view-task-queue-z-index;
+
+    .l-view-task-queue-body {
+        position: absolute;
+        right: @l-view-task-queue-body-right;
+        bottom: @l-view-task-queue-body-bottom;
+        width: @l-view-task-queue-body-width;
+    }
+}
+//to correctly align when has enough width
+@media (min-width: @l-app-min-width) {
+    .l-view-task-queue {
+        right: 0;
+    }
+}

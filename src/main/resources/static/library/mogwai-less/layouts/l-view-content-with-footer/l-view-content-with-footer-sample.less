@@ -1,0 +1,36 @@
+/*
+# .l-view-content-with-footer
+
+Used to place footer to the bottom, when there is enougth space.
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-content-with-footer
+                .l-view-content-with-footer-body
+                    | Content
+                .l-view-content-with-footer-footer
+                    | Footer
+
+#overflow
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-content-with-footer
+                .l-view-content-with-footer-body
+                    include ../../sample-helpers/contentSemiLong.jade
+                .l-view-content-with-footer-footer
+                    include ../../sample-helpers/contentShort.jade
+
+## [debug] include
+
+    //jade
+    include ../../sample-helpers/fixedElementsPositioning.jade
+    include ../../sample-helpers/viewsColoring.jade
+*/
+
+.l-app {
+    height: 250px;
+    overflow: auto;
+}

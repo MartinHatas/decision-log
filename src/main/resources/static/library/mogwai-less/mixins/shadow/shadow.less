@@ -1,0 +1,15 @@
+#shadow {
+	.outerWithBorder(@color :  #888) {
+		/*-moz-box-shadow: 10px 10px 5px #888;
+		-webkit-box-shadow: 10px 10px 5px #888;*/
+		box-shadow: 0 0 7px @color;
+		border: 1px solid lighten(@color, 35%);
+		//http://stackoverflow.com/questions/5617455/issue-with-box-shadow-on-ie9
+		border-collapse: separate;
+	}
+	.bottomRightWithBorder(@bottomRightWithBorder-color: rgba(0,0,0,0.20)){
+		border: 1px solid (@bottomRightWithBorder-color);
+		box-shadow: 0px 1px 3px @bottomRightWithBorder-color;
+		border-collapse: separate;
+	}
+}

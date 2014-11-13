@@ -1,0 +1,66 @@
+/*{
+    "stability": 2,
+    "require": ["table", "icon"],
+    "status": "draft"
+}*/
+
+@table-sorting-header-max-width: ~"100% - 20px"; //to have space for sorting icon on small width
+
+.table-sorting-header {
+    #clickable > .element();
+
+    .table-sorting-header-icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        background-repeat: no-repeat;
+        margin-bottom: 5px;
+        margin-left: 0px;
+    }
+
+    & > .table-sorting-header-text {
+        display: block;
+        max-width: calc(@table-sorting-header-max-width);
+        float: left;
+
+        //elipsis table variant handling
+        .table.table--ellipsis > thead > tr > & {
+            #ellipsis > .line();
+        }
+    }
+
+    &.table-number,
+    &.table-date {
+        & > .table-sorting-header-text {
+            padding-left: 3px;
+            float: right;
+        }
+    }
+    
+    tr:hover & {
+        .table-sorting-header-icon {
+            #sprite > .background("table-sorting-header", "no-sorting-png");
+        }
+        &:hover .table-sorting-header-icon {
+            #sprite > .background("table-sorting-header", "no-sorting-hover-png");
+        }
+    }
+
+    tr &.is-ascending {
+        .table-sorting-header-icon {
+            #sprite > .background("table-sorting-header", "sorting-ascending-png");
+        }
+        &:hover .table-sorting-header-icon {
+            #sprite > .background("table-sorting-header", "sorting-ascending-hover-png");
+        };
+    }
+    tr &.is-descending {
+        .table-sorting-header-icon {
+            #sprite > .background("table-sorting-header", "sorting-descending-png");
+        }
+        &:hover .table-sorting-header-icon {
+            #sprite > .background("table-sorting-header", "sorting-descending-hover-png");
+        };
+    }
+}

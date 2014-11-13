@@ -1,0 +1,40 @@
+/*
+# base - fonts
+Fonts sample page
+
+    //jade
+    .test-font.test-font--light Open Sans Light
+    .test-font.test-font--regular Open Sans Regular (Normal)
+    .test-font.test-font--semibold Open Sans Semibold
+    .test-font.test-font--bold Open Sans Bold
+
+    .test-font.test-font--italic.test-font--light Open Sans Light
+    .test-font.test-font--italic.test-font--regular Open Sans Regular (Normal)
+    .test-font.test-font--italic.test-font--semibold Open Sans Semibold
+    .test-font.test-font--italic.test-font--bold Open Sans Bold
+
+*/
+
+.test-font {
+    font-size: 30px;
+
+    &.test-font--italic {
+        font-style: italic;
+    }
+
+    &.test-font--light {
+        font-weight: @base-font-weight-light;
+    }
+
+    &.test-font--regular {
+        //font-weight: normal; //is the default already (same as @base-font-weight-regular)
+    }
+
+    &.test-font--semibold {
+        font-weight: @base-font-weight-semibold;
+    }
+
+    &.test-font--bold {
+        font-weight: bold; //(same as @base-font-weight-bold)
+    }
+}

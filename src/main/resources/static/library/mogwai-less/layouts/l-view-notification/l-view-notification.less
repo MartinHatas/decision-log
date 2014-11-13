@@ -1,0 +1,26 @@
+/*{
+    "require": ["l-app"]
+}*/
+
+@l-view-notification-min-width: @l-app-min-width;
+
+.l-view-notification {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: @l-view-notification-z-index;
+    min-width: @l-view-notification-min-width;
+}
+
+// other views combinations
+
+.l-view-notification {
+    &.l-view-notification--combined-with-app-header {
+        top: @l-view-app-header-height;
+    }
+    &.l-view-notification--combined-with-sidebar {
+        left: @l-view-sidebar-width;
+        min-width: @l-view-notification-min-width - @l-view-sidebar-width;
+    }
+}

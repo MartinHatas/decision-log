@@ -1,0 +1,38 @@
+/*
+
+# #table
+Mixin allows table columns sizing
+
+ 	//jade
+	div #table > .columnsWidth(15px auto 20% 30px);
+	table.l-table-sizing
+		thead
+			tr
+				th.fixedWidth 15px
+				th auto
+				th.highlight 20%
+				th.fixedWidth 30px
+		tbody
+			tr
+				td.fixedWidth A
+				td B
+				td.highlight C
+				td.fixedWidth D
+			tr
+				td.fixedWidth A
+				td B
+				td.highlight C
+				td.fixedWidth D
+
+*/
+
+.l-table-sizing {
+	width: 100%; //full width table
+	#table > .columnsWidth(15px auto 20% 30px);
+}
+.highlight {
+	background: #f99;
+}
+.fixedWidth {
+	background: cyan;
+}

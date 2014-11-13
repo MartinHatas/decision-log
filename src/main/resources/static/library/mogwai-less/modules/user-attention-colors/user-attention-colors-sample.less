@@ -1,0 +1,46 @@
+/*
+# user-attention-colors
+
+this module defines only color variables to share with child modules
+
+    //jade
+    .test.test-info
+        | Info
+    .test.test-success
+        | Success
+    .test.test-warning
+        | Warning
+    .test.test-error
+        | Error
+    .test.test-disabled
+        | Disabled
+*/
+
+.test {
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 5px;
+
+    .setColor(@color) {
+        color: @color;
+        border: 1px solid @color;
+    }
+    &.test-info {
+        .setColor(@user-attention-info-color);
+    }
+    &.test-success {
+        .setColor(@user-attention-success-color);
+    }
+    &.test-warning {
+        .setColor(@user-attention-warning-color);
+        background: @user-attention-error-background;
+    }
+    &.test-error {
+        .setColor(@user-attention-error-color);
+        background: @user-attention-error-background;
+    }
+    &.test-disabled {
+        .setColor(@user-attention-disabled-color);
+        background: @user-attention-disabled-background;
+    }
+}

@@ -1,0 +1,38 @@
+/*{
+    "require": ["icon"]
+}*/
+/*
+# Rounded action button with icon
+
+Use small size icons.
+
+    //jade
+    .action-button-round
+        .icon.icon--small.icon--edit
+
+*/
+
+@action-button-round-border-color: #DDDDE4;
+@action-button-round-border-color-hover: #00B7C1;
+
+.action-button-round {
+    #clickable > .element();
+    width: 38px;
+    height: 38px;
+    border: 1px solid @action-button-round-border-color;
+    border-radius: 100%;
+
+    &:hover {
+        width: 36px;
+        height: 36px;
+        border: 2px solid @action-button-round-border-color-hover;
+    }
+
+    > .icon {
+        display: block !important;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

@@ -1,0 +1,52 @@
+#center {
+    //NOTE: centering via translate has bluring bug + covered layers trouble
+    //NOTE: margin-auto centering - has trouble with z-indices
+    //NOTE: line-height + vertical-align centering method requires "line-height restore"
+
+    //vertical centering requires min-height to set
+    .verticalParent(@min-height) {
+        font-size: 0;
+
+        //ghost element to fill the parent
+        &:before {
+            content: "";
+            display: inline-block;
+            min-height: @min-height;
+            width: 0;
+            vertical-align: middle;
+          }
+    }
+    .verticalChild() {
+        width: 100%;
+        .verticalChildInlineBlock();
+    }
+    .verticalChildInlineBlock() {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: @base-font-size-default;
+        box-sizing: border-box; //just for case the child has border and/or padding
+    }
+    
+    //NOTE: horizontal centering via transform is causing bad results
+    // in IE9 - shows parent background as line (above/under)
+    // in Chrome/FF - shows jogging 1px on left side when window resiye (but only when 100% child used)
+    .horizontalParent() {
+    }
+    .horizontalChild() {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bothParent(@min-height) {
+        .verticalParent(@min-height);
+        text-align: center;
+    }
+    .bothChild() {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: @base-font-size-default;
+        //note: cannot use mixin .verticalChild() directly due 100% width
+        // (width is expected to be set on child)
+        text-align: left;
+    }
+}

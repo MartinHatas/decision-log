@@ -1,0 +1,53 @@
+/*
+
+    //jade-mixins
+    mixin table
+        table.table.table--collapsible-rows
+            thead
+                tr
+                    th Source File
+                    th Format
+                    th Upload Date
+            tbody
+                tr.table-collapsible-row-header.is-open
+                    td
+                        .table-collapsible-row-toggle
+                        | file.pdf
+                    td pdf
+                    td 3/10/2012
+                tr.table-collapsible-row-body
+                    td(colspan="3")
+                        include ../../sample-helpers/contentShort.jade
+
+                tr.table-collapsible-row-header.is-containing-error.is-open
+                    td
+                        .table-collapsible-row-toggle
+                        | file.pdf
+                    td pdf
+                    td 3/10/2012
+                tr.table-collapsible-row-body
+                    td(colspan="3")
+                        include ../../sample-helpers/contentShort.jade
+
+                tr.table-collapsible-row-header
+                    td
+                        .table-collapsible-row-toggle
+                        | file.pdf
+                    td pdf
+                    td 3/10/2012
+                tr.table-collapsible-row-body
+                    td(colspan="3")
+                        include ../../sample-helpers/contentShort.jade
+
+
+# .table.table--collapsible-rows
+There are pairs of rows in the table. One defines always visible "header row"
+which can be expanded by toggling *.is-open* class, to show "body row".
+
+    //jade
+    mixin table
+    
+## JavaScript behavior
+Application has to handle clicking on the *.table-collapsible-row-toggle* row to toggle *.is-open* class.
+
+*/

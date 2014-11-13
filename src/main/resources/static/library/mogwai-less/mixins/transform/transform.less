@@ -1,0 +1,30 @@
+#transform {
+	.rotate(@angle) {
+		        transform: rotate(@angle);
+		-webkit-transform: rotate(@angle);
+		   -moz-transform: rotate(@angle);
+		    -ms-transform: rotate(@angle);
+		     -o-transform: rotate(@angle);
+	}
+	.translate(@dx, @dy) {
+		        transform: translate(@dx, @dy);
+		-webkit-transform: translate(@dx, @dy);
+		   -moz-transform: translate(@dx, @dy);
+		    -ms-transform: translate(@dx, @dy);
+		     -o-transform: translate(@dx, @dy);
+	}
+	.rotateAndTranslate(@angle, @dx, @dy) {
+		        transform: rotate(@angle) translate(@dx, @dy);
+		-webkit-transform: rotate(@angle) translate(@dx, @dy);
+		   -moz-transform: rotate(@angle) translate(@dx, @dy);
+		    -ms-transform: rotate(@angle) translate(@dx, @dy);
+		     -o-transform: rotate(@angle) translate(@dx, @dy);
+	}
+	.translateAndRotate(@angle, @dx, @dy) {
+		        transform: translate(@dx, @dy) rotate(@angle);
+		-webkit-transform: translate(@dx, @dy) rotate(@angle);
+		   -moz-transform: translate(@dx, @dy) rotate(@angle);
+		    -ms-transform: translate(@dx, @dy) rotate(@angle);
+		     -o-transform: translate(@dx, @dy) rotate(@angle);
+	}
+}

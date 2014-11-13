@@ -1,0 +1,36 @@
+/*
+# .l-view-task-queue
+Offers place to attach progress information (typicaly file upload)
+
+## basic
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-task-queue
+                .l-view-task-queue-body
+                    | Here is task queue
+
+## overflow test
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-task-queue
+                .l-view-task-queue-body
+                    include ../../sample-helpers/contentShort.jade
+
+## [debug] include
+
+    //jade
+    include ../../sample-helpers/fixedElementsPositioning.jade
+    include ../../sample-helpers/viewsColoring.jade
+
+*/
+
+.l-app {
+    height: 250px;
+}
+.l-view-task-queue {
+    background: #ff0000;
+}

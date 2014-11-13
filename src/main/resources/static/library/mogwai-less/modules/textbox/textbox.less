@@ -1,0 +1,77 @@
+/*{
+    "status": "draft",
+    "require": ["user-attention-colors"]
+}*/
+
+.textbox {
+    position: relative;
+    border: @textbox-border-size solid @textbox-border-color;
+    border-radius: @textbox-border-radius;
+    padding-left: @textbox-padding-left;
+    height: @textbox-height - 2 * @textbox-border-size;
+    background: @textbox-background;
+    padding-right: @textbox-padding-right;
+
+    & > input {
+        height: @textbox-height - 2 * @textbox-border-size;
+        color: @textbox-color;
+        background-color: transparent;
+        outline: none;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border: 0;
+
+        &::placeholder {
+            color: @textbox-placeholder-color;
+            font-style: italic;
+        }
+
+        //hiding native input clearing/reset button in IE
+        &::-ms-clear{
+            display: none;
+        }
+    }
+
+    .colorize(@text-color, @background-color) {
+            background:@background-color;
+            border-color: @text-color;
+            & > input {
+                color: @text-color;
+
+                &::placeholder {
+                    color: @text-color;
+                }
+            }
+    }
+
+    &.is-invalid {
+        .colorize(@textbox-invalid-color, @textbox-invalid-background);
+    }
+    &.is-warning {
+        .colorize(@textbox-warning-color, @textbox-warning-background);
+    }
+    &.is-disabled {
+        background-color: @textbox-disabled-background;
+        & > input {
+            color: @textbox-disabled-color;
+        }
+    }
+    &.textbox--search {
+        padding-left: @textbox-search-padding-left;
+        &:before{
+            content: "";
+            #sprite > .inlineBlock("textbox", "textbox-icon-search-png");
+            left: @textbox-padding-left;
+            position: absolute;
+            margin: auto 0; 
+            bottom: 0;
+            top:0;
+        }
+        &.is-focused {
+            &:before{
+                #sprite > .inlineBlock("textbox", "textbox-icon-search-hover-png");
+            }
+        }
+    }
+}

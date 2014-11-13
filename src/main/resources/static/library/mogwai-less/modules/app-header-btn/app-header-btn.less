@@ -1,0 +1,76 @@
+/*{
+    "stability": 3,
+    "require": ["icon", "app-header"]
+}*/
+/*
+# Application header button
+## Button has hover and active by overlay
+
+    //jade
+    .app-header
+        .app-header-left
+
+            a.app-header-btn.app-header-btn--pasive-icon-by-overlay.is-active
+                .app-header-btn-icon-active
+                    .icon.icon--small.icon--dashboard-invert
+                .app-header-btn-label ACTIVE BUTTON
+
+            a.app-header-btn.app-header-btn--pasive-icon-by-overlay
+                .app-header-btn-icon-active
+                    .icon.icon--small.icon--dashboard-invert
+                .app-header-btn-label PASIVE BUTTON
+
+           a.app-header-btn.app-header-btn--only-icon.app-header-btn--pasive-icon-by-overlay
+                .app-header-btn-icon-active
+                    .icon.icon--small.icon--dashboard-invert
+*/
+
+/*
+## Application header button that has only icon
+
+    //jade
+    .app-header
+        .app-header-left
+
+            a.app-header-btn.app-header-btn--only-icon.app-header-btn--pasive-icon-by-overlay
+                .app-header-btn-icon-active
+                    .icon.icon--small.icon--dashboard-invert
+*/
+
+@app-header-btn-line-height: @app-header-height;
+@app-header-btn-horizontal-padding: 30px;
+@app-header-btn-label-color: #fff;
+@app-header-btn--only-icon-horizontal-padding: 20px;
+@app-header-btn-label-font-weight: 400;
+@app-header-btn-font-size: 14px;
+
+.app-header-btn {
+    float: left;
+    line-height: @app-header-btn-line-height;
+    padding: 0 @app-header-btn-horizontal-padding;
+    font-size: @app-header-btn-font-size;
+    #clickable > .element();
+
+    .app-header-btn-icon-active {
+        display: inline-block;
+    }
+
+    .app-header-btn-label {
+        color: @app-header-btn-label-color;
+        font-weight: @app-header-btn-label-font-weight;
+        display: inline-block;
+    }
+
+    &.app-header-btn--only-icon {
+        padding: 0 @app-header-btn--only-icon-horizontal-padding;
+    }
+
+    &.app-header-btn--pasive-icon-by-overlay {
+        #opacity > .background(0.5);
+    }
+
+    &.app-header-btn--pasive-icon-by-overlay:hover, &.app-header-btn--pasive-icon-by-overlay.is-active {
+        #opacity > .background(1);
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,45 @@
+/*{
+    "status": "RC",
+    "stability": 2
+}*/
+/*
+# .l-app
+
+Starting point to use "view layouts", see "application views" sample for more details
+
+    //jade
+    .html.l-app
+        .body.l-app-body
+            .l-app-page
+                | Page1
+            //- only one page has to be visible/exist in DOM (or .is-hidden state can be used)
+            .l-app-page.is-hidden
+                | Page2
+            .l-app-page.is-hidden
+                | Page3
+
+# overflow test
+
+> note: page background change could not be used (orange takes only a part when overflowing),
+    change **.l-app background** to achieve the effect
+
+    //jade
+    .html.l-app
+        .body.l-app-body
+            .l-app-page
+                include ../../sample-helpers/contentLong.jade
+*/
+
+.l-app {
+    height: 250px;
+    overflow: auto; //to demostrate screen scrollbars
+}
+
+.l-app {
+    background: #ffff00;
+}
+
+
+.l-app-page {
+    background: #ffdd00;
+}

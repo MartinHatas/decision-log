@@ -1,0 +1,74 @@
+/*
+#.l-field
+Basic layout for a label and a value
+
+There is fixed height **graphical row** for each .l-field, in which the content is verticaly centered.
+  
+    //jade
+    .l-field
+        .l-field-label label
+        .l-field-value value
+
+##.l-field.l-field--with-unit
+Basic layout for a label, value and some unit after value, lenght of unit area decreases length of area for value 
+
+    //jade
+    .l-field.l-field--with-unit
+        .l-field-label label
+        .l-field-value value
+        .l-field-unit unit
+
+##.l-field.l-field--vertical
+Variant where label and value are verticaly aligned
+
+    //jade
+    .l-field.l-field--vertical
+        .l-field-row
+            .l-field-label label
+        .l-field-row
+            .l-field-value value
+
+    .l-field.l-field--vertical.l-field--with-unit
+        .l-field-row
+            .l-field-label label
+        .l-field-row
+            .l-field-value value
+            .l-field-unit unit
+
+## Different sizing test (center)
+
+    //jade
+    .l-field.l-field--with-unit
+        .l-field-label
+            .test-hight1 label
+        .l-field-value
+            .test-hight2 value
+        .l-field-unit
+            .test-hight3 unit
+*/
+.l-field {
+    background: pink;
+
+    .l-field-label {
+        background: #afa;
+    }
+    .l-field-value {
+        background: #ffa;
+        & + .l-field-value{
+            background: #aff;
+        }
+    }
+    .l-field-unit {
+        background: #f82;
+    }
+}
+
+.test-hight1 {
+    height: 24px;
+}
+.test-hight2 {
+    height: 34px;
+}
+.test-hight3 {
+    height: 22px;
+}

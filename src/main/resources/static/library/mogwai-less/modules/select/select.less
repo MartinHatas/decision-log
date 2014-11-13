@@ -1,0 +1,174 @@
+/*{
+    "status" : "draft",
+    "require" : ["textbox"]
+}*/
+/*
+    //jade-mixins
+    mixin select-items(selectClass, label, itemsCount)
+        button.select(class=selectClass) #{label}
+            .select-toggle
+        .select-items
+            -while(itemsCount--){
+            .select-item
+                .select-item-label Select item no #{itemsCount}
+            -}
+
+    //jade-mixins
+    mixin select-items-with-redactor(selectClass, label, itemsCount)
+        button.select(class=selectClass) #{label}
+            .select-toggle
+        .select-items.select-items--redactor-js
+            -while(itemsCount--){
+            .select-item
+                .select-item-label Select item no #{itemsCount}
+            -}        
+
+#.select
+### Class for select component. Opening and closing is managing via angular (angular strap component). Angular strap works only on 'button' element.
+### Menu with items take 100% width of parent element with position:relative property.
+### Just max 6 items visible without scroll
+    //jade
+    mixin select-items('','Selected item very long text text text text ', 6)
+
+#.select.is-invalid
+### Class for invalid select component. 
+    //jade
+    mixin select-items('is-invalid','Selected item very long text text text text', 6)
+
+#.select.is-disabled
+### Class for select component.
+    //jade
+    button.select.is-disabled Disable select
+        .select-toggle
+        
+#.select.is-warning
+### Class for select component with warning. 
+    //jade
+    button.select.is-warning Selected item
+        .select-toggle
+    .select-items.is-warning
+        .select-item
+            .select-item-label Item 1
+         .select-item
+            .select-item-label Item 2
+         .select-item
+            .select-item-label Item 3
+         .select-item
+            .select-item-label Item 4
+*/
+
+@select-font-size: 13px;
+@select-background: #fff;
+@select-item-height: 25px;
+@select-item-background: #AFB2B5;
+@select-item-active-background: #dddde4;
+@select-toggle-size: 5px;
+@select-items-max-visible-items: 15;
+
+.box-sizing(){
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+.max-item(@item){
+    max-height: @select-item-height*@item;
+    overflow-y: auto; 
+    overflow-x: none; 
+}
+.select{
+    #border-radius > .all(@select-border-radius);
+    border: 1px solid @select-border-color;
+    padding-right: 2 * @select-padding;
+    background: @select-background;
+    padding-left: @select-padding;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: @select-font-size;
+    line-height: @select-height - 3px;
+    color: @select-text-color;
+    #clickable > .element();
+    height: @select-height;
+    text-align: left;
+    display: block;
+    width: 100%;
+    outline: 0;  
+    outline-style:none;
+    outline-width:0;
+    position: relative;
+    overflow: hidden;
+    .box-sizing();
+    & > .select-toggle{
+        margin-top: @select-height / 2 - @select-toggle-size;
+        border: @select-toggle-size solid transparent;
+        border-top-color: @select-text-color;
+        border-bottom-style: none;
+        right: @select-padding;
+        display: inline-block;
+        position: absolute;
+        top: 1px;
+    }
+    .select-recolored(@spinner-main-color, @spinner-transparent-color){
+        border-color: @spinner-main-color;
+        background: @spinner-transparent-color;
+        color: @spinner-main-color;
+        position: relative;
+        overflow: visible; //user wrap element to hidden overflow
+        & > .select-toggle{
+            border-top-color: @spinner-main-color;
+        }
+    }
+    &.is-invalid {
+        .select-recolored(@select-invalid-color, @select-invalid-background);
+    }
+    &.is-warning {
+        .select-recolored(@select-warning-color, @select-warning-background);
+    }
+    &.is-disabled {
+        background-color: @select-disabled-background;
+        color: @select-disabled-color;
+        cursor: default;
+    }
+}
+.select-item(){
+    line-height: @select-item-height;
+    padding: 0 @select-padding;
+    color: @select-text-color;
+    #clickable > .element();
+    white-space: nowrap;
+    width: auto;
+    overflow-x: hidden;
+    &:hover{
+        background: @select-item-active-background;
+    }
+}
+.select-items{
+    border: 1px solid @select-border-color;
+    z-index: @select-items-z-index;
+    background: @select-background;
+    font-size: @select-font-size;
+    display: inline-block;
+    position: absolute;
+     width: calc(~"100% - 2px");
+    margin-top:-1px;
+    box-sizing: border-box;
+    .select-item{
+        text-align: left;
+        .select-item();
+        &.select-item--group{
+            color: @select-item-background;
+            cursor: default;
+            &:hover{
+                background: @select-background;
+            };
+            .select-item--group-items{
+                & > .select-item{
+                    .select-item();
+                    margin-left: -@select-padding;
+                    margin-right: -@select-padding;
+                }
+            }
+        }
+    }
+    .max-item(@select-items-max-visible-items);
+    min-width: 100%;
+}

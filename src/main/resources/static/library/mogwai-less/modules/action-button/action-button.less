@@ -1,0 +1,37 @@
+/*{
+    "require": ["icon"]
+}*/
+
+
+@action-button-small: 20px;
+@action-button-medium: 30px;
+@action-button-large: 40px;
+
+.action-button {
+    #clickable > .element();
+    width: @action-button-medium;
+    height: @action-button-medium;
+
+    &.action-button--small {
+        width: @action-button-small;
+        height: @action-button-small;
+    }
+
+    &.action-button--medium {
+        width: @action-button-medium;
+        height: @action-button-medium;
+    }
+
+    &.action-button--large {
+        width: @action-button-large;
+        height: @action-button-large;
+    }
+
+    > .icon {
+        display: block !important;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

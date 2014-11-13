@@ -1,0 +1,79 @@
+/*
+# .table
+
+Cell align classes:
+- *.table-number* to allign cell content to the right
+- *.table-date* to allign cell content to the right
+
+By default, table column sizing is calculated by browser (based on the content),
+to specifies columns width see *#table > .columnsWidth()* mixin
+
+	
+	//jade
+	table.table
+		thead
+			tr
+				th Source File
+				th Format - header with very very long long and unbelievable long text
+				th.table-date Upload Date
+		tbody
+			tr
+				td Test 1.afp
+				td AFP, 1024 pages
+				td.table-date 3/10/2012
+			tr
+				td Test 2.afp with some long text inside, long text inside, long text inside, long text inside
+				td AFP, 521 pages
+				td.table-date 4/10/2012
+			tr.is-containing-error
+				td ERROR here
+				td AFP, 521 pages
+				td.table-date
+			tr.table-row-link
+				td 
+					a(href="#") test3.afp - row with link
+				td
+					a(href="#") AFP, 521 pages
+				td.table-date
+					a(href="#") 4/10/2012
+
+# .table--ellipsis variant
+Shows ellipsis "..." when the content of the table cell overflows it's size.
+
+Limitation: only single line header a content can be used
+
+Must be use in combination with column sizes definition (for each specific table in the product).
+See sample how to define table sizing using the "#table > .columnsWidth()" mixin.
+
+    //jade
+    table.table.table--ellipsis.table--my-custom-sizing
+        thead
+            tr
+                th Source File
+                th Format - header with very very long long and unbelievable long text long long and unbelievable long text
+                th.table-date Upload Date
+        tbody
+            tr
+                td Test 1.afp
+                td AFP, 1024 pages
+                td.table-date 3/10/2012
+            tr
+                td Test 2.afp with some long text inside, long text inside, long text inside, long text inside
+                td AFP, 521 pages
+                td.table-date 4/10/2012
+            tr.is-containing-error
+                td ERROR here
+                td AFP, 521 pages
+                td.table-date
+            tr.table-row-link
+                td 
+                    a(href="#") test3.afp - row with link
+                td
+                    a(href="#") AFP, 521 pages
+                td.table-date
+                    a(href="#") 4/10/2012
+*/
+
+.table.table--my-custom-sizing {
+    #table > .columnsWidth(20% auto 10%);
+}

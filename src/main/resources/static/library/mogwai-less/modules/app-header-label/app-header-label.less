@@ -1,0 +1,23 @@
+/*{
+    "stability": 2,
+    "require": ["app-header"]
+}*/
+
+/*
+# Application header label
+
+    //jade
+    .app-header
+        .app-header-left
+            .app-header-label
+                | An Application Header Label
+*/
+
+@app-header-label-color: #fff;
+@app-header-label-line-height: @app-header-height;
+
+.app-header-label {
+    line-height: @app-header-label-line-height;
+    float: left;
+    color: @app-header-label-color;
+}

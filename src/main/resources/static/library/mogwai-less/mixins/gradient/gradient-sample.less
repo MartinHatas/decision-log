@@ -1,0 +1,26 @@
+/*
+# Gradient
+
+	<div class="samples">
+		<div class="vertical">.vertical(#fff, #f99)</div>
+		<div class="horizontal">.horizontal(#9f9, #fff)</div>
+		<div class="directional">.directional(#99f, #fff, 45deg)</div>
+	</div>
+*/
+
+.vertical {
+	#gradient > .vertical(#fff, #f99);
+}
+.horizontal {
+	#gradient > .horizontal(#9f9, #fff);
+}
+.directional {
+	#gradient > .directional(#99f, #fff, 45deg);
+	width: 250px;
+	height: 250px;
+}
+
+.samples * {
+	line-height: 50px;
+	margin: 10px 0;
+}

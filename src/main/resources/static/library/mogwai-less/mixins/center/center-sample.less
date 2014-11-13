@@ -1,0 +1,174 @@
+/*
+# #center > .verticalParent(@min-height);
+# #center > .verticalChild();
+Mixins are based on vertical-align + ghost element
+
+    //jade
+    .parent.parent--vertical.parent--min-height
+        .child.child--vertical
+            | Vertical centering 
+            br
+            | - fixed parent height + child is not limited
+    .parent.parent--vertical.parent--min-height
+        -for(var i = 1; i < 7; i++)
+            .child.child--vertical-multiple
+                | Multiple children !{i}
+                br
+                | - all children must into width!
+
+    .parent.parent--horizontal
+        .child.child--horizontal.child--fixed-width
+            | Horizontal centering 
+            br
+            | - parent not limited + child has fixed width
+
+    .parent.parent--both.parent--min-height
+        .child.child--both.child--fixed-width
+            | Both centering
+            br
+            | - parent fixed-height + child has fixed width
+*/
+@parent-min-height: 80px;
+.parent.parent--vertical {
+    #center > .verticalParent(@parent-min-height);
+
+    .child.child--vertical {
+        #center > .verticalChild();
+    }
+    .child.child--vertical-multiple {
+        #center > .verticalChildInlineBlock();
+    }
+}
+
+.parent.parent--horizontal {
+    #center > .horizontalParent();
+
+    .child.child--horizontal {
+        #center > .horizontalChild();
+    }
+}
+
+.parent.parent--both {
+    #center > .bothParent(@parent-min-height);
+
+    .child.child--both {
+        #center > .bothChild();
+    }
+}
+
+/*
+
+
+# Child testing (vertical centering)
+
+    //jade
+    .parent.parent--vertical.parent--min-height
+        .child.child--vertical.child--fixed-height child fixed-height
+
+    .parent.parent--vertical.parent--min-height
+        .child.child--vertical.child--min-height child min-height
+
+    .parent.parent--vertical.parent--min-height
+        .child.child--vertical.child--min-height-percentage.is-failed child min-height percentage 75% (percentage values cannot be used - parent/ghost uses min-height)
+
+    .parent.parent--vertical.parent--min-height
+        .child.child--vertical.child--fixed-height-odd child odd height with border radius
+
+    .parent.parent--vertical.parent--min-height
+        .child.child--vertical.child--min-height
+            | child min-height (overflow)
+            include ../../sample-helpers/contentShort.jade
+
+    .parent.parent--vertical.parent--min-height
+        .child.child--vertical.child--large child higher than parent (parent uses min-height)
+
+    .parent.parent--vertical.parent--min-height
+        .child.child--vertical.child--fixed-width.is-failed child with fixed-width (use both centering)
+
+## absolute child
+
+    //jade
+    .parent.parent--vertical.parent--min-height
+        .child.child--vertical.child--fixed-height
+            | child with absolute sub-child
+            br
+            .sub-child-absolute
+                .sub-child-absolute-content
+                    Absolute content (e.g. selectbox list)
+    .parent.parent--vertical.parent--min-height
+        .child.child--vertical.child--fixed-height this one is not covered
+
+# Child testing (horizontal centering)
+
+    //jade
+    .parent.parent--horizontal.parent--min-height
+        .child.child--horizontal.child--fixed-width parent fixed-height
+
+    .parent.parent--horizontal
+        .child.child--horizontal.child--fixed-width-percentage child width percentage 50%
+
+# Child testing (both centering)
+
+    //jade
+    .parent.parent--both.parent--min-height
+        .child.child--both.child--fixed-width parent fixed-height
+
+*/
+
+// Sizes definition
+
+.child--fixed-height {
+    height: 40px;
+}
+
+.child--large {
+    height: @parent-min-height + 30px;
+}
+
+.child--fixed-height-odd {
+    height: 41px;
+}
+
+.child--min-height {
+    min-height: 40px;
+}
+
+.child--min-height-percentage {
+    min-height: 75%;
+}
+
+.child--fixed-width {
+    width: 300px;
+}
+
+.child--fixed-width-percentage {
+    width: 50%;
+}
+
+.sub-child-absolute {
+    position: relative;
+}
+.sub-child-absolute-content {
+    position: absolute;
+    z-index: 4000;
+    left: 300px;
+    top: -10px;
+    background: pink;
+    border: 1px solid;
+    border-radius: 2px;
+    height: 150px;
+}
+
+// Colors definition
+.parent {
+    margin-top: 5px;
+    background: cyan;
+}
+.child {
+    border: 1px solid;
+    border-radius: 10px;
+    background: yellow;
+    &.is-failed {
+        background: #f66;
+    }
+}

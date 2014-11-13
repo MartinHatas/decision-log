@@ -1,0 +1,36 @@
+/*
+# .l-view-sidebar
+Offers fixed left side with scrollbar
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-sidebar
+                | Here is sidebar
+
+## overflow test
+
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-sidebar
+                include ../../sample-helpers/contentLong.jade
+
+## combination (app-header)
+    //jade
+    .l-app
+        .l-app-page
+            .l-view-sidebar.l-view-sidebar--combined-with-app-header
+                include ../../sample-helpers/contentLong.jade
+
+## [debug] include
+
+    //jade
+    include ../../sample-helpers/fixedElementsPositioning.jade
+    include ../../sample-helpers/viewsColoring.jade
+
+*/
+
+.l-app {
+    height: 250px;
+}

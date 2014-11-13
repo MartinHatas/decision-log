@@ -1,0 +1,41 @@
+/*
+#transform
+
+NOTE: Transformations are not supported by IE8 (and using `ms-filter` breaks IE9)
+
+There area also combinations `.rotateAndTranslate`, `translateAndRotate`
+
+	<div class="sample">
+		<div class="rotate">.rotate(45deg)</div>
+	</div>
+
+	<div class="sample">
+		<div class="translate translate-original">original</div>
+		<div class="translate translate-result">.translate(100px, 20px)</div>
+	</div>
+*/
+
+.rotate {
+	#transform > .rotate(45deg);
+	width: 120px;
+	height: 120px;
+	background: #999;
+}
+
+.translate {
+	height: 50px;
+	width: 200px;
+	position: absolute;
+}
+.translate-original {
+	background: #9f9;
+}
+.translate-result {
+	background: #99f;
+	opacity: 0.8;
+	#transform > .translate(100px, 20px);
+}
+
+.sample {
+	height: 100px;
+}

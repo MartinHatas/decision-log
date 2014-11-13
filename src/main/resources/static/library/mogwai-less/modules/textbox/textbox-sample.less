@@ -1,0 +1,50 @@
+/*
+# .textbox
+
+    //jade
+    .textbox
+        input(type="text" placeholder="Textbox Placeholder")
+    .textbox
+        input(type="text" placeholder="Textbox Placeholder" value="Textbox Value")
+
+# .textbox.is-invalid 
+
+    //jade
+    .textbox.is-invalid
+        input(type="text" placeholder="Invalid Textbox Placeholder")
+    .textbox.is-invalid
+        input(type="text" placeholder="Invalid Textbox Placeholder" value="Invalid Textbox Value")
+
+# .textbox.is-disabled
+To prevent user typing, input element has to be disabled via "disabled" attribute
+
+    //jade
+    .textbox.is-disabled
+        input(type="text" placeholder="Disabled Textbox Placeholder" disabled)
+    .textbox.is-disabled
+        input(type="text" placeholder="Disabled Textbox Placeholder" disabled value="Disabled Textbox Value")
+
+# .textbox.is-warning
+
+    //jade
+    .textbox.is-warning
+        input(type="text" placeholder="Warning Textbox Placeholder")
+    .textbox.is-warning
+        input(type="text" placeholder="Warning Textbox Placeholder" value="Warning Textbox Value")
+
+# .textbox--search variant
+
+    //jade
+    .textbox.textbox--search
+        input(type="text" placeholder="Search Placeholder")
+    .textbox.textbox--search
+        input(type="text" placeholder="Search Placeholder" value="Search Value")
+
+## Javascript Note:
+Class "is-focused" has to be added by JS, when input field is having user input focus
+(right now it is necessary only for correct behaviour fo search variant).
+*/
+
+.textbox + .textbox {
+    margin-top: 10px;
+}

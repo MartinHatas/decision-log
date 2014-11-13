@@ -1,0 +1,25 @@
+/*{
+    "require": ["l-app"]
+}*/
+@l-view-sidebar-border: 1px solid #dddde4;
+
+.l-view-sidebar {
+    position: fixed;
+    width: @l-view-sidebar-width;
+    //note: top/bottom is used (instead height: 100%) to be enable combination 
+    top: 0;
+    bottom: 0;
+    z-index: @l-view-sidebar-z-index;
+    overflow-x: hidden;
+    overflow: auto;
+    border-right: @l-view-sidebar-border;
+    box-sizing: border-box; //so the border is part of sidebar width
+}
+
+// other views combinations
+
+.l-view-sidebar {
+    &.l-view-sidebar--combined-with-app-header {
+        top: @l-view-app-header-height;
+    }
+}

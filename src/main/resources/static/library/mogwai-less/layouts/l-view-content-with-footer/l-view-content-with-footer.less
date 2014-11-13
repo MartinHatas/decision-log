@@ -1,0 +1,24 @@
+/*{
+    "require": ["l-app"]
+}*/
+
+@l-view-content-with-footer-footer-height: 50px;
+
+.l-view-content-with-footer {
+    box-sizing: border-box;
+    height: 100%;
+    /*width: 100%;*/
+    padding-bottom: @l-view-content-with-footer-footer-height;
+
+    .l-view-content-with-footer-body {
+        min-height: 100%;
+        width: 100%;
+        float: left;
+    }
+
+    .l-view-content-with-footer-footer {
+        height: @l-view-content-with-footer-footer-height;
+        width: 100%;
+        float: left;
+    }
+}

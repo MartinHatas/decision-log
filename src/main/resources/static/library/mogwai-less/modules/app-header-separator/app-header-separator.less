@@ -1,0 +1,31 @@
+/*{
+    "stability": 2,
+    "require": ["app-header"]
+}*/
+
+@app-header-separator-color: #32425e;
+@app-header-separator-width: 1px;
+@app-header-separator-vertical-margin: 0px;
+@app-header-separator-horizontal-margin: 1px;
+@app-header-separator-height: @app-header-height;
+@app-header-separator-line-height: @app-header-height - @app-header-separator-vertical-margin * 2;
+
+@app-header-separator-group-color: #000;
+@app-header-separator-group-vertical-margin: 12px;
+@app-header-separator-group-line-height: @app-header-height - @app-header-separator-group-vertical-margin * 2;
+
+
+.app-header-separator {
+    float: left;
+    margin: @app-header-separator-vertical-margin @app-header-separator-horizontal-margin;
+    background-color: @app-header-separator-color;
+    line-height: @app-header-separator-line-height;
+    height: @app-header-separator-line-height;
+    width: @app-header-separator-width;
+
+    &.app-header-separator--group {
+        margin: @app-header-separator-group-vertical-margin @app-header-separator-horizontal-margin;
+        background-color: @app-header-separator-group-color;
+        height: @app-header-separator-group-line-height;
+    }
+}

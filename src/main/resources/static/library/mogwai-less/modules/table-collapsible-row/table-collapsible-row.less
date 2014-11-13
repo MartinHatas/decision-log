@@ -1,0 +1,104 @@
+/*{
+	"require": ["table"],
+	"status": "draft"
+}*/
+
+.table.table--collapsible-rows {
+    > thead > tr > th:first-child,
+    > tbody > tr > td:first-child {
+        padding-left: @table-collapsible-row-header-first-column-padding;
+    }
+    
+    //http://stackoverflow.com/questions/13567208/different-border-spacing-for-different-rows
+    .leftThickLine() {
+        position: relative;
+
+        &:before {
+            content: "";
+            display: block;
+            left: 0;
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            width: @table-collapsible-row-body-content-border-width;
+            background: @table-collapsible-row-content-border-color;
+        }
+    }
+    .recolorThickLine(@color) {
+        &:before {
+            background: @color;
+        }
+    }
+
+    .table-collapsible-row-header {
+        &.is-open {
+            & + .table-collapsible-row-body {
+                //shows the following body row
+                display: table-row;
+            }
+
+            background: @table-collapsible-row-is-open-background;
+
+            & > td:nth-child(1) {
+                padding-left: @table-collapsible-row-header-first-column-padding;
+                margin-top: 1px;
+
+                .leftThickLine();
+            }
+
+            &.is-containing-error.is-open {
+                //colorize thick line when error
+                & > td:nth-child(1),
+                & + .table-collapsible-row-body > td:nth-child(1) {
+                    .recolorThickLine(@table-collapsible-row-body-containing-error-left-border-color);
+                }
+            }
+        }
+
+        .table-collapsible-row-toggle {
+            #clickable > .element();
+            #sprite > .inlineBlock("table-collapsible-row", "collapsible-toggle-png");
+            #transform > .rotate(90deg);
+            float: left;
+            margin-left: -35px;
+        }
+
+        &.is-open .table-collapsible-row-toggle {
+            #sprite > .background("table-collapsible-row", "collapsible-toggle-hover-png");
+            #transform > .rotate(130deg);
+        }
+    }
+    .table-collapsible-row-body {
+        display: none;
+
+        & > td {
+            background: @table-collapsible-row-is-open-background;
+            border-top: none;
+            padding-top: @table-collapsible-row-body-content-padding;
+            padding-bottom: @table-collapsible-row-body-content-padding;
+
+            .leftThickLine();
+        }
+        //inner collapsible row - if necessary in the future do is as variant without padding
+        /*& > td > .table-collapsible-row-body-content {
+
+            .table {
+                thead > tr {
+                    background-color: @table-collapsible-row-is-open-background;
+                    & > th:first-child {
+                        padding-left: 0;
+                    }
+                } 
+                tbody > tr {
+                    background-color: @table-collapsible-row-is-open-background;
+                    & > td:first-child {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }*/
+    }
+}
+
+
+

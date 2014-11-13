@@ -1,0 +1,33 @@
+@btn-height: 35px;
+@btn-min-width: 62px; // outer width = min-width + 2x padding = 102px
+@btn-border-radius: 2px;
+@btn-padding: 20px;
+@btn-font-size: 13px;
+@btn-default-background: #515151;
+@btn-default-background-hover: #414141;
+@btn-default-background-active: #313131;
+@btn-default-color: #fff;
+
+@btn-disabled-background: @user-attention-disabled-background;
+@btn-disabled-color: #ababab; //todo: why does this not fit @user-attention-disabled-color
+
+//note: following color has same value as @user-attention-disabled-color, but there is different meaning
+@btn-light-background: #818181;
+@btn-light-background-hover: darken(@btn-light-background, 10%);;
+@btn-light-background-active: darken(@btn-light-background, 20%);;
+
+@btn-error-background: @user-attention-error-color;
+@btn-error-background-hover: darken(@btn-error-background, 10%);
+@btn-error-background-active: darken(@btn-error-background, 20%);
+
+@btn-warning-background: @user-attention-warning-color;
+@btn-warning-background-hover: darken(@btn-warning-background, 10%);
+@btn-warning-background-active: darken(@btn-warning-background, 20%);
+
+@btn-info-background: @user-attention-info-color;
+@btn-info-background-hover: darken(@btn-info-background, 10%);
+@btn-info-background-active: darken(@btn-info-background, 20%);;
+
+@btn-success-background: @user-attention-success-color;
+@btn-success-background-hover: darken(@btn-success-background, 10%);
+@btn-success-background-active: darken(@btn-success-background, 20%);

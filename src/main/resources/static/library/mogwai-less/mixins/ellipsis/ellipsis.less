@@ -1,0 +1,60 @@
+
+#ellipsis {
+
+	.line() {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.multiline(@lineCount, @lineHeight, @backgroundColor: white) {
+		/* http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/ */
+		@backgroundColorTransparent: rgba(red(@backgroundColor), green(@backgroundColor), blue(@backgroundColor), 0);
+		@ellipsisWidth: 3em;
+		@ellipsisWidthIE: 1em; //using smaller width for IE, because background has no gradient
+		@height: @lineCount * @lineHeight;
+
+		overflow: hidden;
+		height: @height;
+		line-height: @lineHeight;
+
+		&:before {
+			content:"";
+			float: left;
+			width: 5px;
+			height: @height;
+		}
+
+		& > *:first-child {
+			float: right;
+			width: 100%;
+			margin: 0 0 0 -5px;
+		}
+
+		&:after {
+			content: "\02026"; //tripple dot
+
+			float: right;
+			position: relative;
+			top: -@lineHeight;
+			height: @lineHeight;
+			line-height: @lineHeight;
+			left: 100%; 
+			width: @ellipsisWidth;
+			margin-left: -@ellipsisWidth;
+			width: ~"@{ellipsisWidthIE}\9";
+			margin-left: ~"-@{ellipsisWidthIE}\9";
+			padding-right: 5px;
+			
+			text-align: right;
+			background: @backgroundColor;
+			background: -webkit-gradient(linear, left top, right top, from(@backgroundColorTransparent),
+				to(@backgroundColor), color-stop(50%, @backgroundColor));
+			background: -moz-linear-gradient(to right, @backgroundColorTransparent, @backgroundColor 50%, @backgroundColor);			
+			background: -o-linear-gradient(to right, @backgroundColorTransparent, @backgroundColor 50%, @backgroundColor);
+			background: -ms-linear-gradient(to right, @backgroundColorTransparent, @backgroundColor 50%, @backgroundColor);
+			background: linear-gradient(to right, @backgroundColorTransparent, @backgroundColor 50%, @backgroundColor);
+		}
+	}
+
+}

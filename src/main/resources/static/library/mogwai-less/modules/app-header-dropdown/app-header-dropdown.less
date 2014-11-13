@@ -1,0 +1,109 @@
+/*{
+    "require": ["app-header", "icon"]
+}*/
+
+@app-header-dropdown-ellipsis-trigger-width: 150px;
+@app-header-dropdown-font-weight: @base-font-weight-semibold;
+@app-header-dropdown-height: @app-header-height;
+@app-header-dropdown-background-color: @app-header-background-color;
+@app-header-dropdown-active-background-color: @app-header-background-color;
+@app-header-dropdown-text-color: #FFF;
+@app-header-dropdown-active-text-color: #FFF;
+@app-header-dropdown-font-size: 13px;
+@app-header-dropdown-trigger-icon-margin-right: 13px;
+@app-header-dropdown-list-shadow: #AEAEAE;
+@app-header-dropdown-list-item-background-color: #FFFFFF;
+@app-header-dropdown-list-item-hover-background-color: #F0F0F0;
+@app-header-dropdown-list-item-line-height: 60px;
+@app-header-dropdown-list-item-icon-width: 20px;
+@app-header-dropdown-list-item-font-color: #40484B;
+@app-header-dropdown-list-item-icon-margin-right: 13px;
+@app-header-dropdown-list-item-padding: 0 40px 0 @app-header-dropdown-list-item-icon-margin-right;
+@app-header-dropdown-list-item-border: 1px solid #DDDDE4;
+
+.app-header-dropdown {
+    #clickable > .element();
+    font-size: @app-header-dropdown-font-size;
+    position: relative;
+    display: inline-block;
+    transform: translateZ(0px);   // hack to not change text antialiasing on adding class by AngularJS
+                                  // in Firefox (http://stackoverflow.com/a/22873999)
+
+    &.app-header-dropdown-ellipsis {
+        .app-header-dropdown-trigger-text {
+            #ellipsis > .line();
+            max-width: @app-header-dropdown-ellipsis-trigger-width;
+        }
+    }
+
+    > .app-header-dropdown-trigger {
+        background: @app-header-dropdown-background-color;
+        color: @app-header-dropdown-text-color;
+        font-weight: @app-header-dropdown-font-weight;
+        line-height: @app-header-dropdown-height;
+
+        .app-header-dropdown-trigger-icon {
+            margin-right: @app-header-dropdown-trigger-icon-margin-right;
+            float: left;
+        }
+
+        .app-header-dropdown-trigger-text {
+            float: left;
+        }
+
+        .app-header-dropdown-trigger-expander-icon {
+            #sprite > .inlineBlock("app-header-dropdown", "app-header-dropdown-toggle-closed-png");
+            #sprite > .centerForPixelHeight("app-header-dropdown", "app-header-dropdown-toggle-closed-png", @app-header-dropdown-font-size);
+            vertical-align: middle;
+        }
+    }
+
+    > .app-header-dropdown-list {
+        #shadow > .bottomRightWithBorder(@app-header-dropdown-list-shadow);
+        z-index: @app-header-dropdown-list-z-index;
+        position: absolute;
+        top: @app-header-dropdown-height;
+        right: 0;
+        display: none;
+        border-top: @app-header-dropdown-list-item-border;
+
+        .app-header-dropdown-list-item {
+            white-space: nowrap;
+            background-color: @app-header-dropdown-list-item-background-color;
+            padding: @app-header-dropdown-list-item-padding;
+            border-bottom: @app-header-dropdown-list-item-border;
+            font-weight: @app-header-dropdown-font-weight;
+            line-height: @app-header-dropdown-list-item-line-height;
+            color: @app-header-dropdown-list-item-font-color;
+
+            &:hover {
+                background-color: @app-header-dropdown-list-item-hover-background-color;
+            }
+
+            .app-header-dropdown-list-item-icon {
+                width: @app-header-dropdown-list-item-icon-width;
+                margin-right: @app-header-dropdown-list-item-icon-margin-right;
+                display: inline-block;
+            }
+
+            .app-header-dropdown-list-item-text {
+                display: inline-block;
+            }
+        }
+    }
+
+    &.is-open {
+        .app-header-dropdown-trigger {
+            background: @app-header-dropdown-active-background-color;
+            color: @app-header-dropdown-active-text-color;
+
+            > .app-header-dropdown-trigger-expander-icon {
+                #sprite > .inlineBlock("app-header-dropdown", "app-header-dropdown-toggle-open-png");
+            }
+        }
+
+        .app-header-dropdown-list {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+/*{
+    "status": "draft",
+    "review-comment4": "do toho layoutu přibudou validační stavy, které budou aktivovat prostor pro validační hlášku/značku"
+}*/
+
+@l-field-part-padding: 12px;
+
+.l-field {
+    .centerFieldRow() {
+        #center > .verticalParent(@l-field-height);
+        & > .l-field-label,
+        & > .l-field-value,
+        & > .l-field-unit {
+            #center > .verticalChild();
+            box-sizing: border-box;
+        }
+    }
+    .centerFieldRow(); //by default, field behaves as row (but is necessary when using vertical layout)
+
+    & > .l-field-label {
+        width: @l-field-label-width;
+        padding-right: @l-field-part-padding;
+    }
+    & > .l-field-value {
+        position: relative; /* nested select size could be calculated wrong if this line is omitted */
+        width: ~"calc(100% - @{l-field-label-width})";
+    }
+    & > .l-field-unit {
+        width: @l-field-unit-width;
+        padding-left: @l-field-part-padding;
+    }
+
+    &.l-field--with-unit {
+        & > .l-field-value {
+            @fixed-elements-width: @l-field-label-width + @l-field-unit-width;
+            width: ~"calc(100% - @{fixed-elements-width})";
+        }
+    }
+
+    &.l-field--vertical {
+        & > .l-field-row {
+            display: inline-block;
+            width: 100%;
+
+            .centerFieldRow();
+
+            & > .l-field-label,
+            & > .l-field-value {
+                width: 100%;
+            }
+        }
+
+        &.l-field--with-unit > .l-field-row {
+            & > .l-field-value {
+                width: ~"calc(100% - @{l-field-unit-width})";
+            }
+            & > .l-field-unit {
+                width: @l-field-unit-width;
+                padding-left: @l-field-part-padding;
+            }
+        }
+    }
+}
