@@ -22,6 +22,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -138,17 +139,22 @@ public class ElasticSearchStore {
     }
 
     private void saveJson(String decisionJsonString) {
-        IndexResponse indexResponse = node.client().prepareIndex(DECISIONS_INDEX_NAME, DECISION_TYPE_NAME)
-                .setSource(decisionJsonString)
-                .execute()
-                .actionGet();
+        try {
+            IndexResponse indexResponse = node.client().prepareIndex(DECISIONS_INDEX_NAME, DECISION_TYPE_NAME)
+                    .setSource(decisionJsonString.getBytes("UTF-8"))
+                    .execute()
+                    .actionGet();
+        } catch (UnsupportedEncodingException e) {
+            logger.debug("Should never happened, every JVM must support UTF8");
+        }
     }
 
     private String convertEntityToJson(Decision decision) {
         String decisionJsonString = null;
         try {
-            decisionJsonString = objectMapper.writeValueAsString(decision);
-        } catch (JsonProcessingException e) {
+            byte[] bytes = objectMapper.writeValueAsBytes(decision);
+            decisionJsonString = new String(bytes, "UTF-8");
+        } catch (Exception e) {
             logger.error(String.format("Failed"), e);
         }
         return decisionJsonString;
@@ -168,11 +174,11 @@ public class ElasticSearchStore {
                 sampleDecision1.setSubject("Long transactions");
                 sampleDecision1.setDate(new Date());
                 sampleDecision1.setReason("In Interactive Plus we have long transactions which causes performance problem and deadlocks.");
-                sampleDecision1.setConclusions("" +
+                sampleDecision1.setConclusions(
                         "1)\tVašek se podívá na zjednodušení volání SQL při schvalování. Všechny data by se měla načíst EAGER jedním SELECTEM pomocí JOINů přes ALIASY.\n" +
-                        "2)\tPetr mrkne na kaskády v databázi, které využijeme při mazání.\n" +
-                        "3)\tMartin H. se podívá na optimalizaci operací s DB, při vytváření snapshotů, taky aby se bloby kopírovaly přímo v DB a ne v Javě.\n" +
-                        "4)\tOndra koukne na optimalizaci při mazání draftů – budou pouze označeny jako deleted a z DB se smažou později.\n");
+                                "2)\tPetr mrkne na kaskády v databázi, které využijeme při mazání.\n" +
+                                "3)\tMartin H. se podívá na optimalizaci operací s DB, při vytváření snapshotů, taky aby se bloby kopírovaly přímo v DB a ne v Javě.\n" +
+                                "4)\tOndra koukne na optimalizaci při mazání draftů – budou pouze označeny jako deleted a z DB se smažou později.\n");
                 sampleDecision1.setAttendees(new String[]{"m.hatas", "m.jankovsky", "v.stolin", "h.steinmetz", "m.kosar"});
                 sampleDecision1.setTags(new String[]{"#performance", "#transactions", "#database", "#deadlock", "#peak"});
 

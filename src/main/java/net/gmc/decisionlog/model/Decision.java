@@ -1,10 +1,13 @@
 package net.gmc.decisionlog.model;
 
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 
 public class Decision {
+
+    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
 
     private String id;
     private String subject;
@@ -54,19 +57,23 @@ public class Decision {
     }
 
     public String getConclusions() {
-        return conclusions;
+        return conclusions.replaceAll("\\n", "<br/>");
     }
 
     public void setConclusions(String conclusions) {
         this.conclusions = conclusions;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        return DATE_FORMAT.format(date);
     }
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Date getTimestamp(){
+        return date;
     }
 
     public String[] getAttendees() {
