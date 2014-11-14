@@ -10,11 +10,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 
 @Controller
 @RequestMapping(value="")
 public class DecisionController {
+
+    private static final Random R = new Random();
 
     @Autowired
     private ElasticSearchStore elasticSearchStore;
@@ -29,12 +32,15 @@ public class DecisionController {
 
     @RequestMapping(value="/search/{keyWord}", method= RequestMethod.GET)
     public String search(@PathVariable String keyWord, Model model) {
+        sleep();
         model.addAttribute("savedSuccessfully", true);
         model.addAttribute("showRelevancy", true);
         List<Decision> decisions = elasticSearchStore.searchDecisions(keyWord);
         model.addAttribute("decision", decisions);
         return "index";
     }
+
+
 
     @RequestMapping(value="/{deciscionId}", method= RequestMethod.GET)
     public String getDecisionById(@PathVariable String decisionId, Model model) {
@@ -76,6 +82,14 @@ public class DecisionController {
     @RequestMapping(value="/search1/{keyWord}", method= RequestMethod.GET, produces = "application/json")
     public List<Decision> search1(@PathVariable String keyWord, Model model) {
         return elasticSearchStore.searchDecisions(keyWord);
+    }
+
+    private void sleep() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
