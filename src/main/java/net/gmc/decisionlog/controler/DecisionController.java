@@ -2,6 +2,7 @@ package net.gmc.decisionlog.controler;
 
 import net.gmc.decisionlog.data.ElasticSearchStore;
 import net.gmc.decisionlog.model.Decision;
+import net.gmc.decisionlog.model.Search;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,19 +25,21 @@ public class DecisionController {
 
     @RequestMapping(value="/", method= RequestMethod.GET)
     public String getListDecisionsView(Model model) {
-        model.addAttribute("savedSuccessfully", true);
+        model.addAttribute("savedSuccessfully", false);
         model.addAttribute("showRelevancy", false);
+        model.addAttribute("search", new Search());
         model.addAttribute("decisions", elasticSearchStore.listAllDecision());
         return "index";
     }
 
-    @RequestMapping(value="/search/{keyWord}", method= RequestMethod.GET)
-    public String search(@PathVariable String keyWord, Model model) {
+    @RequestMapping(value="/", method= RequestMethod.POST)
+    public String search(@ModelAttribute("search") Search search, Model model) {
         sleep();
-        model.addAttribute("savedSuccessfully", true);
+        model.addAttribute("savedSuccessfully", false);
         model.addAttribute("showRelevancy", true);
-        List<Decision> decisions = elasticSearchStore.searchDecisions(keyWord);
+        List<Decision> decisions = elasticSearchStore.searchDecisions(search.getText());
         model.addAttribute("decision", decisions);
+        model.addAttribute("search", new Search(search.getText(), search.getTag()));
         return "index";
     }
 
@@ -65,9 +68,12 @@ public class DecisionController {
         }
         List<Decision> decisionList = new ArrayList<Decision>();
         decisionList.add(decision);
-        model.addAttribute("decisions", elasticSearchStore.listAllDecision());
+        List<Decision> decisions = elasticSearchStore.listAllDecision();
+        decisions.add(decision);
+        model.addAttribute("decisions", decisions);
         model.addAttribute("savedSuccessfully", savedSuccessfully);
         model.addAttribute("showRelevancy", false);
+        model.addAttribute("search", new Search());
         return "index";
     }
 

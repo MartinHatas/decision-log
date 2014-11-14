@@ -15,6 +15,7 @@ import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.node.Node;
 import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.sort.SortOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -54,23 +55,11 @@ public class ElasticSearchStore {
     private void init() throws InterruptedException {
         logger.info("Constructing and running ElasticSearch storage.");
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
         buildNode();
-        createIndex();
-        waitUntilElasticSearchIsStarted();
-//        listAllDecision();
+        createIndex();;
         createSampleData();
     }
 
-    private void waitUntilElasticSearchIsStarted() {
-        try {
-
-            ClusterStateResponse clusterState = getClusterState();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     private ClusterStateResponse getClusterState() throws ExecutionException, InterruptedException {
         return node.client().admin().cluster().prepareState().execute().get();
@@ -136,6 +125,7 @@ public class ElasticSearchStore {
         return node.client().prepareSearch(DECISIONS_INDEX_NAME)
                     .setTypes(DECISION_TYPE_NAME)
                     .setQuery(QueryBuilders.matchAllQuery())
+                    .addSort("timestamp", SortOrder.DESC)
                     .execute()
                     .actionGet();
     }
@@ -194,7 +184,7 @@ public class ElasticSearchStore {
                 Decision sampleDecision2 = new Decision();
                 sampleDecision2.setSubject("User activity tracking");
                 sampleDecision2.setDate(new Date());
-                sampleDecision2.setReason("We want lo log some user actions at frontend to the license library so we can achieve better UX.");
+                sampleDecision2.setReason("We want log some user actions at frontend to the license library so we can achieve better UX.");
                 sampleDecision2.setConclusions(
                         "1)\tMartin Viktorin a Tomáš Sychra vyvíjejí JavaScriptový logger, který si includneme do klienta a budem přes něj logovat uživatelské akce, které upřesní UX. (pure javascript, singleton, odesílá jednou za čas/po naplnění zásobníku/po ukončení framu, obecné schéma logované zprávy)\n" +
                                 "2)\tMartin Viktorin a Tomáš Sychra vyvíjejí maven modul, který obsahuje servlet, který umí příjmat a deserializovat zprávy z JS loggeru a volá metodu interface, který si v I+ na serveru naimplementujeme tak, aby zprávu poslal do licencační knihovny.\n" +
@@ -202,8 +192,20 @@ public class ElasticSearchStore {
                 sampleDecision2.setAttendees(new String[]{"Stanislav Hacker", "Lukáš Fíla", "Lenka Kreibichová", "Radek Špelda", "Martin Kosař"});
                 sampleDecision2.setTags(new String[]{"#UX", "#frontend", "#javascript", "#logging", "#license"});
 
+
+
+                Decision sampleDecision3 = new Decision();
+                sampleDecision3.setSubject("Choosing framework for Inspire Interactive backend");
+                sampleDecision3.setDate(new Date());
+                sampleDecision3.setReason("We want to build our application on top of framework that supports MVC pattern, can be easily integrated with cloud and have support for business intelligence addons.");
+                sampleDecision3.setConclusions(
+                        "");
+                sampleDecision3.setAttendees(new String[]{"Mark Zuckie", "Bill Doors", "Steve Bending"});
+                sampleDecision3.setTags(new String[]{"#framework", "#backend", "#cloud", "#BI", "#MVC"});
+
                 saveDecision(sampleDecision1);
                 saveDecision(sampleDecision2);
+                saveDecision(sampleDecision3);
             }
         }
 
