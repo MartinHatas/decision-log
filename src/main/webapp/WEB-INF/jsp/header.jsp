@@ -38,7 +38,3 @@
 
                 </div>
             </div>
-
-            <div class="textbox textbox--search">
-                <input type="text" placeholder="FullText Search "/>
-            </div>
