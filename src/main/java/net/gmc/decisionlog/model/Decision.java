@@ -149,6 +149,6 @@ public class Decision {
     }
 
     public String getSkypeMessage() {
-        return String.format("New decision record about '%s' has been saved. You can visit it here. http://gmc-decisionlog/%s", subject, id);
+        return String.format("New decision record about '%s' has been saved. You can check it here. http://gmc-decisionlog/%s", subject, id);
     }
 }
