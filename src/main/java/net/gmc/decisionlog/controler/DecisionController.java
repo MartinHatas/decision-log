@@ -32,14 +32,14 @@ public class DecisionController {
         return "index";
     }
 
-    @RequestMapping(value="/search/{keyWord}", method= RequestMethod.GET)
-    public String search(@PathVariable String keyWord, Model model) {
+    @RequestMapping(value="/", method= RequestMethod.POST)
+    public String search(@ModelAttribute("search") Search search, Model model) {
         sleep();
         model.addAttribute("savedSuccessfully", false);
         model.addAttribute("showRelevancy", true);
-        List<Decision> decisions = elasticSearchStore.searchDecisions(keyWord);
+        List<Decision> decisions = elasticSearchStore.searchDecisions(search.getText());
         model.addAttribute("decision", decisions);
-        model.addAttribute("search", new Search());
+        model.addAttribute("search", new Search(search.getText(), search.getTag()));
         return "index";
     }
 
