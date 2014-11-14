@@ -26,6 +26,7 @@ import javax.annotation.PreDestroy;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -179,36 +180,97 @@ public class ElasticSearchStore {
 
     private void createSampleData() throws InterruptedException {
         if (isDemo) {
+            Date date = new Date();
+
+            Calendar c2 = Calendar.getInstance();
+            c2.setTime(date);
+            c2.add(Calendar.YEAR, -1);
+            c2.add(Calendar.MONTH, -8);
+
             Thread.sleep(5000);
-    //        if (listAllDecision().isEmpty()) {
-                Decision sampleDecision1 = new Decision();
-                sampleDecision1.setSubject("Long transactions");
-                sampleDecision1.setDate(new Date());
-                sampleDecision1.setReason("In Interactive Plus we have long transactions which causes performance problem and deadlocks.");
-                sampleDecision1.setConclusions(
+            //        if (listAllDecision().isEmpty()) {
+            Decision sampleDecision1 = new Decision();
+            sampleDecision1.setSubject("Long transactions");
+            sampleDecision1.setDate(c2.getTime());
+            sampleDecision1.setReason("In Interactive Plus we have long transactions which causes performance problem and deadlocks.");
+            sampleDecision1.setConclusions(
                         "1)\tVašek se podívá na zjednodušení volání SQL při schvalování. Všechny data by se měla načíst EAGER jedním SELECTEM pomocí JOINů přes ALIASY.\n" +
                                 "2)\tPetr mrkne na kaskády v databázi, které využijeme při mazání.\n" +
                                 "3)\tMartin H. se podívá na optimalizaci operací s DB, při vytváření snapshotů, taky aby se bloby kopírovaly přímo v DB a ne v Javě.\n" +
                                 "4)\tOndra koukne na optimalizaci při mazání draftů – budou pouze označeny jako deleted a z DB se smažou později.\n");
-                sampleDecision1.setAttendees(new String[]{"Martin Hátaš", "Michal Jankovský", "Václav Stolín", "Hynek Steinmetz", "Martin Kosař"});
-                sampleDecision1.setTags(new String[]{"#performance", "#transactions", "#database", "#deadlock", "#peak"});
+            sampleDecision1.setAttendees(new String[]{"Martin Hátaš", "Michal Jankovský", "Václav Stolín", "Hynek Steinmetz", "Martin Kosař"});
+            sampleDecision1.setTags(new String[]{"#performance", "#transactions", "#database", "#deadlock", "#peak"});
 
-                Decision sampleDecision2 = new Decision();
-                sampleDecision2.setSubject("User activity tracking");
-                sampleDecision2.setDate(new Date());
-                sampleDecision2.setReason("We want log some user actions at frontend to the license library so we can achieve better UX.");
-                sampleDecision2.setConclusions(
+            Calendar c1 = Calendar.getInstance();
+            c1.setTime(date);
+            c1.add(Calendar.YEAR, -1);
+            c1.add(Calendar.MONTH, -5);
+
+            Decision sampleDecision2 = new Decision();
+            sampleDecision2.setSubject("User activity tracking");
+            sampleDecision2.setDate(c1.getTime());
+            sampleDecision2.setReason("We want log some user actions at frontend to the license library so we can achieve better UX.");
+            sampleDecision2.setConclusions(
                         "1)\tMartin Viktorin a Tomáš Sychra vyvíjejí JavaScriptový logger framework, který si includneme do klienta a budem přes něj logovat uživatelské akce, které upřesní UX. (pure javascript, singleton, odesílá jednou za čas/po naplnění zásobníku/po ukončení framu, obecné schéma logované zprávy)\n" +
                                 "2)\tMartin Viktorin a Tomáš Sychra vyvíjejí maven modul, který obsahuje servlet, který umí příjmat a deserializovat zprávy z JS loggeru a volá metodu interface, který si v I+ na serveru naimplementujeme tak, aby zprávu poslal do licencační knihovny.\n" +
                                 "3)\tKonzultanti za I+ byli demokraticky zvoleni Lukáš a Standa.\n");
-                sampleDecision2.setAttendees(new String[]{"Stanislav Hacker", "Lukáš Fíla", "Lenka Kreibichová", "Radek Špelda", "Martin Kosař"});
-                sampleDecision2.setTags(new String[]{"#UX", "#frontend", "#javascript", "#logging", "#license"});
+            sampleDecision2.setAttendees(new String[]{"Stanislav Hacker", "Lukáš Fíla", "Lenka Kreibichová", "Radek Špelda", "Martin Kosař"});
+            sampleDecision2.setTags(new String[]{"#UX", "#frontend", "#javascript", "#logging", "#license"});
 
 
 
-                Decision sampleDecision3 = new Decision();
-                sampleDecision3.setSubject("Choosing framework for Inspire Interactive backend");
-                sampleDecision3.setDate(new Date());
+            Calendar c3 = Calendar.getInstance();
+            c3.setTime(date);
+            c3.add(Calendar.YEAR, -1);
+            c3.add(Calendar.MONTH, -5);
+
+            Decision sampleDecision4 = new Decision();
+            sampleDecision4.setSubject("Modularization - Architecture change");
+            sampleDecision4.setDate(c3.getTime());
+            sampleDecision4.setReason("We want to split our monolithic application into a modules so that we support code ownership that bring us more code quality a faster development.");
+            sampleDecision4.setConclusions(
+                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis aute irure dolor in " +
+                            "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Nam sed tellus " +
+                            "id magna elementum tincidunt. Maecenas aliquet accumsan leo. Mauris dolor felis, sagittis at," +
+                            " luctus sed, aliquam non, tellus. framework Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris" +
+                            " nisi ut aliquip ex ea commodo consequat. Phasellus faucibus molestie nisl. Nulla quis diam. Class aptent " +
+                            "taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos." +
+                            " Fusce suscipit libero eget elit. Donec quis nibh at felis congue commodo.");
+            sampleDecision4.setAttendees(new String[]{"Denis van Gaal", "Don Ruiz", "Frank Buchar"});
+            sampleDecision4.setTags(new String[]{"#modularization", "#server", "#ownership", "#quality"});
+
+
+            Calendar c4 = Calendar.getInstance();
+            c4.setTime(date);
+            c4.add(Calendar.MONTH, -3);
+
+            Decision sampleDecision5 = new Decision();
+            sampleDecision5.setSubject("What database we should use as internal datastorage");
+            sampleDecision5.setDate(c4.getTime());
+            sampleDecision5.setReason("We are choosing database to run in memory for non-production data. We need good performance and stability");
+            sampleDecision5.setConclusions(
+                    "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis aute irure dolor in " +
+                            "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Nam sed tellus " +
+                            "id magna elementum tincidunt. Maecenas aliquet accumsan leo. Mauris dolor felis, sagittis at," +
+                            " luctus sed, aliquam non, tellus. framework Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris" +
+                            " nisi ut aliquip ex ea commodo consequat. Phasellus faucibus molestie nisl. Nulla quis diam. Class aptent " +
+                            "taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos." +
+                            " Fusce suscipit libero eget elit. Donec quis nibh at felis congue commodo.");
+            sampleDecision5.setAttendees(new String[]{"Denis van Gaal", "Don Ruiz", "Frank Buchar"});
+            sampleDecision5.setTags(new String[]{"#modularization", "#server", "#ownership", "#quality"});
+
+
+
+
+            Decision sampleDecision3 = new Decision();
+            sampleDecision3.setSubject("Choosing framework for Inspire Interactive backend");
+
+            Calendar c = Calendar.getInstance();
+            c.setTime(date);
+            c.add(Calendar.YEAR, -2);
+            c.add(Calendar.MONTH, -2);
+
+            sampleDecision3.setDate(c.getTime());
                 sampleDecision3.setReason("We want to build our application on top of framework that supports MVC pattern, can be easily integrated with cloud and have support for business intelligence addons.");
                 sampleDecision3.setConclusions(
                         "We were choosing among several frameworks namely Spring, Play, Akka and J2EE. \n" +
@@ -220,6 +282,8 @@ public class ElasticSearchStore {
                 saveDecision(sampleDecision1);
                 saveDecision(sampleDecision2);
                 saveDecision(sampleDecision3);
+                saveDecision(sampleDecision4);
+                saveDecision(sampleDecision5);
    //         }
         }
 
