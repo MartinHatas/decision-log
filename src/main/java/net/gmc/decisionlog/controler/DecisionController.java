@@ -45,10 +45,10 @@ public class DecisionController {
 
 
 
-    @RequestMapping(value="/{deciscionId}", method= RequestMethod.GET)
+    @RequestMapping(value="/detail/(decisionId)", method= RequestMethod.GET)
     public String getDecisionById(@PathVariable String decisionId, Model model) {
         model.addAttribute("decision", elasticSearchStore.getDecision(decisionId));
-        return "decision";
+        return "detail";
     }
 
     @RequestMapping(value="/add-decision", method= RequestMethod.GET)
@@ -69,7 +69,7 @@ public class DecisionController {
         List<Decision> decisionList = new ArrayList<Decision>();
         decisionList.add(decision);
         List<Decision> decisions = elasticSearchStore.listAllDecision();
-        decisions.add(decision);
+        decisions.add(0, decision);
         model.addAttribute("decisions", decisions);
         model.addAttribute("savedSuccessfully", savedSuccessfully);
         model.addAttribute("showRelevancy", false);
