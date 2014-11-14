@@ -133,19 +133,23 @@ public class ElasticSearchStore {
     public void saveDecision(Decision decision){
         logger.info(String.format("Going to save new decision record: '%s'", decision.toString()));
         String decisionJsonString = convertEntityToJson(decision);
-        saveJson(decisionJsonString);
+        String id = saveJson(decisionJsonString);
+        decision.setId(id);
         publisher.publishDecisionAdded(decision);
     }
 
-    private void saveJson(String decisionJsonString) {
+    private String saveJson(String decisionJsonString) {
+        String response = null;
         try {
             IndexResponse indexResponse = node.client().prepareIndex(DECISIONS_INDEX_NAME, DECISION_TYPE_NAME)
                     .setSource(decisionJsonString.getBytes("UTF-8"))
                     .execute()
                     .actionGet();
+            return indexResponse.getId();
         } catch (UnsupportedEncodingException e) {
             logger.debug("Should never happened, every JVM must support UTF8");
         }
+        return response;
     }
 
     private String convertEntityToJson(Decision decision) {
@@ -168,7 +172,7 @@ public class ElasticSearchStore {
     private void createSampleData() throws InterruptedException {
         if (isDemo) {
             Thread.sleep(5000);
-            if (listAllDecision().isEmpty()) {
+    //        if (listAllDecision().isEmpty()) {
                 Decision sampleDecision1 = new Decision();
                 sampleDecision1.setSubject("Long transactions");
                 sampleDecision1.setDate(new Date());
@@ -199,14 +203,14 @@ public class ElasticSearchStore {
                 sampleDecision3.setDate(new Date());
                 sampleDecision3.setReason("We want to build our application on top of framework that supports MVC pattern, can be easily integrated with cloud and have support for business intelligence addons.");
                 sampleDecision3.setConclusions(
-                        "");
+                        "We selet this because of");
                 sampleDecision3.setAttendees(new String[]{"Mark Zuckie", "Bill Doors", "Steve Bending"});
                 sampleDecision3.setTags(new String[]{"#framework", "#backend", "#cloud", "#BI", "#MVC"});
 
                 saveDecision(sampleDecision1);
                 saveDecision(sampleDecision2);
                 saveDecision(sampleDecision3);
-            }
+   //         }
         }
 
     }

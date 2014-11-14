@@ -34,20 +34,22 @@ public class DecisionController {
 
     @RequestMapping(value="/", method= RequestMethod.POST)
     public String search(@ModelAttribute("search") Search search, Model model) {
-        sleep();
         model.addAttribute("savedSuccessfully", false);
         model.addAttribute("showRelevancy", true);
         List<Decision> decisions = elasticSearchStore.searchDecisions(search.getText());
-        model.addAttribute("decision", decisions);
+        model.addAttribute("decisions", decisions);
         model.addAttribute("search", new Search(search.getText(), search.getTag()));
         return "index";
     }
 
 
 
-    @RequestMapping(value="/detail/(decisionId)", method= RequestMethod.GET)
+    @RequestMapping(value="/{decisionId}", method= RequestMethod.GET)
     public String getDecisionById(@PathVariable String decisionId, Model model) {
-        model.addAttribute("decision", elasticSearchStore.getDecision(decisionId));
+        Decision decision = elasticSearchStore.getDecision(decisionId);
+        List<Decision> decisionList = new ArrayList<Decision>();
+        decisionList.add(decision);
+        model.addAttribute("decisions", decisionList);
         return "detail";
     }
 
@@ -88,14 +90,6 @@ public class DecisionController {
     @RequestMapping(value="/search1/{keyWord}", method= RequestMethod.GET, produces = "application/json")
     public List<Decision> search1(@PathVariable String keyWord, Model model) {
         return elasticSearchStore.searchDecisions(keyWord);
-    }
-
-    private void sleep() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
 

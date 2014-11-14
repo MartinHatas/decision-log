@@ -11,6 +11,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class SkypeNotifier implements ApplicationListener<DecisionAddedMessage> {
@@ -27,7 +29,6 @@ public class SkypeNotifier implements ApplicationListener<DecisionAddedMessage> 
     @PostConstruct
     private void init() throws SkypeException {
 
-        Chat[] allChats = Skype.getAllChats();
 
 
         if (skypeNotificationEnabled) {
@@ -64,7 +65,7 @@ public class SkypeNotifier implements ApplicationListener<DecisionAddedMessage> 
 
     private void sendDecisionSkypeMessage(Decision decision, String skypeChatId) {
         try {
-            Skype.chat(skypeChatId).send(decision.toString());
+            Skype.chat(skypeChatId).send(decision.getSkypeMessage());
         } catch (SkypeException e) {
             logger.error(String.format("Failed to send skype message to the chat with id '%s'", skypeChatId), e);
         }

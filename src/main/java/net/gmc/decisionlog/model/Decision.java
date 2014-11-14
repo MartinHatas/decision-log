@@ -119,4 +119,8 @@ public class Decision {
                 ", tags=" + Arrays.toString(tags) +
                 '}';
     }
+
+    public String getSkypeMessage() {
+        return String.format("New decision record about '%s' has been saved. You can visit it here. http://hatas:8080/%s", subject, id);
+    }
 }
