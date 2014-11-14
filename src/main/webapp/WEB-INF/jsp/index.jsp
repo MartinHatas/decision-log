@@ -50,7 +50,7 @@ ${savedSuccessfully?
         <tr class="table-collapsible-row-header"><%--is-open--%>
             <td class="date">
                 <div class="table-collapsible-row-toggle"></div>
-                <c:out value="${decision.date}"/>
+                <c:out value="${decision.formattedDate}" escapeXml='false'/>
             </td>
             <td class="subject"><c:out value="${decision.subject}"/></td>
             <td class="summary">

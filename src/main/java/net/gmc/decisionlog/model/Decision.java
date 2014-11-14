@@ -80,6 +80,14 @@ public class Decision {
         return stringDate;
     }
 
+    public String getFormattedDate(){
+        String date1 = getDate();
+        if (date1 != null) {
+            return date1.replaceAll("-", "&#8209;");
+        }
+        return "";
+    }
+
     public void setDate(Date date) {
         this.date = date;
     }
