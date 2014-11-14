@@ -52,6 +52,39 @@
 .l-app .form-box .textbox {
   margin-bottom: 10px;
 }
+.l-app textarea.textbox {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-height: 8em;
+}
+.l-app .new-rdecision-submit {
+  margin-top: 10px;
+}
+.l-app .content .attendees span,
+.l-app .content .tags span {
+  background-color: #777;
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.l-app .content .attendees span:first-of-type,
+.l-app .content .tags span:first-of-type {
+  margin-left: 0;
+}
+.l-app .content .attendees span:last-of-type,
+.l-app .content .tags span:last-of-type {
+  margin-right: 0;
+}
 .alert {
   padding: 15px;
   margin-bottom: 20px;

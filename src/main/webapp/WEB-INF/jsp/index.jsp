@@ -93,8 +93,18 @@ ${savedSuccessfully?
                         <div class="heading">
                             Attendees:
                         </div>
-                        <div class="content">
+                        <div class="content attendees">
                             <c:out value="${decision.formattedAttendees}" escapeXml='false'/>
+
+                        </div>
+                    </div>
+
+                    <div class="detail">
+                        <div class="heading">
+                            Attendees:
+                        </div>
+                        <div class="content tags">
+                            <c:out value="${decision.formattedTags}" escapeXml='false'/>
 
                         </div>
                     </div>

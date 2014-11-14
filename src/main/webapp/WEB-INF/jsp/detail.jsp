@@ -5,6 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="header.jsp"></jsp:include>
+
 <div class="detail-box">
     <c:forEach var="decision" items="${decisions}">
 

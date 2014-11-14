@@ -14,34 +14,35 @@
     <label for="subject">Subject</label>
 
     <div class="textbox">
-        <form:input path="subject" placeholder="Short description"/>
+        <form:input path="subject" placeholder="Short description"  required="required"/>
 
     </div>
 
     <label for="reason">Reason</label>
 
-    <div class="textbox">
-        <form:input path="reason" placeholder="reason"/>
+    <div>
+        <form:textarea path="reason" placeholder="Why we need decision" class="textbox" rows="5"/>
     </div>
 
     <label for="conclusions">Conclusions</label>
 
-    <div class="textbox">
-        <form:input path="conclusions" placeholder="conclusions"/>
+    <div>
+        <form:textarea path="conclusions" placeholder="Why we decided for ..." class="textbox" rows="5"/>
     </div>
 
     <label for="attendees">Attendees</label>
 
     <div class="textbox">
-        <form:input path="attendees" placeholder="attendees"/>
+        <form:input path="attendees" placeholder="Who to ask about details"/>
     </div>
 
     <label for="tags">Tags</label>
 
     <div class="textbox">
-        <form:input path="tags" placeholder="tags"/>
+        <form:input path="tags" placeholder="Tags"/>
     </div>
-    <input type="submit" value="Register"/>
+
+    <input type="submit" value="SAVE RECORD" class="btn btn-light new-rdecision-submit" />
 
             </form:form>
 </div>
