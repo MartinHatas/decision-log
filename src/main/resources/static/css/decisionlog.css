@@ -174,3 +174,6 @@ button.close {
 .alert {
   margin: 10px;
 }
+.non-css {
+  display: none !important;
+}
