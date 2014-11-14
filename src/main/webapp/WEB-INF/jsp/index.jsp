@@ -10,23 +10,23 @@
 
 
 <form:form action="/" method="post" commandName="search">
-<div class="textbox textbox--search">
+    <div class="textbox textbox--search">
 
         <form:input path="text" placeholder="FullText Search"/>
 
          
-</div>
+    </div>
     <input class="non-css" type="submit" value="Search"/>
 </form:form>
 
 
-${savedSuccessfully?
-'<div class="alert alert-success alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+<c:if test="savedSuccessfully">
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span></button>
         Decision record <strong>saved</strong> successfully.
-        </div>
-        '
-        :""}
+    </div>
+</c:if>
 
 
 <table class="table table--collapsible-rows">
@@ -35,7 +35,9 @@ ${savedSuccessfully?
         <th>Date</th>
         <th>Subject</th>
         <th>Summary</th>
-        <th>Relevancy</th>
+        <c:if test="showRelevancy">
+            <th>Relevancy</th>
+        </c:if>
     </tr>
     </thead>
     <tbody>
@@ -58,13 +60,15 @@ ${savedSuccessfully?
                     <c:out value="${decision.reason}"/>
                 </div>
             </td>
-            <td class="relevancy">
-                <div class="wrapper">
-                        <%--<c:out value="${decision.relevance}"/>--%>
-                        ${decision.relevance>0.1?"&#9733;":""}${decision.relevance>0.3?"&#9733;":""}${decision.relevance>0.5?"&#9733;":""}${decision.relevance>0.7?"&#9733;":""}${decision.relevance>0.9?"&#9733;":""}
-                    <div class="hider"></div>
-                </div>
-            </td>
+            <c:if test="showRelevancy">
+                <td class="relevancy">
+                    <div class="wrapper">
+                            <%--<c:out value="${decision.relevance}"/>--%>
+                            ${decision.relevance>0.1?"&#9733;":""}${decision.relevance>0.3?"&#9733;":""}${decision.relevance>0.5?"&#9733;":""}${decision.relevance>0.7?"&#9733;":""}${decision.relevance>0.9?"&#9733;":""}
+                        <div class="hider"></div>
+                    </div>
+                </td>
+            </c:if>
         </tr>
 
         <tr class="table-collapsible-row-body">
@@ -101,7 +105,7 @@ ${savedSuccessfully?
 
                     <div class="detail">
                         <div class="heading">
-                            Attendees:
+                            Tags:
                         </div>
                         <div class="content tags">
                             <c:out value="${decision.formattedTags}" escapeXml='false'/>
@@ -115,4 +119,18 @@ ${savedSuccessfully?
     </c:forEach>
     </tbody>
 </table>
+
+
+<c:if test="${empty decisions}">
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
+                class="sr-only">Close</span></button>
+        No decisions found. (Using search query "${search.text}")
+    </div>
+</c:if>
+
+<c:if test="decisions.size == 0">
+    nothing
+</c:if>
+
 <jsp:include page="footer.jsp"></jsp:include>
