@@ -7,6 +7,15 @@
 
 <jsp:include page="header.jsp"></jsp:include>
 
+${savedSuccessfully?
+'<div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Decision record <strong>saved</strong> successfully.
+        </div>
+        '
+:""}
+
+
             <table class="table table--collapsible-rows">
                 <thead>
                 <tr>
@@ -25,7 +34,7 @@
                 <%--this.tags = tags;--%>
                 <%--relevance--%>
                 <c:forEach var="decision" items="${decisions}">
-                    <tr class="table-collapsible-row-header is-open"><%--is-open--%>
+                    <tr class="table-collapsible-row-header"><%--is-open--%>
                         <td class="date">
                             <div class="table-collapsible-row-toggle"></div>
                             <c:out value="${decision.date}"/>
@@ -38,8 +47,8 @@
                         </td>
                         <td class="relevancy">
                             <div class="wrapper">
-                                <c:out value="${decision.relevance}"/>
-                                    <%--&#9733;&#9733;&#9733;&#9733;&#9733;--%>
+                                <%--<c:out value="${decision.relevance}"/>--%>
+                                    &#9733;&#9733;&#9733;&#9733;&#9733;
                                 <div class="hider"></div>
                             </div>
                         </td>

@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/mogwai.css" media="screen"/>
 <link rel="stylesheet" type="text/css" href="css/decisionlog.css" media="screen"/>
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/mogwai.js"></script>
 <html>
 
@@ -22,13 +23,13 @@
                 <div class="app-header-left">
                     <img src="gfx/decision.png" class="app-header-logo"/>
 
-                    <div class="app-header-btn app-header-btn--pasive-icon-by-overlay is-active">
+                    <div class="app-header-btn app-header-btn--pasive-icon-by-overlay${pageContext.request.servletPath=='/WEB-INF/jsp/index.jsp'?' is-active':''}">
                         <div class="app-header-btn-icon-active">
                             <div class="icon icon--small icon--dashboard-invert"></div>
                         </div>
                         <a class="app-header-btn-label" href="/">DASHBOARD</a>
                     </div>
-                    <div class="app-header-btn app-header-btn--pasive-icon-by-overlay">
+                    <div class="app-header-btn app-header-btn--pasive-icon-by-overlay${pageContext.request.servletPath=='/WEB-INF/jsp/add.jsp'?' is-active':''}">
                         <div class="app-header-btn-icon-active">
                             <div class="icon icon--small icon--dashboard-invert"></div>
                         </div>
