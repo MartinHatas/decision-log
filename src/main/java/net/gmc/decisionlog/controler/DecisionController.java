@@ -18,8 +18,6 @@ import java.util.Random;
 @RequestMapping(value="")
 public class DecisionController {
 
-    private static final Random R = new Random();
-
     @Autowired
     private ElasticSearchStore elasticSearchStore;
 

@@ -94,7 +94,7 @@ ${savedSuccessfully?
                             Attendees:
                         </div>
                         <div class="content">
-                            <c:out value="${decision.attendees}" escapeXml='false'/>
+                            <c:out value="${decision.formattedAttendees}" escapeXml='false'/>
 
                         </div>
                     </div>

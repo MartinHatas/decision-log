@@ -1,6 +1,8 @@
 package net.gmc.decisionlog.model;
 
 
+import org.apache.commons.lang.StringUtils;
+
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -69,11 +71,13 @@ public class Decision {
     }
 
     public String getDate() {
+        String stringDate = null;
         if (date != null) {
-            return DATE_FORMAT.format(date);
+             stringDate = DATE_FORMAT.format(date);
         }else {
-            return DATE_FORMAT.format(new Date());
+            stringDate = DATE_FORMAT.format(new Date());
         }
+        return stringDate;
     }
 
     public void setDate(Date date) {
@@ -106,6 +110,22 @@ public class Decision {
 
     public void setRelevance(Float relevance) {
         this.relevance = relevance;
+    }
+
+    public String getFormattedAttendees(){
+        StringBuilder sb = new StringBuilder();
+        for (String attendee : attendees) {
+            sb.append("<span>" + attendee + "</span>");
+        }
+        return sb.toString();
+    }
+
+    public String getFormattedTags(){
+        StringBuilder sb = new StringBuilder();
+        for (String tag : tags) {
+            sb.append("<span>" + tag + "</span>");
+        }
+        return sb.toString();
     }
 
     @Override
