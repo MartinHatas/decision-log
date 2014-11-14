@@ -95,16 +95,24 @@ public class ElasticSearchStore {
     private List<Decision> deserializeDecisionsResponse(SearchResponse searchResponse) {
         List<Decision> decisions = new ArrayList<Decision>();
         for(SearchHit hit : searchResponse.getHits()){
-            getDecisionsFromHit(decisions, hit);
+            getDecisionsFromHit(decisions, hit, searchResponse.getHits().getMaxScore());
         }
         return decisions;
     }
 
-    private void getDecisionsFromHit(List<Decision> decisions, SearchHit hit) {
+    private void getDecisionsFromHit(List<Decision> decisions, SearchHit hit, float maxScore) {
         String sourceAsString = hit.getSourceAsString();
         Decision decision = deserialize(sourceAsString);
         if (decision != null) {
-            decision.setRelevance(hit.getScore());
+
+            float score;
+            if (hit.getScore() != 0f && maxScore != 0f) {
+                score = hit.getScore() / maxScore;
+            } else {
+                score = hit.getScore();
+            }
+
+            decision.setRelevance(score);
             decision.setId(hit.getId());
             decisions.add(decision);
         }
@@ -220,13 +228,14 @@ public class ElasticSearchStore {
         SearchResponse response = node.client().prepareSearch(DECISIONS_INDEX_NAME)
                 .setTypes(DECISION_TYPE_NAME)
                 .setSearchType(SearchType.DFS_QUERY_THEN_FETCH)
-                .setQuery(QueryBuilders.simpleQueryString(keyWord).field("subject").field("reason").field("conclusions").field("attendees").field("tags"))
+                .setQuery(QueryBuilders.simpleQueryString(keyWord).field("subject").field("reason").field("conclusions").field("attendees").field("tags", 2.0f))
                 .execute()
                 .actionGet();
 
+
         List<Decision> decisionList = new ArrayList<Decision>();
         for (SearchHit hit : response.getHits()) {
-            getDecisionsFromHit(decisionList, hit);
+            getDecisionsFromHit(decisionList, hit, response.getHits().getMaxScore());
         }
 
         return decisionList;
