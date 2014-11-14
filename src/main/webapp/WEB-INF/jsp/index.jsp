@@ -88,6 +88,17 @@ ${savedSuccessfully?
 
                         </div>
                     </div>
+
+                    <div class="detail">
+                        <div class="heading">
+                            Attendees:
+                        </div>
+                        <div class="content">
+                            <c:out value="${decision.attendees}" escapeXml='false'/>
+
+                        </div>
+                    </div>
+
                 </div>
             </td>
         </tr>
