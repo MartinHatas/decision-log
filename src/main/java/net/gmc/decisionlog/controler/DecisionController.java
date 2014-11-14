@@ -21,12 +21,16 @@ public class DecisionController {
 
     @RequestMapping(value="/", method= RequestMethod.GET)
     public String getListDecisionsView(Model model) {
+        boolean savedSuccessfully = true;
+        model.addAttribute("savedSuccessfully", savedSuccessfully);
         model.addAttribute("decisions", elasticSearchStore.listAllDecision());
         return "index";
     }
 
     @RequestMapping(value="/search/{keyWord}", method= RequestMethod.GET)
     public String search(@PathVariable String keyWord, Model model) {
+        boolean savedSuccessfully = true;
+        model.addAttribute("savedSuccessfully", savedSuccessfully);
         List<Decision> decisions = elasticSearchStore.searchDecisions(keyWord);
         model.addAttribute("decision", decisions);
         return "index";
@@ -46,12 +50,18 @@ public class DecisionController {
 
     @RequestMapping(value="/add-decision", method= RequestMethod.POST)
     public String addDecision(@ModelAttribute("decision") Decision decision, Model model) {
+        boolean savedSuccessfully = true;
         decision.setDate(new Date());
-        elasticSearchStore.saveDecision(decision);
+        try {
+            elasticSearchStore.saveDecision(decision);
+        } catch (Exception e) {
+            savedSuccessfully = false;
+        }
         List<Decision> decisionList = new ArrayList<Decision>();
         decisionList.add(decision);
-        model.addAttribute("decisions", decisionList);
-        return "detail";
+        model.addAttribute("decisions", elasticSearchStore.listAllDecision());
+        model.addAttribute("savedSuccessfully", savedSuccessfully);
+        return "index";
     }
 
     @ResponseBody
