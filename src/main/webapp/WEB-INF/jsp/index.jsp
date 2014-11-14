@@ -34,20 +34,14 @@
     <tr>
         <th>Date</th>
         <th>Subject</th>
-        <th>Summary</th>
+        <th>Reason</th>
         <c:if test="showRelevancy">
             <th>Relevancy</th>
         </c:if>
     </tr>
     </thead>
     <tbody>
-    <%--this.subject = subject;--%>
-    <%--this.reason = reason;--%>
-    <%--this.conclusions = conclusions;--%>
-    <%--this.date = date;--%>
-    <%--this.attendees = attendees;--%>
-    <%--this.tags = tags;--%>
-    <%--relevance--%>
+
     <c:forEach var="decision" items="${decisions}">
         <tr class="table-collapsible-row-header"><%--is-open--%>
             <td class="date">
