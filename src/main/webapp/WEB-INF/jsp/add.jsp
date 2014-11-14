@@ -39,7 +39,7 @@
     <label for="tags">Tags</label>
 
     <div class="textbox">
-        <form:input path="tags" placeholder="Tags"/>
+        <form:input path="tags" placeholder="Tags (optimizing relevancy)"/>
     </div>
 
     <input type="submit" value="SAVE RECORD" class="btn btn-light new-rdecision-submit" />
