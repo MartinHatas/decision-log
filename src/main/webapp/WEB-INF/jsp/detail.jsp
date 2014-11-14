@@ -16,7 +16,7 @@
                 </div>
                 <div class="content">
                     <div class="date">
-                        <%--<c:out value="${decision.date}"/>--%>
+                        <c:out value="${decision.formattedDate}"/>
                     </div>
                 </div>
             </div>
@@ -47,6 +47,26 @@
                 </div>
                 <div class="content">
                     <c:out value="${decision.conclusions}" escapeXml='false'/>
+
+                </div>
+            </div>
+
+            <div class="detail">
+                <div class="heading">
+                    Attendees:
+                </div>
+                <div class="content attendees">
+                    <c:out value="${decision.formattedAttendees}" escapeXml='false'/>
+
+                </div>
+            </div>
+
+            <div class="detail">
+                <div class="heading">
+                    Tags:
+                </div>
+                <div class="content tags">
+                    <c:out value="${decision.formattedTags}" escapeXml='false'/>
 
                 </div>
             </div>
