@@ -198,7 +198,7 @@ public class ElasticSearchStore {
                 sampleDecision2.setDate(new Date());
                 sampleDecision2.setReason("We want log some user actions at frontend to the license library so we can achieve better UX.");
                 sampleDecision2.setConclusions(
-                        "1)\tMartin Viktorin a Tomáš Sychra vyvíjejí JavaScriptový logger, který si includneme do klienta a budem přes něj logovat uživatelské akce, které upřesní UX. (pure javascript, singleton, odesílá jednou za čas/po naplnění zásobníku/po ukončení framu, obecné schéma logované zprávy)\n" +
+                        "1)\tMartin Viktorin a Tomáš Sychra vyvíjejí JavaScriptový logger framework, který si includneme do klienta a budem přes něj logovat uživatelské akce, které upřesní UX. (pure javascript, singleton, odesílá jednou za čas/po naplnění zásobníku/po ukončení framu, obecné schéma logované zprávy)\n" +
                                 "2)\tMartin Viktorin a Tomáš Sychra vyvíjejí maven modul, který obsahuje servlet, který umí příjmat a deserializovat zprávy z JS loggeru a volá metodu interface, který si v I+ na serveru naimplementujeme tak, aby zprávu poslal do licencační knihovny.\n" +
                                 "3)\tKonzultanti za I+ byli demokraticky zvoleni Lukáš a Standa.\n");
                 sampleDecision2.setAttendees(new String[]{"Stanislav Hacker", "Lukáš Fíla", "Lenka Kreibichová", "Radek Špelda", "Martin Kosař"});
@@ -211,9 +211,11 @@ public class ElasticSearchStore {
                 sampleDecision3.setDate(new Date());
                 sampleDecision3.setReason("We want to build our application on top of framework that supports MVC pattern, can be easily integrated with cloud and have support for business intelligence addons.");
                 sampleDecision3.setConclusions(
-                        "We selet this because of");
-                sampleDecision3.setAttendees(new String[]{"Mark Zuckie", "Bill Doors", "Steve Bending"});
-                sampleDecision3.setTags(new String[]{"#framework", "#backend", "#cloud", "#BI", "#MVC"});
+                        "We were choosing among several frameworks namely Spring, Play, Akka and J2EE. \n" +
+                                "Finally we have chosen Spring framework because of its plugins and addons that provide us much more functionality than we even need.\n" +
+                                "It core of our project. It can´t be easily changed in future.");
+                sampleDecision3.setAttendees(new String[]{"Browsil Pillow", "Bill Doors", "Steve Bender"});
+                sampleDecision3.setTags(new String[]{"#framework", "#backend", "#cloud", "#BI", "#MVC", "#Spring"});
 
                 saveDecision(sampleDecision1);
                 saveDecision(sampleDecision2);
