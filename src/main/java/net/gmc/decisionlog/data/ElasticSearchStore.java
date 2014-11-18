@@ -52,13 +52,15 @@ public class ElasticSearchStore {
     @Autowired
     private DecisionEventPublisher publisher;
 
+    private boolean isPopulated = false;
+
     @PostConstruct
     private void init() throws InterruptedException {
         logger.info("Constructing and running ElasticSearch storage.");
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         buildNode();
-        createIndex();;
-        createSampleData();
+        createIndex();
+       // createSampleData();
     }
 
 
@@ -82,6 +84,11 @@ public class ElasticSearchStore {
                 logger.debug("Creating index.");
                 node.client().admin().indices().prepareCreate(DECISIONS_INDEX_NAME).execute().get();
                 //    node.client().admin().indices().preparePutMapping(DECISIONS_INDEX_NAME).setSource(mapping).setType("_default_").execute().get();
+            } else {
+                long count = node.client().admin().indices().prepareStats(DECISIONS_INDEX_NAME).execute().get().getTotal().getDocs().getCount();
+                if (count > 0) {
+                    isPopulated = true;
+                }
             }
         } catch (Exception e) {
             logger.error("Failed to create index for fulltext search.", e);
@@ -89,8 +96,12 @@ public class ElasticSearchStore {
     }
 
     public List<Decision> listAllDecision() {
-        SearchResponse searchResponse = getSearchResponse();
-        return deserializeDecisionsResponse(searchResponse);
+        if (isPopulated) {
+            SearchResponse searchResponse = getSearchResponse();
+            return deserializeDecisionsResponse(searchResponse);
+        } else {
+            return new ArrayList<Decision>();
+        }
     }
 
     private List<Decision> deserializeDecisionsResponse(SearchResponse searchResponse) {
@@ -144,6 +155,7 @@ public class ElasticSearchStore {
         String decisionJsonString = convertEntityToJson(decision);
         String id = saveJson(decisionJsonString);
         decision.setId(id);
+        isPopulated = true;
         publisher.publishDecisionAdded(decision);
     }
 

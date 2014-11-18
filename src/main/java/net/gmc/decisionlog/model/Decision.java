@@ -3,6 +3,8 @@ package net.gmc.decisionlog.model;
 
 import org.apache.commons.lang.StringUtils;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -148,7 +150,7 @@ public class Decision {
                 '}';
     }
 
-    public String getSkypeMessage() {
-        return String.format("New decision record about '%s' has been saved. You can check it here. http://gmc-decisionlog/%s", subject, id);
+    public String getSkypeMessage() throws UnknownHostException {
+        return String.format("New decision record about '%s' has been saved. You can check it here. http://%s:/%s", subject, InetAddress.getLocalHost().getHostName(), id);
     }
 }
