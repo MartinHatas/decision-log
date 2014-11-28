@@ -58,8 +58,7 @@
                 <td class="relevancy">
                     <div class="wrapper">
                             <%--<c:out value="${decision.relevance}"/>--%>
-                            <%--${decision.relevance>0.1?"&#9733;":""}${decision.relevance>0.3?"&#9733;":""}${decision.relevance>0.5?"&#9733;":""}${decision.relevance>0.7?"&#9733;":""}${decision.relevance>0.9?"&#9733;":""}--%>
-                            &#9733;&#9733;${decision.relevance>0.5?"&#9733;":""}${decision.relevance>0.7?"&#9733;":""}${decision.relevance>0.9?"&#9733;":""}
+                            ${decision.relevance>0.1?"&#9733;":""}${decision.relevance>0.3?"&#9733;":""}${decision.relevance>0.5?"&#9733;":""}${decision.relevance>0.7?"&#9733;":""}${decision.relevance>0.9?"&#9733;":""}
                         <div class="hider"></div>
                     </div>
                 </td>
