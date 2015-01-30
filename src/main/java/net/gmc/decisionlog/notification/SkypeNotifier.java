@@ -25,6 +25,9 @@ public class SkypeNotifier implements ApplicationListener<DecisionAddedMessage> 
     @Value("${skype.notification.enabled}")
     private boolean skypeNotificationEnabled;
 
+    @Value("${server.port}")
+    private String port;
+
 
     private List<Chat> chats = new ArrayList<Chat>();
 
@@ -77,7 +80,7 @@ public class SkypeNotifier implements ApplicationListener<DecisionAddedMessage> 
     private void sendDecisionSkypeMessage(Decision decision, String skypeChatId) {
         try {
             for (Chat chat: chats) {
-                chat.send(decision.getSkypeMessage());
+                chat.send(String.format(decision.getSkypeMessage(), port));
             }
         } catch (Exception e) {
             logger.error(String.format("Failed to send skype message to the chat with id '%s'", skypeChatId), e);

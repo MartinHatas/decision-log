@@ -41,14 +41,15 @@ public class ElasticSearchStore {
     private static final Logger logger = Logger.getLogger(ElasticSearchStore.class);
 
     public static final String DECISION_TYPE_NAME = "decision";
-    private static final String DECISIONS_INDEX_NAME = "decisions";
     private static final String DECISION_LOG = "decisionlog";
     private ObjectMapper objectMapper = new ObjectMapper();
-
     private static Node node;
 
     @Value("${demo}")
     private boolean isDemo;
+
+    @Value("${store.index.name}")
+    private String DECISIONS_INDEX_NAME;
 
     @Autowired
     private DecisionEventPublisher publisher;
