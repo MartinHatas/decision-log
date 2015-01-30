@@ -3,3 +3,5 @@ syntax: glob
 *.iml
 target/*
 data/decisionlog/*
+build_decisionlog*
+out*
