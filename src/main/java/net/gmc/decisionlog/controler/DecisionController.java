@@ -74,7 +74,7 @@ public class DecisionController {
         model.addAttribute("savedSuccessfully", savedSuccessfully);
         model.addAttribute("showRelevancy", false);
         model.addAttribute("search", new Search());
-        return "redirect:/";
+        return "index";
     }
 
     @ResponseBody
