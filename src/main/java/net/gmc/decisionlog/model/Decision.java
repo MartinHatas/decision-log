@@ -151,6 +151,6 @@ public class Decision {
     }
 
     public String getSkypeMessage() throws UnknownHostException {
-        return String.format("New decision record about '%s' has been saved. You can check it here. http://%s:%s/%s", subject, InetAddress.getLocalHost().getHostName(), "%s", id);
+        return String.format("New decision record about '%s' has been saved. You can check it here. http://%s:%s%s/%s", subject, InetAddress.getLocalHost().getHostName(), "%s","%s", id);
     }
 }

@@ -29,13 +29,13 @@
                         <div class="app-header-btn-icon-active">
                             <div class="icon icon--small icon--dashboard-invert"></div>
                         </div>
-                        <a class="app-header-btn-label" href="/">DASHBOARD</a>
+                        <a href="${pageContext.request.contextPath}/" class="app-header-btn-label" href="/">DASHBOARD</a>
                     </div>
                     <div class="app-header-btn app-header-btn--pasive-icon-by-overlay${pageContext.request.servletPath=='/WEB-INF/jsp/add.jsp'?' is-active':''}">
                         <div class="app-header-btn-icon-active">
                             <div class="icon icon--small icon--add"></div>
                         </div>
-                        <a href="/add-decision" class="app-header-btn-label">CREATE NEW DECISION</a>
+                        <a href="${pageContext.request.contextPath}/add-decision" class="app-header-btn-label">CREATE NEW DECISION</a>
                     </div>
 
                 </div>

@@ -41,7 +41,7 @@ public class ElasticSearchStore {
     private static final Logger logger = Logger.getLogger(ElasticSearchStore.class);
 
     public static final String DECISION_TYPE_NAME = "decision";
-    private static final String DECISION_LOG = "decisionlog";
+    private static final String DECISIONS_INDEX_NAME = "decisionlog";
     private ObjectMapper objectMapper = new ObjectMapper();
     private static Node node;
 
@@ -49,7 +49,7 @@ public class ElasticSearchStore {
     private boolean isDemo;
 
     @Value("${store.index.name}")
-    private String DECISIONS_INDEX_NAME;
+    private String DECISION_LOG;
 
     @Autowired
     private DecisionEventPublisher publisher;
@@ -62,7 +62,6 @@ public class ElasticSearchStore {
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         buildNode();
         createIndex();
-       // createSampleData();
     }
 
 
@@ -142,7 +141,7 @@ public class ElasticSearchStore {
             Decision decision = objectMapper.readValue(sourceAsString, Decision.class);
             return decision;
         } catch (IOException e) {
-            logger.error(String.format("Failed to deserialize desicion '%s'", sourceAsString), e);
+            logger.error(String.format("Failed to deserialize decision '%s'", sourceAsString), e);
         }
         return null;
     }

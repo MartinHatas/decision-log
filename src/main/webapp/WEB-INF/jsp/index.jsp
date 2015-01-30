@@ -10,7 +10,7 @@
 <jsp:include page="header.jsp"></jsp:include>
 
 
-<form:form action="/" method="post" commandName="search">
+<form:form action="${pageContext.request.contextPath}/" method="post" commandName="search">
     <div class="textbox textbox--search">
 
         <form:input path="text" placeholder="FullText Search"/>
