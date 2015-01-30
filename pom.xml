@@ -7,7 +7,7 @@
     <artifactId>decision-log</artifactId>
     <version>0.1.0</version>
 
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -20,6 +20,7 @@
         <start-class>net.gmc.decisionlog.Application</start-class>
         <main.basedir>${basedir}/../..</main.basedir>
         <m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>
+        <start-class>net.gmc.decisionlog.Application</start-class>
     </properties>
 
     <dependencies>

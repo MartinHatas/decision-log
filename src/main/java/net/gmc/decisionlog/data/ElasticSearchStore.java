@@ -13,6 +13,7 @@ import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.shard.DocsStats;
 import org.elasticsearch.node.Node;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.sort.SortOrder;
@@ -85,7 +86,12 @@ public class ElasticSearchStore {
                 node.client().admin().indices().prepareCreate(DECISIONS_INDEX_NAME).execute().get();
                 //    node.client().admin().indices().preparePutMapping(DECISIONS_INDEX_NAME).setSource(mapping).setType("_default_").execute().get();
             } else {
-                long count = node.client().admin().indices().prepareStats(DECISIONS_INDEX_NAME).execute().get().getTotal().getDocs().getCount();
+                DocsStats docs = node.client().admin().indices().prepareStats(DECISIONS_INDEX_NAME).execute().get().getTotal().getDocs();
+                if (docs == null) {
+                    isPopulated = false;
+                    return;
+                }
+                long count = docs.getCount();
                 if (count > 0) {
                     isPopulated = true;
                 }
