@@ -41,14 +41,14 @@ public class SkypeNotifier implements ApplicationListener<DecisionAddedMessage> 
         if (skypeNotificationEnabled) {
             Skype.setDaemon(false);
             Chat[] allChats = Skype.getAllChats();
-//            for (Chat chat : allChats) {
-//                for (String skypeChatName: skypeChatNames) {
-//                    if (chat.getId().equals(skypeChatName)) {
-//                        logger.info(String.format("Registering: chat with id '%s' has been found.", skypeChatName));
-//                        chats.add(chat);
-//                    }
-//                }
-//            }
+            for (Chat chat : allChats) {
+                for (String skypeChatName: skypeChatNames) {
+                    if (chat.getId().equals(skypeChatName)) {
+                        logger.info(String.format("Registering: chat with id '%s' has been found.", skypeChatName));
+                        chats.add(chat);
+                    }
+                }
+            }
 
             if (Skype.isInstalled()){
                 initSkypeDaemon();
@@ -83,10 +83,10 @@ public class SkypeNotifier implements ApplicationListener<DecisionAddedMessage> 
 
     private void sendDecisionSkypeMessage(Decision decision, String skypeChatId) {
         try {
-            Skype.chat(skypeChatId.trim()).send(String.format(decision.getSkypeMessage(), port, contextPath));
-//            for (Chat chat: chats) {
-//                chat.send(String.format(decision.getSkypeMessage(), port, contextPath));
-//            }
+//            Skype.chat(skypeChatId.trim()).send(String.format(decision.getSkypeMessage(), port, contextPath));
+            for (Chat chat: chats) {
+                chat.send(String.format(decision.getSkypeMessage(), port, contextPath));
+            }
         } catch (Exception e) {
             logger.error(String.format("Failed to send skype message to the chat with id '%s'", skypeChatId), e);
         }

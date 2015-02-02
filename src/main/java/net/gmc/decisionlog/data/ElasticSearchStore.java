@@ -8,6 +8,7 @@ import net.gmc.decisionlog.model.Decision;
 import net.gmc.decisionlog.notification.publishing.DecisionEventPublisher;
 import org.apache.log4j.Logger;
 import org.elasticsearch.action.admin.cluster.state.ClusterStateResponse;
+import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchResponse;
@@ -339,5 +340,13 @@ public class ElasticSearchStore {
             e.printStackTrace();
         }
         return decision;
+    }
+
+    public void deleteDecision(String decisionId) {
+        try {
+            DeleteResponse deleteResponse = node.client().prepareDelete(DECISIONS_INDEX_NAME, DECISION_TYPE_NAME, decisionId).execute().get();
+        } catch (Exception e) {
+            logger.error(String.format("Failed to delete decision with id '%s'", decisionId), e);
+        }
     }
 }

@@ -1,8 +1,15 @@
 package net.gmc.decisionlog.controler;
 
+import com.skype.Chat;
+import com.skype.ChatMessage;
+import com.skype.Skype;
+import com.skype.SkypeException;
 import net.gmc.decisionlog.data.ElasticSearchStore;
 import net.gmc.decisionlog.model.Decision;
 import net.gmc.decisionlog.model.Search;
+import net.gmc.decisionlog.model.SkypeChatInfo;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +24,8 @@ import java.util.Random;
 @Controller
 @RequestMapping(value="")
 public class DecisionController {
+
+    private static final Logger logger = LogManager.getLogger(DecisionController.class);
 
     @Autowired
     private ElasticSearchStore elasticSearchStore;
@@ -40,7 +49,15 @@ public class DecisionController {
         return "index";
     }
 
-
+    @RequestMapping(value="/{decisionId}", method= RequestMethod.DELETE)
+    public String search(@PathVariable String decisionId, Model model) {
+        model.addAttribute("savedSuccessfully", false);
+        model.addAttribute("showRelevancy", true);
+        elasticSearchStore.deleteDecision(decisionId);
+        List<Decision> decisions = elasticSearchStore.listAllDecision();
+        model.addAttribute("decisions", decisions);
+        return "index";
+    }
 
     @RequestMapping(value="/{decisionId}", method= RequestMethod.GET)
     public String getDecisionById(@PathVariable String decisionId, Model model) {
@@ -90,5 +107,32 @@ public class DecisionController {
         return elasticSearchStore.searchDecisions(keyWord);
     }
 
+
+    @ResponseBody
+    @RequestMapping(value="/skype", method= RequestMethod.GET, produces = "application/json")
+    public List<SkypeChatInfo> getRecentChats(Model model) {
+        return getSkypeChatInfos();
+    }
+
+    private List<SkypeChatInfo> getSkypeChatInfos() {
+        List<SkypeChatInfo> skypeChatInfos = new ArrayList<SkypeChatInfo>();
+        try {
+            Chat[] allRecentChats = Skype.getAllRecentChats();
+            for (Chat recentChat : allRecentChats) {
+                SkypeChatInfo skypeChatInfo = new SkypeChatInfo();
+                skypeChatInfo.id = recentChat.getId();
+                skypeChatInfo.status = recentChat.getStatus();
+                skypeChatInfo.windowTitle = recentChat.getWindowTitle();
+                ChatMessage[] recentChatMessages = recentChat.getRecentChatMessages();
+                if (recentChatMessages.length > 0) {
+                    skypeChatInfo.lastMessage = recentChatMessages[recentChatMessages.length - 1].getContent();
+                }
+                skypeChatInfos.add(skypeChatInfo);
+            }
+        } catch (SkypeException e) {
+            logger.error("Failed to obtain all recent chat names.", e);
+        }
+        return skypeChatInfos;
+    }
 
 }

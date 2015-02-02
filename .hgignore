@@ -5,3 +5,4 @@ target/*
 data/decisionlog/*
 build_decisionlog*
 out*
+data/*
